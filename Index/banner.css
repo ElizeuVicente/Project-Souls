@@ -4,7 +4,7 @@
     background-size: cover;
     background-position: center;
     width: 100%;
-    height: 900px;
+    height: 700px;
 }
 
 
@@ -21,6 +21,7 @@
 .banner .container1 .title {
     position: relative;
     bottom: 50px;
+    font-family: 'OptmusPrinceps';
 }
 
 .banner .container1 .title p {
