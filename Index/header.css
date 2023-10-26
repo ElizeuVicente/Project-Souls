@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+}
+
+/*Header*/
+.header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    height: 100%;
+}
+
+.header .container .navbar li {
+    list-style: none;
+    display: inline;
+    padding: 0 35px;
+    width: 100%;
+    color: #FFF;
+}
+
+.header .container .navbar li:hover {
+    color: #790707;
+    transition: 0.3s;
+
+}
+
+.header .container img {
+    display: inline;
+    margin-top: 25px;
+    height: 94px;
+}
+
+.header .login {
+    display: flex;
+    height: 100%;
+    position: relative;
+    left: 20lh;
+    align-items: end;
+
+}
+
+.header .login a {
+    text-decoration: none;
+    color: #790707;
+
+}
+/*Header*/
+
+
