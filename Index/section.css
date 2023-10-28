@@ -1,4 +1,4 @@
-.section {
+.section-context {
     width: 100%;
     height: 300px;
     background-color: #0C0C0C;
@@ -8,33 +8,71 @@
     
 }
 
-.section .container {
+.section-context .container {
     width: 80%;
     
 }
 
-.section .container h1 {
+.section-context .container h1 {
     font-family: 'OptmusPrincepsSB';
     text-align: center;
     color: #D0D0D0; 
+    border-bottom: 1px solid #D0D0D0;
+    border-radius: 30px;
     
 }
 
-.section .container .text {
+.section-context .container .text {
    display: flex;
    justify-content: space-between;  
    color: #D0D0D0; 
 }
 
-.section .container .text p {
+.section-context .container .text p {
     margin: 0%;
     padding: 0 10px;
 }
 
-.franquia{
+.section-franquia{
     width: 100%;
+    height: 300px;
+    background-color: #0C0C0C;
 }
-.franquia .container {
-    height: 100px;
+
+.section-franquia .title {
+    display: flex;
+    justify-content: center;
 }
+
+.section-franquia .title h1 {
+    margin: 0%;
+    font-family: 'OptmusPrincepsSB';
+    text-align: center;
+    color: #D0D0D0; 
+    padding: 30px;
+}
+
+.section-franquia .franquia{
+    display: flex;
+    width: 100%;
+    height: 300px;
+    background-color: #0C0C0C;
+    justify-content: center;
+
+}
+
+.section-franquia .franquia .container-img {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    
+
+}
+.section-franquia .franquia .container-img img{
+    padding: 0 20px;
+    width: 26.6%;
+    height: 100%;
+}
+
+
 

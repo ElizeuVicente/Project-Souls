@@ -1,10 +1,11 @@
 .banner {
-    background-image: url(../img/Wallpapers/WallpaperMenu.png);
+    background: url(../img/Wallpapers/WallpaperMenu.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     width: 100%;
-    height: 700px;
+    height: 570px;
+    
 }
 
 
@@ -16,20 +17,26 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    
 
 }
 .banner .container .title {
-    position: relative;
+    
     bottom: 50px;
-    font-family: 'OptmusPrinceps';
+    font-family: 'OptmusPrincepsSB';
 }
 
 .banner .container .title p {
-    color: #FFF;
+    color: #D0D0D0;
     font-size: 40px;
+    margin: 0;
+    padding: 15px 0;
 }
 
 .banner .container .title span {
     color: #790707;
-    font-size: 96px;
+    font-size: 90px;
+    text-shadow: 0 0 1px #790707;
+    
+    
 }
