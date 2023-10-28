@@ -42,7 +42,7 @@ body {
 .header .container .navbar li:hover {
     border-bottom: 1px solid #790707;
     color: #790707;
-    transition: 0.3s;
+    transition: 0.3s ease-in-out;
 
 }
 

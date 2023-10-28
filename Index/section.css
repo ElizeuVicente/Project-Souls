@@ -35,8 +35,17 @@
 
 .section-franquia{
     width: 100%;
-    height: 300px;
+    height: 500px;
     background-color: #0C0C0C;
+}
+
+.section-franquia .franquia{
+    display: flex;
+    width: 100%;
+    height: 355px;
+    background-color: #0C0C0C;
+    justify-content: center;
+
 }
 
 .section-franquia .title {
@@ -52,14 +61,6 @@
     padding: 30px;
 }
 
-.section-franquia .franquia{
-    display: flex;
-    width: 100%;
-    height: 300px;
-    background-color: #0C0C0C;
-    justify-content: center;
-
-}
 
 .section-franquia .franquia .container-img {
     width: 80%;
@@ -72,6 +73,36 @@
     padding: 0 20px;
     width: 26.6%;
     height: 100%;
+}
+
+.section-franquia .comprar-button {
+    display:flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.section-franquia .comprar-button .container {
+    display: flex ;
+    padding-top: 10px;
+    width: 61%;
+    justify-content: space-between;
+}
+
+.section-franquia .comprar-button .container a{
+    background-color: #0C0C0C;
+    border: 2px solid #790707;
+    color: #790707;
+    border-radius: 30px;
+    padding: 0 20px;
+    text-decoration: none;
+}
+
+
+.section-franquia .comprar-button .container a:hover{
+    color: #0C0C0C;
+    background-color: #790707;
+    padding: 0 22px;
+    transition: 0.3s ease-in-out;
 }
 
 
