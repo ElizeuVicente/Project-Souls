@@ -1,0 +1,48 @@
+body {
+    background-image: url(../img/Wallpapers/WallpaperDS1.png);
+    background-size: cover;
+}
+
+
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    flex-direction: column;
+}
+
+.login h1 {
+    text-align: center;
+    font-family: 'OptmusPrincepsSB';
+    text-align: center;
+    color: #D0D0D0; 
+    padding: 30px;
+}
+
+.login span {
+    color: #D0D0D0; 
+    font-family: 'OptmusPrincepsSB';
+}
+
+.login input {
+    margin: 5px;
+    width: 200px;
+    text-align: center;
+    border: #0C0C0C;
+    background-color: #0C0C0C;
+    box-shadow: none;
+    
+    color: #D0D0D0;
+    height: 20px;
+    border-radius: 5px;
+}
+
+.login button {
+    background-color: #0C0C0C;
+    color: #D0D0D0;
+    box-shadow: none;
+    margin: 3px;
+    width: 90px;
+}
+

@@ -10,10 +10,9 @@ body {
     src: url('../font/OptimusPrincepsSemiBold.ttf') format('truetype');
 }
 
-/*Header da linha 11 até a linha 61*/
+/*Header*/
 .header {
     position: fixed;
-
     width: 100%;
     height: 85px;
     display: flex;
@@ -31,6 +30,8 @@ body {
    
 }
 
+
+/*Navlinks*/
 .header .container .navbar li {
     list-style: none;
     display: inline;
@@ -43,9 +44,13 @@ body {
     border-bottom: 1px solid #790707;
     color: #790707;
     transition: 0.3s ease-in-out;
-
 }
 
+
+
+
+
+/*Navimg*/
 .header .container img {
     display: block;
     align-items: end;
@@ -58,10 +63,10 @@ body {
     position: relative;
     left: 18vh;
     align-items: end;
-    
-
 }
 
+
+/*Login*/
 .header .login a {
     padding: 0 5px;
     color: #790707;
@@ -77,6 +82,8 @@ body {
     top: 1px;
     transition: 0.3s;
 }
+
+
 
 /*ScrollBar*/
 ::-webkit-scrollbar {
