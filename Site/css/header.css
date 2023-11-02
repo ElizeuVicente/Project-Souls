@@ -85,6 +85,8 @@ body {
 }
 
 /*DropDown*/
+
+
 /*Personagens*/
 .header .container .navbar li .dropdown-personagens {
     position: absolute;
@@ -95,13 +97,14 @@ body {
 }
 
 .header .container .navbar li .dropdown-personagens li {
-    padding: 0 19px;
+    padding: 5px 19px;
     text-align: center;
 }
 
 .header .container .navbar li:hover .dropdown-personagens {
     display: flex;
 }
+
 
 
 /*Conquistas*/
@@ -115,13 +118,14 @@ body {
 }
 
 .header .container .navbar li .dropdown-conquistas li {
-    padding: 0 19px;
+    padding: 5px 19px;
     text-align: center;
 }
 
 .header .container .navbar li:hover .dropdown-conquistas {
     display: flex;
 }
+
 
 
 /*Build*/
@@ -135,7 +139,7 @@ body {
 }
 
 .header .container .navbar li .dropdown-build li {
-    padding: 0 19px;
+    padding: 5px 19px;
     text-align: center;
 }
 
@@ -144,8 +148,8 @@ body {
 }
 
 
-/*Equipamentos*/
 
+/*Equipamentos*/
 .header .container .navbar li .dropdown-equipamentos {
     position: absolute;
     display: none;
@@ -155,7 +159,7 @@ body {
 }
 
 .header .container .navbar li .dropdown-equipamentos li {
-    padding: 0 19px;
+    padding: 5px 19px;
     text-align: center;
 }
 
