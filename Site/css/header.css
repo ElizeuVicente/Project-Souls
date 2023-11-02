@@ -60,8 +60,9 @@ body {
 .header .login {
     display: flex;
     height: 100%;
-    position: relative;
-    left: 18vh;
+    position: absolute;
+    left: 90%;
+    bottom: 0px;
     align-items: end;
 }
 
