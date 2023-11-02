@@ -1,11 +1,11 @@
 body {
-    margin: 0;  
+    margin: 0;
 }
 
 @font-face {
     font-family: 'OptmusPrinceps';
     src: url('../font/OptimusPrinceps.ttf') format('truetype');
-    
+
     font-family: 'OptmusPrincepsSB';
     src: url('../font/OptimusPrincepsSemiBold.ttf') format('truetype');
 }
@@ -22,18 +22,18 @@ body {
 }
 
 .header .container {
+
     display: flex;
     justify-content: space-between;
     align-items: end;
     height: 100%;
     font-family: 'OptmusPrinceps';
-   
+
 }
 
 
 /*Navlinks*/
 .header .container .navbar li {
-    list-style: none;
     display: inline;
     padding: 0 35px;
     width: 100%;
@@ -83,6 +83,88 @@ body {
     top: 1px;
     transition: 0.3s;
 }
+
+/*DropDown*/
+/*Personagens*/
+.header .container .navbar li .dropdown-personagens {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    margin: 0 10px;
+    padding: 5px 0;
+}
+
+.header .container .navbar li .dropdown-personagens li {
+    padding: 0 19px;
+    text-align: center;
+}
+
+.header .container .navbar li:hover .dropdown-personagens {
+    display: flex;
+}
+
+
+/*Conquistas*/
+.header .container .navbar li .dropdown-conquistas {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    margin: 0 10px;
+    padding: 10px 0;
+    left: 450px;
+}
+
+.header .container .navbar li .dropdown-conquistas li {
+    padding: 0 19px;
+    text-align: center;
+}
+
+.header .container .navbar li:hover .dropdown-conquistas {
+    display: flex;
+}
+
+
+/*Build*/
+.header .container .navbar li .dropdown-build {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    margin: 0 10px;
+    padding: 5px 0;
+    right: 292px;
+}
+
+.header .container .navbar li .dropdown-build li {
+    padding: 0 19px;
+    text-align: center;
+}
+
+.header .container .navbar li:hover .dropdown-build {
+    display: flex;
+}
+
+
+/*Equipamentos*/
+
+.header .container .navbar li .dropdown-equipamentos {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    margin: 0 10px;
+    padding: 5px 0;
+}
+
+.header .container .navbar li .dropdown-equipamentos li {
+    padding: 0 19px;
+    text-align: center;
+}
+
+.header .container .navbar li:hover .dropdown-equipamentos {
+    display: flex;
+}
+
+
+
 
 
 
