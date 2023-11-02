@@ -1,5 +1,5 @@
 body {
-    background-image: url(../img/Wallpapers/WallpaperDS1.png);
+    background-image:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../img/Wallpapers/WallpaperDS1.png);
     background-size: cover;
 }
 
@@ -17,7 +17,8 @@ body {
     font-family: 'OptmusPrincepsSB';
     text-align: center;
     color: #D0D0D0; 
-    padding: 30px;
+    margin-bottom: 100px;
+    margin-top: 0;
 }
 
 .login span {
@@ -29,20 +30,41 @@ body {
     margin: 5px;
     width: 200px;
     text-align: center;
-    border: #0C0C0C;
-    background-color: #0C0C0C;
-    box-shadow: none;
-    
+    border: 2px solid #d0d0d065;
+    background-color: #0d0d0db0;
     color: #D0D0D0;
     height: 20px;
-    border-radius: 5px;
+    border-radius: 4px;
+    outline: none;
+}
+
+.login input:hover {
+    border-bottom: 2px solid #790707;
+    transition: 0.3s;
+
+}
+
+.login input:focus {
+    border: 2px solid #790707;
+    transition: 0.3s;
+    
 }
 
 .login button {
-    background-color: #0C0C0C;
+    background-color: #0d0d0db0;
+    border: 2px solid #d0d0d065;
+    padding: 1px 5px;
     color: #D0D0D0;
-    box-shadow: none;
-    margin: 3px;
+    margin: 5px 5px;
     width: 90px;
+    border-radius: 4px;
+}
+
+.login button:hover {
+    border: 2px solid #790707;
+    background-color: #790707;
+    color: #0d0d0d;
+    width: 100px;
+    transition: 0.3s;
 }
 
