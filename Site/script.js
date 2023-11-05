@@ -1,2 +1,2 @@
-var username = 'Ashen one'
+var username = `Ashen One`;
 usernameTitle.innerHTML = username;

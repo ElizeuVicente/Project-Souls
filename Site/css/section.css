@@ -1,7 +1,6 @@
 .section-context {
     width: 100%;
     height: 300px;
-    background-color: #0C0C0C;
     display: flex;
     justify-content: center;
     
@@ -36,14 +35,14 @@
 .section-franquia{
     width: 100%;
     height: 500px;
-    background-color: #0C0C0C;
+    
 }
 
 .section-franquia .franquia{
     display: flex;
     width: 100%;
     height: 355px;
-    background-color: #0C0C0C;
+    
     justify-content: center;
 
 }
