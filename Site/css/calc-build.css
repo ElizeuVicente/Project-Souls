@@ -1,0 +1,15 @@
+.Atributos {
+    display: grid;
+    width: 10%;
+}
+
+.Atributos .atrStatus {
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+}
+
+.Atributos .atrStatus .btnAtrSts span{
+    padding: 0 5px;
+}
+
