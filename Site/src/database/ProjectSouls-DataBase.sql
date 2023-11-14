@@ -14,7 +14,7 @@ DanoSombrio int,
 Critico int,
 BuffMagia int
 );
--- (0, 'nome', 'tipo', 'descriçao', dano, cura, buff),
+
 create table Feitiços (
 idFeitico int primary key auto_increment,
 nome varchar(45),
@@ -23,6 +23,13 @@ descricao varchar(200),
 dano decimal(4,3),
 cura decimal(4,3),
 buff decimal(4,3));
+
+create table Usuario (
+idUser int primary key auto_increment,
+nome varchar(30),
+email varchar(50),
+senha varchar(30)
+) auto_increment = 10000;
 
 insert into Armas values
 (null,'Dagger','Adaga', 1.5, 65, 0, 0, 0, 0, 130, 0),
@@ -367,7 +374,7 @@ select * from Armas
 select * from Armas
 	where tipo = 'Espada Curva';
 select * from Armas
-	where tipo = 'Grande Espada Grande';
+	where tipo = 'Grande Espada Curva';
 select * from Armas
 	where tipo = 'Katana';
 select * from Armas
