@@ -1,5 +1,5 @@
 .section-CDS1 {
-    height: 1560px;
+    height: 1564px;
     width: 100%;
 
 }
@@ -16,6 +16,7 @@
     justify-content: center;
     position: relative;
     bottom: 190px;
+    z-index: -1;
 }
 
 .container-progress-bar .progress-bar{
@@ -63,13 +64,12 @@
 
 }
 
-.linha-div {
-    height: 1px;
-    width: 80%;
-    background-color: #D0D0D0;
-}
-
 .container-linha {
     display: flex;
     justify-content: center;
+}
+.container-linha .linha-div {
+    height: 1px;
+    width: 80%;
+    background-color: #D0D0D0;
 }
