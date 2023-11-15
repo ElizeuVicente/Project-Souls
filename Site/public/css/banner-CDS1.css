@@ -1,15 +1,13 @@
 body {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../img/Wallpapers/WallpaperDS1.png);
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(../img/Wallpapers/WallpaperDS1.png);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size:cover;
     background-position: center;
 }
 .banner {
     width: 100%;
     height: 570px;
 }
-
-
 
 .banner .container {
     width: 100%;
@@ -18,11 +16,8 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    
-
 }
 .banner .container .title {
-    
     bottom: 50px;
     font-family: 'OptmusPrincepsSB';
 }
@@ -40,3 +35,5 @@ body {
     margin: 0;
     padding: 0;
 }
+
+
