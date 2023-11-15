@@ -1,5 +1,73 @@
 .section-CDS3 {
-    height: 100px;
+    height: 1630px;
     width: 100%;
     
+}
+.section-CDS3 .container-Conquest {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 10%;
+
+}
+
+.container-progress-bar {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    bottom: 190px;
+    z-index: -1;
+}
+
+.container-progress-bar .progress-bar{
+    background-color: #141414;
+    border: 2px solid #070707;
+    height: 18px;
+    width: 80%;
+    border-radius: 5px;
+}
+
+.container-progress-bar .progress-bar .progress {
+    background-color: #790707;
+    height: 100%;
+    width: 100%;
+    border-radius: 3px;
+}
+
+.container-linha {
+    display: flex;
+    justify-content: center;
+}
+.container-linha .linha-div {
+    height: 1px;
+    width: 80%;
+    background-color: #D0D0D0;
+}
+
+.section-CDS3 .container-Conquest .div-Conquest {
+    width: 35%;
+}
+
+.section-CDS3 .container-Conquest .div-Conquest .Conquest {
+    display: flex;
+    align-items: start;
+    border-bottom: 1px solid #D0D0D0;
+    margin: 10px 0;
+
+}
+
+.section-CDS3 .container-Conquest .div-Conquest .Conquest div {
+    margin: 0;
+}
+
+.section-CDS3 .container-Conquest .div-Conquest .Conquest div h3 {
+    margin: 0;
+    text-decoration: none;
+    font-family: 'OptmusPrincepsSB';
+    color: #D0D0D0;
+}
+
+.section-CDS3 .container-Conquest .div-Conquest .Conquest div p {
+    color: #D0D0D0;
+    margin: 10px 0;
+
 }
