@@ -28,7 +28,9 @@
 
 .section-context .container .text p {
     margin: 0%;
-    padding: 0 5%;
+    padding: 0 10% 15px;
+    text-align: center;
+    border-bottom: 1px solid #D0D0D0;
 }
 
 .section-franquia {
@@ -47,6 +49,7 @@
     text-align: center;
     color: #D0D0D0;
     padding: 30px;
+    margin-top: 15px;
 }
 
 
@@ -81,13 +84,21 @@
 }
 
 .section-franquia .franquia .container .franquia-Ds div {
-    text-align: center;   
+    text-align: center; 
+}
+.section-franquia .franquia .container .franquia-Ds div h3 {
+    font-family: 'OptmusPrincepsSB';
 }
 
 .section-franquia .franquia .container .franquia-Ds:hover {
     transition: 0.5s  ease-out;
     font-size: 20px;
     width: 150%;
-    font-size: 16px;
+    font-size: 16px; 
+}
+
+.section-franquia .franquia .container .franquia-Ds:hover div {
+    background-color: rgba(13, 13, 13,0.4);
+    border-radius: 20px;
     
 }

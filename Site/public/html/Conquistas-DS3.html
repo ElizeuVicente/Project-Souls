@@ -74,7 +74,7 @@
 
         <div class="container-progress-bar">
             <div class="progress-bar">
-                <div class="progress"></div>
+                <div class="progress" id="divProgress"></div>
             </div>
         </div>
 
@@ -385,12 +385,13 @@
                     </div>
                 </div>
                 <div class="Conquest">
-                    <input type="checkbox">
+                    <input type="checkbox" >
                     <div>
                         <h3>A Alma Negra</h3>
                         <p>Complete todas as conquistas</p>
                     </div>
                 </div>
+
 
             </div>
         </div>
@@ -399,3 +400,8 @@
 </body>
 
 </html>
+<script>
+    function progredir() {
+        divProgress.style.width = `0%`
+    }
+</script>

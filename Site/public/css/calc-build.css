@@ -12,4 +12,11 @@
 .Atributos .atrStatus .btnAtrSts span{
     padding: 0 5px;
 }
+.container-status{
+    display: flex;
+}
 
+.chart-atributos {
+    width: 500px;
+    height: 600px;
+}
