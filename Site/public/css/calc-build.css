@@ -1,6 +1,10 @@
+.calc-build {
+    padding-top: 85px;
+}
 .Atributos {
     display: grid;
-    width: 10%;
+    width: 20%;
+    
 }
 
 .Atributos .atrStatus {
@@ -12,11 +16,30 @@
 .Atributos .atrStatus .btnAtrSts span{
     padding: 0 5px;
 }
-.container-status{
+
+.Status {
+    width: 100%;
     display: flex;
+    justify-content: center;
 }
 
-.chart-atributos {
-    width: 500px;
-    height: 600px;
+.Status .container-status{
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    
+}
+
+
+.Status .container-status .chart-atributos {
+    width: 400px;
+    height: 500px;
+    align-items: center;
+    display: flex;
+}
+.Atr-Title{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }

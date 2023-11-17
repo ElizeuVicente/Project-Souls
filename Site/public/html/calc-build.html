@@ -6,103 +6,154 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/calc-build.css">
+    <link rel="stylesheet" href="../css/header.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
+    <!--Header-->
     <div>
-        <!--Class de seção 1-->
-        <div class="container-status">
-            <h1>Atributos</h1>
-            <p>
-                Nivel:<span id="spanLevel">1</span>
-            </p>
-        </div>
-        <div class="container-status">
-            <div class="Atributos">
-                <div class="atrStatus">
-                    <p>Vigor</p>
-                    <div class="btnAtrSts">
-                        <button onclick="lvDownVigo()">-</button>
-                        <span id="lvVigor">10</span>
-                        <button onclick="lvUpVigo()">+</button>
-                    </div>
+        <div class="header">
+            <div class="container">
+
+                <div class="navbar">
+                    <li>
+                        <span>Personagens</span>
+                        <ul class="dropdown-personagens">
+                            <li onclick="window.location.href = '../html/'">Bosses</li>
+                            <li onclick="window.location.href = '../html/'">NPC</li>
+                            <li onclick="window.location.href = '../html/'">Inimigos</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span>Conquistas</span>
+                        <ul class="dropdown-conquistas">
+                            <li onclick="window.location.href = '../html/Conquistas-DS1.html'">Dark Souls I</li>
+                            <li onclick="window.location.href = '../html/Conquistas-DS2.html'">Dark Souls II</li>
+                            <li onclick="window.location.href = '../html/Conquistas-DS3.html'">Dark Souls III</li>
+                        </ul>
+                    </li>
+                </div>
+                <a href="../html/index.html"><img src="../img/Icon/Ricon.png"></a>
+                <div class="navbar">
+                    <li>
+                        <span>Equipamentos</span>
+                        <ul class="dropdown-equipamentos">
+                            <li onclick="window.location.href = '../html/'">Armas</li>
+                            <li onclick="window.location.href = '../html/'">Armaduras</li>
+                            <li onclick="window.location.href = '../html/'">Feitiços</li>
+                            <li onclick="window.location.href = '../html/'">Anéis</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span>Build</span>
+                        <ul class="dropdown-build">
+                            <li onclick="window.location.href = '../html/'">Calculadora de Build</li>
+                            <li onclick="window.location.href = '../html/'">Builds Salvas</li>
+                        </ul>
+                    </li>
                 </div>
 
-                <div class="atrStatus">
-                    <p>Conhecimento</p>
-                    <div class="btnAtrSts">
-                        <button onclick="lvDownConh()">-</button>
-                        <span id="lvConhecimento">10</span>
-                        <button onclick="lvUpConh()">+</button>
-                    </div>
-                </div>
-
-                <div class="atrStatus">
-                    <p>Fortitude</p>
-                    <div class="btnAtrSts">
-                        <button onclick="lvDownForti()">-</button>
-                        <span id="lvFortitude">10</span>
-                        <button onclick="lvUpForti()">+</button>
-                    </div>
-                </div>
-
-                <div class="atrStatus">
-                    <p>Vitalidade</p>
-                    <div class="btnAtrSts">
-                        <button onclick="lvDownVita()">-</button>
-                        <span id="lvVitalidade">10</span>
-                        <button onclick="lvUpVita()">+</button>
-                    </div>
-                </div>
-
-                <div class="atrStatus">
-                    <p>Força</p>
-                    <div class="btnAtrSts">
-                        <button onclick="lvDownForc()">-</button>
-                        <span id="lvForca">10</span>
-                        <button onclick="lvUpForc()">+</button>
-                    </div>
-                </div>
-
-                <div class="atrStatus">
-                    <p>Destreza</p>
-                    <div class="btnAtrSts">
-                        <button onclick="lvDownDest()">-</button>
-                        <span id="lvDestreza">10</span>
-                        <button onclick="lvUpDest()">+</button>
-                    </div>
-                </div>
-
-                <div class="atrStatus">
-                    <p>Inteligencia</p>
-                    <div class="btnAtrSts">
-                        <button onclick="lvDownInt()">-</button>
-                        <span id="lvInteligencia">10</span>
-                        <button onclick="lvUpInt()">+</button>
-                    </div>
-                </div>
-
-                <div class="atrStatus">
-                    <p>Fé</p>
-                    <div class="btnAtrSts">
-                        <button onclick="lvDownFe()">-</button>
-                        <span id="lvFe">10</span>
-                        <button onclick="lvUpFe()">+</button>
-                    </div>
-                </div>
-
-                <div class="atrStatus">
-                    <p>Sorte</p>
-                    <div class="btnAtrSts">
-                        <button onclick="lvDownSo()">-</button>
-                        <span id="lvSorte">10</span>
-                        <button onclick="lvUpSo()">+</button>
-                    </div>
-                </div>
             </div>
-            <div class="chart-atributos">
-                <canvas id="myChart"></canvas>
+        </div>
+    </div>
+    <!--Atributos-->
+    <div class="calc-build">
+        <div class="Atr-Title">
+            <div>
+                <h1>Atributos</h1>
+                <p>
+                    Nivel:<span id="spanLevel">1</span>
+                </p>
+            </div>
+        </div>
+        <div class="Status">
+            <div class="container-status">
+                <div class="Atributos">
+                    <div class="atrStatus">
+                        <p>Vigor</p>
+                        <div class="btnAtrSts">
+                            <button onclick="lvDownVigo()">-</button>
+                            <span id="lvVigor">10</span>
+                            <button onclick="lvUpVigo()">+</button>
+                        </div>
+                    </div>
+
+                    <div class="atrStatus">
+                        <p>Conhecimento</p>
+                        <div class="btnAtrSts">
+                            <button onclick="lvDownConh()">-</button>
+                            <span id="lvConhecimento">10</span>
+                            <button onclick="lvUpConh()">+</button>
+                        </div>
+                    </div>
+
+                    <div class="atrStatus">
+                        <p>Fortitude</p>
+                        <div class="btnAtrSts">
+                            <button onclick="lvDownForti()">-</button>
+                            <span id="lvFortitude">10</span>
+                            <button onclick="lvUpForti()">+</button>
+                        </div>
+                    </div>
+
+                    <div class="atrStatus">
+                        <p>Vitalidade</p>
+                        <div class="btnAtrSts">
+                            <button onclick="lvDownVita()">-</button>
+                            <span id="lvVitalidade">10</span>
+                            <button onclick="lvUpVita()">+</button>
+                        </div>
+                    </div>
+
+                    <div class="atrStatus">
+                        <p>Força</p>
+                        <div class="btnAtrSts">
+                            <button onclick="lvDownForc()">-</button>
+                            <span id="lvForca">10</span>
+                            <button onclick="lvUpForc()">+</button>
+                        </div>
+                    </div>
+
+                    <div class="atrStatus">
+                        <p>Destreza</p>
+                        <div class="btnAtrSts">
+                            <button onclick="lvDownDest()">-</button>
+                            <span id="lvDestreza">10</span>
+                            <button onclick="lvUpDest()">+</button>
+                        </div>
+                    </div>
+
+                    <div class="atrStatus">
+                        <p>Inteligencia</p>
+                        <div class="btnAtrSts">
+                            <button onclick="lvDownInt()">-</button>
+                            <span id="lvInteligencia">10</span>
+                            <button onclick="lvUpInt()">+</button>
+                        </div>
+                    </div>
+
+                    <div class="atrStatus">
+                        <p>Fé</p>
+                        <div class="btnAtrSts">
+                            <button onclick="lvDownFe()">-</button>
+                            <span id="lvFe">10</span>
+                            <button onclick="lvUpFe()">+</button>
+                        </div>
+                    </div>
+
+                    <div class="atrStatus">
+                        <p>Sorte</p>
+                        <div class="btnAtrSts">
+                            <button onclick="lvDownSo()">-</button>
+                            <span id="lvSorte">10</span>
+                            <button onclick="lvUpSo()">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-atributos">
+                    <canvas id="myChart"></canvas>
+                </div>
             </div>
         </div>
     </div>
@@ -142,8 +193,8 @@
             spanLevel.innerHTML = Level
         }
     }
-    
-    
+
+
     function lvUpConh() {
         if (Conh < 99) {
             Conh++;
@@ -164,8 +215,8 @@
             spanLevel.innerHTML = Level
         }
     }
-    
-    
+
+
     function lvUpForti() {
         if (Forti < 99) {
             Forti++;
@@ -186,8 +237,8 @@
             spanLevel.innerHTML = Level
         }
     }
-    
-    
+
+
     function lvUpVita() {
         if (Vita < 99) {
             Vita++;
@@ -208,8 +259,8 @@
             spanLevel.innerHTML = Level
         }
     }
-    
-    
+
+
     function lvUpForc() {
         if (Forc < 99) {
             Forc++;
@@ -251,8 +302,8 @@
             spanLevel.innerHTML = Level;
         }
     }
-    
-    
+
+
     function lvUpInt() {
         if (Inte < 99) {
             Inte++;
@@ -261,7 +312,7 @@
             spanLevel.innerHTML = Level;
             Atr[6] = Inte;
         }
-        
+
     }
     function lvDownInt() {
         if (Inte > 10) {
@@ -274,8 +325,8 @@
             spanLevel.innerHTML = Level
         }
     }
-    
-    
+
+
     function lvUpFe() {
         if (Fe < 99) {
             Fe++;
@@ -296,8 +347,8 @@
             spanLevel.innerHTML = Level
         }
     }
-    
-    
+
+
     function lvUpSo() {
         if (Sort < 99) {
             Sort++;
@@ -318,9 +369,9 @@
             spanLevel.innerHTML = Level
         }
     }
-    
+
     let Atr = [Vigo, Conh, Forti, Vita, Forc, Dest, Inte, Fe, Sort]
-    
+
     new Chart(ctx, {
         type: 'radar',
         data: {
