@@ -376,54 +376,7 @@ insert into Feitiços values
 select * from Armas;
 select * from Feitiços;
 
-select * from Armas
-	where tipo = 'Adaga';
-select * from Armas
-	where tipo = 'Espada Reta';
-select * from Armas
-	where tipo = 'Grande Espada';
-select * from Armas
-	where tipo = 'Ultra Espada Grande';
-select * from Armas
-	where tipo = 'Espada Curva';
-select * from Armas
-	where tipo = 'Grande Espada Curva';
-select * from Armas
-	where tipo = 'Katana';
-select * from Armas
-	where tipo = 'Lamina de impulso';
-select * from Armas
-	where tipo = 'Machado';
-select * from Armas
-	where tipo = 'Grande Machado';
-select * from Armas
-	where tipo = 'Martelo';
-select * from Armas
-	where tipo = 'Grande Martelo';
-select * from Armas
-	where tipo = 'Punho&Garra';
-select * from Armas
-	where tipo = 'Lança';
-select * from Armas
-	where tipo = 'Alabarda';
-select * from Armas
-	where tipo = 'Foice';
-select * from Armas
-	where tipo = 'Chicote';
-select * from Armas
-	where tipo = 'Arco';
-select * from Armas
-	where tipo = 'Grande Arco';
-select * from Armas
-	where tipo = 'Besta';
-select * from Armas
-	where tipo = 'Cajado';
-select * from Armas
-	where tipo = 'Chama';
-select * from Armas
-	where tipo = 'Talismã';
-select * from Armas
-	where tipo = 'Carrilhão';
+select * from Usuario;
 
 -- Usuário
 create user 'insertProjectSouls'@'localhost' identified by 'S0uls6';
