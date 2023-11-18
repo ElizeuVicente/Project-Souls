@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../css/calc-build.css">
-    <link rel="stylesheet" href="../css/header.css">
+    <title>Calculadora de Build</title>
+    <link rel="stylesheet" href="./css/calc-build.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="shortcut icon" href="./img/Icon/ShortCutIcon.png" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="../js/Calculadora.js"></script>
+    <script src="./js/Calculadora.js"></script>
 </head>
 
 <body>
@@ -21,41 +22,42 @@
                     <li>
                         <span>Personagens</span>
                         <ul class="dropdown-personagens">
-                            <li onclick="window.location.href = '../'">Bosses</li>
-                            <li onclick="window.location.href = '../'">NPC</li>
-                            <li onclick="window.location.href = '../'">Inimigos</li>
+                            <li onclick="window.location.href = './'">Bosses</li>
+                            <li onclick="window.location.href = './'">NPC</li>
+                            <li onclick="window.location.href = './'">Inimigos</li>
                         </ul>
                     </li>
                     <li>
                         <span>Conquistas</span>
                         <ul class="dropdown-conquistas">
-                            <li onclick="window.location.href = '../Conquistas-DS1.html'">Dark Souls I</li>
-                            <li onclick="window.location.href = '../Conquistas-DS2.html'">Dark Souls II</li>
-                            <li onclick="window.location.href = '../Conquistas-DS3.html'">Dark Souls III</li>
+                            <li onclick="window.location.href = './Conquistas-DS1.html'">Dark Souls I</li>
+                            <li onclick="window.location.href = './Conquistas-DS2.html'">Dark Souls II</li>
+                            <li onclick="window.location.href = './Conquistas-DS3.html'">Dark Souls III</li>
                         </ul>
                     </li>
                 </div>
-                <a href="../index.html"><img src="../img/Icon/Ricon.png"></a>
+                <a href="./index.html"><img src="./img/Icon/Ricon.png"></a>
                 <div class="navbar">
                     <li>
                         <span>Equipamentos</span>
                         <ul class="dropdown-equipamentos">
-                            <li onclick="window.location.href = '../'">Armas</li>
-                            <li onclick="window.location.href = '../'">Armaduras</li>
-                            <li onclick="window.location.href = '../'">Feitiços</li>
-                            <li onclick="window.location.href = '../'">Anéis</li>
+                            <li onclick="window.location.href = './'">Armas</li>
+                            <li onclick="window.location.href = './'">Armaduras</li>
+                            <li onclick="window.location.href = './'">Feitiços</li>
+                            <li onclick="window.location.href = './'">Anéis</li>
                         </ul>
                     </li>
                     <li>
                         <span>Build</span>
                         <ul class="dropdown-build">
-                            <li onclick="window.location.href = '../calc-build.html'">Calculadora de Build</li>
-                            <li onclick="window.location.href = '../'">Builds Salvas</li>
+                            <li onclick="window.location.href = './calc-build.html'">Calculadora de Build</li>
+                            <li onclick="window.location.href = './'">Builds Salvas</li>
                         </ul>
                     </li>
                 </div>
 
             </div>
+            <div class="login"><a href="./login.html">Entrar</a></div>
         </div>
     </div>
     <!--Atributos-->
@@ -162,23 +164,26 @@
 
 </html>
 <script>
-    const ctx = document.getElementById('myChart');
+    const AtrCtx = document.getElementById('myChart');
 
-    new Chart(ctx, {
+    new Chart(AtrCtx, {
         type: 'radar',
         data: {
             labels: ['Vigor', 'Conhecimento', 'Fortitude', 'Vitalidade', 'Força', 'Destreza', 'Inteligencia', 'Fé', 'Sorte'],
             datasets: [{
-                label: '# of Votes',
+                label: 'Nivel de Atributo',
                 data: Atr,
-                borderWidth: 3
+                borderColor: "#790707",
+                backgroundColor: "#790707ba",
+                borderWidth: 3,
+                pointHoverBackgroundColor: '#0d0d0d',
             }]
         },
         options: {
             scales: {
                 r: {
                     angleLines: {
-                        display: false
+                        display: true
                     },
                     suggestedMin: 5,
                     suggestedMax: 99

@@ -1,3 +1,7 @@
+body {
+    background-color: grey;
+}
+
 .calc-build {
     padding-top: 85px;
 }
@@ -11,10 +15,25 @@
     display: flex;
     align-items: center;
     justify-content:space-between;
+    border-bottom: 0.5px solid #D0D0D0;
+    border-top: 0.5px solid #D0D0D0;
+}
+
+.Atributos .atrStatus .btnAtrSts button {
+    background-color: #0d0d0d;
+    color: #D0D0D0;
+    border: 1px solid #D0D0D0;
+    border-radius: 5px;
+}
+.Atributos .atrStatus .btnAtrSts button:hover {
+    background-color: #790707;
+    border: 1px solid #790707;
+    transition: 0.5s;
 }
 
 .Atributos .atrStatus .btnAtrSts span{
     padding: 0 5px;
+    color: #D0D0D0 ;
 }
 
 .Status {

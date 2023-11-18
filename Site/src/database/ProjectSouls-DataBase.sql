@@ -1,28 +1,6 @@
 create database ProjectSouls;
 use ProjectSouls;
 -- drop database ProjectSouls;
-create table Armas (
-idArma int primary key auto_increment,
-nome varchar(64),
-tipo varchar(30),
-peso decimal(3,1),
-DanoFisico int,
-DanoMagico int,
-DanoFlamejante int,
-DanoEletrico int,
-DanoSombrio int,
-Critico int,
-BuffMagia int
-);
-
-create table Feitiços (
-idFeitico int primary key auto_increment,
-nome varchar(45),
-tipo varchar(45),
-descricao varchar(200),
-dano decimal(4,3),
-cura decimal(4,3),
-buff decimal(4,3));
 
 create table Usuario (
 idUser int primary key auto_increment,
@@ -43,6 +21,57 @@ fkConquista int,
 primary key (fkUser, fkConquista),
 qtdConquista int
 );
+
+create table Build (
+idBuild int auto_increment,
+fkUser int,
+primary key (idBuild, fkUser),
+nome varchar(45)
+)auto_increment = 50000;
+
+
+create table Atributos (
+fkBuild int,
+fkUser int,
+idAtr int,
+primary key (fkBuild, fkUser, idAtr),
+Nivel int,
+Vigor int,
+Conhecimento int,
+Fortitude int,
+Vitalidade int,
+Forca int,
+Destreza int,
+Inteligencia int,
+Fe int,
+Sorte int
+);
+
+
+create table Armas (
+idArma int primary key auto_increment,
+nome varchar(64),
+tipo varchar(30),
+peso decimal(3,1),
+DanoFisico int,
+DanoMagico int,
+DanoFlamejante int,
+DanoEletrico int,
+DanoSombrio int,
+Critico int,
+BuffMagia int
+);
+
+
+create table Feitiços (
+idFeitico int primary key auto_increment,
+nome varchar(45),
+tipo varchar(45),
+descricao varchar(200),
+dano decimal(4,3),
+cura decimal(4,3),
+buff decimal(4,3));
+
 
 insert into Armas values
 (null,'Dagger','Adaga', 1.5, 65, 0, 0, 0, 0, 130, 0),
@@ -379,7 +408,7 @@ select * from Feitiços;
 select * from Usuario;
 
 -- Usuário
-create user 'insertProjectSouls'@'localhost' identified by 'S0uls6';
+create user 'UserProjectSouls'@'localhost' identified by 'S0uls6';
 
 grant INSERT,SELECT on Usuario.* to 'insertProjectSouls'@'localhost';
 grant INSERT, DELETE, SELECT on UserXConquista.* to 'insertProjectSouls'@'localhost';

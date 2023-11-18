@@ -1,5 +1,5 @@
 body {
-    background-image:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../img/Wallpapers/WallpaperDS1.png);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/Wallpapers/WallpaperDS1.png);
     background-size: cover;
 }
 
@@ -16,13 +16,13 @@ body {
     text-align: center;
     font-family: 'OptmusPrincepsSB';
     text-align: center;
-    color: #D0D0D0; 
+    color: #D0D0D0;
     margin-bottom: 100px;
     margin-top: 0;
 }
 
 .login span {
-    color: #D0D0D0; 
+    color: #D0D0D0;
     font-family: 'OptmusPrincepsSB';
 }
 
@@ -47,7 +47,7 @@ body {
 .login input:focus {
     border: 2px solid #790707;
     transition: 0.3s;
-    
+
 }
 
 .login button {
@@ -68,3 +68,16 @@ body {
     transition: 0.3s;
 }
 
+.cardError {
+    display: none;
+    width: 300px;
+    background-color: #000000d3;
+    border-radius: 5px;
+    text-align: center;
+    color: #880707;
+    position: relative;
+    bottom: 100px;
+    left: 475px;
+    border: 0.5px solid #880707;
+
+}

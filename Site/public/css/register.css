@@ -6,34 +6,43 @@ body {
 }
 
 .register {
+    position: relative;
+    top: 100px;
+    z-index: -1;
+}
+
+.container-register {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 338px;
     flex-direction: column;
     position: relative;
-    top: 108px;
-    z-index: -1;
+    top: 85px;
+    z-index: 0;
 }
 
 
-.register h1 {
+.container-register h1 {
     text-align: center;
     font-family: 'OptmusPrincepsSB';
     text-align: center;
     color: #D0D0D0; 
-    margin-bottom: 48px;
+    margin-bottom: 0;
     margin-top: 0;
+    position: relative;
+    bottom: 107px;
+
 }
 
 
 
-.register span {
+.container-register span {
     color: #D0D0D0; 
     font-family: 'OptmusPrincepsSB';
 }
 
-.register input {
+.container-register input {
     margin: 5px;
     width: 200px;
     text-align: center;
@@ -43,21 +52,23 @@ body {
     height: 20px;
     border-radius: 4px;
     outline: none;
+    position:relative;
+    z-index: 1;
 }
 
-.register input:hover {
+.container-register input:hover {
     border-bottom: 2px solid #790707;
     transition: 0.3s;
 
 }
 
-.register input:focus {
+.container-register input:focus {
     border: 2px solid #790707;
     transition: 0.3s;
     
 }
 
-.register button {
+.container-register button {
     background-color: #0d0d0db0;
     border: 2px solid #d0d0d065;
     padding: 1px 5px;
@@ -67,10 +78,23 @@ body {
     border-radius: 4px;
 }
 
-.register button:hover {
+.container-register button:hover {
     border: 2px solid #790707;
     background-color: #790707;
     color: #0d0d0d;
     width: 100px;
     transition: 0.3s;
+}
+
+.cardError {
+    display: none;
+    width: 300px;
+    background-color: #000000d3;
+    border-radius: 5px;
+    text-align: center;
+    color: #880707;
+    position: relative;
+    top: 55px;
+    left: 485px;
+
 }
