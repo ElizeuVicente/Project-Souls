@@ -1,3 +1,41 @@
+body {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(../img/Wallpapers/WallpaperDS1.png);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+}
+.banner {
+    width: 100%;
+    height: 570px;
+}
+
+.banner .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.banner .container .title {
+    bottom: 50px;
+    font-family: 'OptmusPrincepsSB';
+}
+
+.banner .container .title p {
+    color: #D0D0D0;
+    font-size: 22px;
+    margin: 0;
+    padding: 0;
+}
+
+.banner .container .title h1 {
+    color: #D0D0D0;
+    font-size: 80px;
+    margin: 0;
+    padding: 0;
+}
+
 .section-CDS1 {
     height: fit-content;
     width: 100%;
