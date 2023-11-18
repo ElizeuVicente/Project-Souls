@@ -27,9 +27,22 @@ buff decimal(4,3));
 create table Usuario (
 idUser int primary key auto_increment,
 nome varchar(30),
-email varchar(50),
+email varchar(50) unique,
 senha varchar(30)
 ) auto_increment = 10000;
+
+create table Conquista (
+idConquista int primary key auto_increment,
+nome varchar(45),
+jogo varchar(45)
+);
+
+create table UserXConquista (
+fkUser int,
+fkConquista int,
+primary key (fkUser, fkConquista),
+qtdConquista int
+);
 
 insert into Armas values
 (null,'Dagger','Adaga', 1.5, 65, 0, 0, 0, 0, 130, 0),
@@ -411,5 +424,14 @@ select * from Armas
 	where tipo = 'Talismã';
 select * from Armas
 	where tipo = 'Carrilhão';
+
+-- Usuário
+create user 'insertProjectSouls'@'localhost' identified by 'S0uls6';
+
+grant INSERT,SELECT on Usuario.* to 'insertProjectSouls'@'localhost';
+grant INSERT, DELETE, SELECT on UserXConquista.* to 'insertProjectSouls'@'localhost';
+
+flush privileges;
+
     
 

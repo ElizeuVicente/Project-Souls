@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="shortcut icon" href="../img/Icon/ShortCutIcon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/register.css">
+</head>
+
+<body>
+    <!--Header-->
+    <div>
+        <div class="header">
+            <div class="container">
+
+                <div class="navbar">
+                    <li>
+                        <span>Personagens</span>
+                        <ul class="dropdown-personagens">
+                            <li onclick="window.location.href = '../'">Bosses</li>
+                            <li onclick="window.location.href = '../'">NPC</li>
+                            <li onclick="window.location.href = '../'">Inimigos</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span>Conquistas</span>
+                        <ul class="dropdown-conquistas">
+                            <li onclick="window.location.href = '../Conquistas-DS1.html'">Dark Souls I</li>
+                            <li onclick="window.location.href = '../Conquistas-DS2.html'">Dark Souls II</li>
+                            <li onclick="window.location.href = '../Conquistas-DS3.html'">Dark Souls III</li>
+                        </ul>
+                    </li>
+                </div>
+                <a href="../index.html"><img src="../img/Icon/Ricon.png"></a>
+                <div class="navbar">
+                    <li>
+                        <span>Equipamentos</span>
+                        <ul class="dropdown-equipamentos">
+                            <li onclick="window.location.href = '../'">Armas</li>
+                            <li onclick="window.location.href = '../'">Armaduras</li>
+                            <li onclick="window.location.href = '../'">Feitiços</li>
+                            <li onclick="window.location.href = '../'">Anéis</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span>Build</span>
+                        <ul class="dropdown-build">
+                            <li onclick="window.location.href = '../calc-build.html'">Calculadora de Build</li>
+                            <li onclick="window.location.href = '../'">Builds Salvas</li>
+                        </ul>
+                    </li>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="register">
+
+        <h1>Junte-se conosco</h1>
+        
+            <span>Nome</span>
+            <input type="text" id="inUserName">
+            <span>Email</span>
+            <input type="text" id="inEmail" placeholder="Example123@gmail.com">
+            <span>Senha</span>
+            <input type="password" id="inSenha">
+            <span>Confirmar senha</span>
+            <input type="password" id="inSenhaConfirm">
+       
+
+        <div>
+            <button onclick="window.location.href = '../login.html'">Login</button>
+            <button onclick="registrar()">Registrar</button>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script src="../script.js"></script>
