@@ -51,7 +51,7 @@ function cadastrar() {
             msgError.className = "invalido"
 
         }
-        window.location = 'index.html'
+        window.location = 'login.html'
     }
 
 

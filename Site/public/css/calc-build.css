@@ -1,39 +1,7 @@
 body {
-    background-color: grey;
-}
-
-.calc-build {
-    padding-top: 85px;
-}
-.Atributos {
-    display: grid;
-    width: 20%;
-    
-}
-
-.Atributos .atrStatus {
-    display: flex;
-    align-items: center;
-    justify-content:space-between;
-    border-bottom: 0.5px solid #D0D0D0;
-    border-top: 0.5px solid #D0D0D0;
-}
-
-.Atributos .atrStatus .btnAtrSts button {
-    background-color: #0d0d0d;
-    color: #D0D0D0;
-    border: 1px solid #D0D0D0;
-    border-radius: 5px;
-}
-.Atributos .atrStatus .btnAtrSts button:hover {
-    background-color: #790707;
-    border: 1px solid #790707;
-    transition: 0.5s;
-}
-
-.Atributos .atrStatus .btnAtrSts span{
-    padding: 0 5px;
-    color: #D0D0D0 ;
+    background-image: url(../img/Wallpapers/image\ 9.png);
+    background-size: cover;
+    background-position: top;
 }
 
 .Status {
@@ -42,13 +10,12 @@ body {
     justify-content: center;
 }
 
-.Status .container-status{
+.Status .container-status {
     display: flex;
     width: 80%;
     justify-content: space-between;
-    
-}
 
+}
 
 .Status .container-status .chart-atributos {
     width: 400px;
@@ -56,9 +23,99 @@ body {
     align-items: center;
     display: flex;
 }
-.Atr-Title{
+
+.calc-build {
+    padding-top: 85px;
+}
+
+.Atributos {
+    display: grid;
+    width: 20%;
+
+}
+
+.Title {
     width: 100%;
     display: flex;
     justify-content: center;
     text-align: center;
+    color: #D0D0D0;
+    font-family: 'OptmusPrincepsSB';
+}
+
+.Title h1 {
+    border-bottom: 0.5px solid #D0D0D0;
+}
+
+.Atributos .atrStatus {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 0.5px solid #D0D0D0;
+    border-top: 0.5px solid #D0D0D0;
+    color: #D0D0D0;
+}
+
+.Atributos .atrStatus .btnAtrSts button {
+    background-color: #0d0d0d;
+    color: #D0D0D0;
+    border: 1px solid #D0D0D0;
+    border-radius: 5px;
+}
+
+.Atributos .atrStatus .btnAtrSts button:hover {
+    background-color: #790707;
+    border: 1px solid #790707;
+    transition: 0.5s;
+}
+
+.Atributos .atrStatus .btnAtrSts span {
+    padding: 0 5px;
+    color: #D0D0D0;
+}
+
+.equipamentos {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.equipamentos .container {
+    
+    height:fit-content ;
+    width: 80%;
+    display: grid;
+}
+
+.equipamentos .container .armaduraXArma {
+display: flex;
+justify-content: space-between;
+}
+
+.equipamentos .container .armaduraXArma .form-Equi {
+    width: 30%;
+    display: grid;
+}
+.equipamentos .container .armaduraXArma .form-Equi h3 {
+    text-align: center;
+    color: #D0D0D0;
+    border-bottom: 0.5px solid #D0D0D0;
+}
+
+.equipamentos .container .armaduraXArma .form-Equi .equi-Sel {
+    display: flex;
+    padding: 10px 0;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.equipamentos .container .armaduraXArma .form-Equi .equi-Sel p {
+    color: #D0D0D0;
+}
+
+.equipamentos .container .armaduraXArma .form-Equi .equi-Sel select {
+    width: 60%;
+    background-color: #0d0d0d;
+    color: #D0D0D0;
+    border-radius: 5px;
 }

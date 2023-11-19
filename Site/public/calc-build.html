@@ -62,11 +62,11 @@
     </div>
     <!--Atributos-->
     <div class="calc-build">
-        <div class="Atr-Title">
+        <div class="Title">
             <div>
                 <h1>Atributos</h1>
                 <p>
-                    Nivel:<span id="spanLevel">1</span>
+                    Nivel:<span id="spanLevel"> 1</span>
                 </p>
             </div>
         </div>
@@ -159,6 +159,115 @@
                 </div>
             </div>
         </div>
+
+        <div class="Title">
+            <h1>Equipamento</h1>
+        </div>
+        <div class="equipamentos">
+            <div class="container">
+                <div class="armaduraXArma">
+                    <div class="form-Equi">
+                        <h3>Armaduras</h3>
+                        <div class="equi-Sel">
+                            <p>Cabeça</p>
+                            <select id="selArmCabeca">
+                            </select>
+                        </div>
+                        <div class="equi-Sel">
+                            <p>Torso</p>
+                            <select id="selArmTorso"></select>
+                        </div>
+                        <div class="equi-Sel">
+                            <p>Mãos</p>
+                            <select id="selArmMao"></select>
+                        </div>
+                        <div class="equi-Sel">
+                            <p>Pernas</p>
+                            <select id="selArmPerna"></select>
+                        </div>
+                    </div>
+
+                    <div class="form-Equi">
+                        <h3>Armas</h3>
+                        <div class="equi-Sel">
+                            <p>Mão Direita</p>
+                            <select id="selArmDireita">
+
+                            </select>
+                        </div>
+                        <div class="equi-Sel">
+                            <p>Mão Esquerda</p>
+                            <select id="selArmEsquerda"></select>
+                        </div>
+                        <div class="equi-Sel">
+                            <p>Mão Direita 2</p>
+                            <select id="selArmDireta2"></select>
+                        </div>
+                        <div class="equi-Sel">
+                            <p>Mão Esquerda 2</p>
+                            <select id="selArmEsquerda2"></select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="armaduraXArma">
+                    <div class="form-Equi">
+                        <h3>Anéis</h3>
+                        <div class="equi-Sel">
+                            <p>Anél 1</p>
+                            <select id="selAnel1">
+                            </select>
+                        </div>
+                        <div class="equi-Sel">
+                            <p>Anél 2</p>
+                            <select id="selAnel2"></select>
+                        </div>
+                        <div class="equi-Sel">
+                            <p>Anél 3</p>
+                            <select id="selAnel3"></select>
+                        </div>
+                        <div class="equi-Sel">
+                            <p>Anél 4</p>
+                            <select id="selAnel4"></select>
+                        </div>
+                    </div>
+
+                    <div class="form-Equi">
+                        <h3>Feitiços</h3>
+                        <div class="equi-Sel">
+                            <p>Espaço 1</p>
+                            <select id="selMag1">
+
+                            </select>
+                        </div>
+                        <div class="equi-Sel">
+                            <p>Espaço 2</p>
+                            <select id="selMag2"></select>
+                        </div>
+                        <div class="equi-Sel">
+                            <p>Espaço 3</p>
+                            <select id="selMag3"></select>
+                        </div>
+                        <div class="equi-Sel">
+                            <p>Espaço 4</p>
+                            <select id="selMag4"></select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="Title">
+            <div>
+                <h1>Status</h1>
+                <p>
+                    Nivel:<span id="spanLevelStats"> 1</span>
+                </p>
+                <p>
+                    Almas Necessarias: <span id="spanCustoAlma"> 673</span> 
+                </p>
+            </div>
+        </div>
     </div>
 </body>
 
@@ -182,13 +291,10 @@
         options: {
             scales: {
                 r: {
-                    angleLines: {
-                        display: true
-                    },
                     suggestedMin: 5,
                     suggestedMax: 99
-
                 }
+
             }
 
         }
