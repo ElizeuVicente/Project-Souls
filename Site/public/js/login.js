@@ -3,7 +3,8 @@ function logar() {
     var senhaVar = inSenha.value;
 
     if (emailVar == "" || senhaVar == "") {
-        alert('Preencha todos os campos');
+        const cardError = document.getElementById("cardError")
+        cardError.style.display = `block`;
         return;
     }
 
@@ -25,8 +26,9 @@ function logar() {
             resposta.json().then(json => {
                 console.log(json);
                 console.log(JSON.stringify(json));
+                sessionStorage.ID_USUARIO = json.idUser
                 sessionStorage.NOME_USUARIO = json.nome
-            
+                sessionStorage.EMAIL_USUARIO = json.email
                 setTimeout(function () {
                     window.location = "./index.html";
                 }, 1000); // apenas para exibir o loading
@@ -45,5 +47,5 @@ function logar() {
     });
 
     return false;
-
+    
 }

@@ -70,7 +70,16 @@ tipo varchar(45),
 descricao varchar(200),
 dano decimal(4,3),
 cura decimal(4,3),
-buff decimal(4,3));
+buff decimal(4,3)
+);
+
+create table ArmaXBuild (
+fkArmas int,
+fkBuild int,
+fkUser int,
+primary key (fkArmas, fkBuild, fkUser),
+Slot int
+);
 
 
 insert into Armas values

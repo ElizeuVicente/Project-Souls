@@ -246,44 +246,38 @@ function lvDownSo() {
 
 function calcularAlmasC() {
     AlmasC = 673;
+    
     for (var i = 1; i < Level; i++) {
         if (Level != 1) {
-            if(Level == 10) AlmasC = 811;
-            else if (Level == 20) AlmasC = 2601;
-            else if (Level == 30) AlmasC = 5567;
-            else if (Level == 40) AlmasC = 9505;
-            else if (Level == 50) AlmasC = 14535;
-            else if (Level == 60) AlmasC = 20777;
-            else if (Level == 70) AlmasC = 28351;
-            else if (Level == 80) AlmasC = 37377;
-            else if (Level == 90) AlmasC = 47975;
-            else if (Level == 100) AlmasC = 60265;
-            else if (Level == 110) AlmasC = 74367;
-            else if (Level == 120) AlmasC = 90401;
-            else if (Level == 130) AlmasC = 108487;
-            else if (Level == 140) AlmasC = 128745;
-            else if (Level == 150) AlmasC = 151295;
-            else if (Level == 160) AlmasC = 176257;
-            else if (Level == 170) AlmasC = 203751;
-            else if (Level == 180) AlmasC = 233897;
-            else if (Level == 190) AlmasC = 266815;
-            else if (Level == 200) AlmasC = 302625;
-            else if (Level == 210) AlmasC = 341447;
-            else if (Level == 220) AlmasC = 383401;
-            else if (Level == 230) AlmasC = 428607;
-            else if (Level == 240) AlmasC = 477185;
-            else if (Level == 250) AlmasC = 529255;
-            else if (Level == 260) AlmasC = 584937;
-            else if (Level == 270) AlmasC = 644351;
-            else if (Level == 280) AlmasC = 707617;
-            else if (Level == 290) AlmasC = 774855;
-            else if (Level == 300) AlmasC = 846185;
-            else AlmasC = (AlmasC * 0.0132) + AlmasC
+            if (Level < 13){
+                AlmasC = AlmasC*1.025
+            }else {
+            AlmasC = 0.02*Level^3 + 3.06*Level^3 + 105.6*Level - 895
+            }
         }
-        spanCustoAlma.innerHTML = ` ${AlmasC.toFixed()}`;
     }
+    spanCustoAlma.innerHTML = ` ${AlmasC.toFixed()}`;
 }
 
 let Atr = [Vigo, Conh, Forti, Vita, Forc, Dest, Inte, Fe, Sort]
+
+
+function salvarBuild() {
+    if(sessionStorage.ID_USUARIO != undefined) {
+        
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar,
+                idUsuarioServer: idUsuario
+            })
+        })
+    }
+}
 
 

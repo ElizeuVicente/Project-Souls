@@ -54,6 +54,7 @@ body {
     display: block;
     align-items: end;
     height: 85px;
+    cursor: pointer;
 }
 
 .header .login {
