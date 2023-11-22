@@ -543,8 +543,7 @@ select * from Usuario;
 -- Usuário
 create user 'UserProjectSouls'@'localhost' identified by 'S0uls6';
 
-grant INSERT,SELECT on Usuario.* to 'insertProjectSouls'@'localhost';
-grant INSERT, DELETE, SELECT on UserXConquista.* to 'insertProjectSouls'@'localhost';
+grant INSERT, DELETE, SELECT, UPDATE on  ProjectSoul.* to 'UserProjectSouls'@'localhost';
 
 flush privileges;
 
