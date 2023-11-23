@@ -1,6 +1,5 @@
 create database ProjectSouls;
 use ProjectSouls;
--- drop database ProjectSouls;
 
 create table Usuario (
 idUser int primary key auto_increment,
@@ -12,13 +11,12 @@ senha varchar(30)
 create table Conquista (
 idConquista int primary key auto_increment,
 nome varchar(80)
-);
+) auto_increment = 123;
 
 create table UserXConquista (
 fkUser int,
 fkConquista int,
-primary key (fkUser, fkConquista),
-qtdConquista int
+primary key (fkUser, fkConquista)
 );
 
 create table Build (
@@ -62,7 +60,7 @@ BuffMagia int
 );
 
 
-create table Feitiços (
+create table Feiticos (
 idFeitico int primary key auto_increment,
 nome varchar(45),
 tipo varchar(45),
@@ -70,6 +68,18 @@ descricao varchar(200),
 dano decimal(4,3),
 cura decimal(4,3),
 buff decimal(4,3)
+);
+
+create table Armaduras (
+idArmaduras int,
+nome varchar(45),
+tipo varchar(45),
+peso decimal(3,1),
+DefesaFisica int,
+DefesaMagica int,
+DefesaFlamejante int,
+DefesaEletrica int,
+DefesaSombria int
 );
 
 create table ArmaXBuild (
@@ -80,6 +90,29 @@ primary key (fkArmas, fkBuild, fkUser),
 Slot int
 );
 
+create table FeiticoXBuild (
+fkFeitico int,
+fkBuild int,
+fkUser int,
+primary key (fkFeitico, fkBuild, fkUser),
+Slot int
+);
+
+create table ArmaduraXBuild (
+fkArmadura int,
+fkBuild int,
+fkUser int,
+primary key (fkArmadura, fkBuild, fkUser),
+Slot int
+);
+
+create table AnelXBuild (
+fkAnel int,
+fkBuild int,
+fkUser int,
+primary key (fkAnel, fkBuild, fkUser),
+Slot int
+);
 
 insert into Armas values
 (null,'Dagger','Adaga', 1.5, 65, 0, 0, 0, 0, 130, 0),
@@ -304,7 +337,7 @@ insert into Armas values
 (null,'Yorshka Chime','Carrilhão', 0.5, 54,  0, 0, 0, 0, 100, 60),
 (null,'Sacred Chime Of Filianore','Carrilhão', 0.5, 74,  0, 0, 0, 0, 100, 142);
 
-insert into Feitiços values
+insert into Feiticos values
 (null, 'Heal Aid', 'Milagre', ' Significantemente restaura HP', 0, 1.1, 0),
 (null, 'Heal', 'Milagre', 'Restaura o próprio HP e de todos proximos', 0, 3, 0),
 (null, 'Med Heal', 'Milagre', 'Moderadamente restaura HP próprio e de todos proximos', 0, 4.1, 0),
@@ -536,14 +569,23 @@ insert into Conquista values
 
 
 select * from Armas;
-select * from Feitiços;
+select * from Feiticos;
 select * from Conquista;
 select * from Usuario;
+select * from UserXConquista;
+
 
 -- Usuário
 create user 'UserProjectSouls'@'localhost' identified by 'S0uls6';
 
-grant INSERT, DELETE, SELECT, UPDATE on  ProjectSoul.* to 'UserProjectSouls'@'localhost';
+grant INSERT, SELECT, UPDATE on  ProjectSouls.Usuario to 'UserProjectSouls'@'localhost';
+grant INSERT, DELETE, SELECT, UPDATE on  ProjectSouls.UserXConquista to 'UserProjectSouls'@'localhost';
+grant INSERT, DELETE, SELECT, UPDATE on ProjectSouls.ArmaXBuild to 'UserProjectSouls'@'localhost';
+grant INSERT, DELETE, SELECT, UPDATE on  ProjectSouls.FeiticoXBuild to 'UserProjectSouls'@'localhost';
+grant INSERT, DELETE, SELECT, UPDATE on  ProjectSouls.ArmaduraXBuild to 'UserProjectSouls'@'localhost';
+grant INSERT, DELETE, SELECT, UPDATE on ProjectSouls.AnelXBuild to 'UserProjectSouls'@'localhost';
+grant INSERT, DELETE, SELECT, UPDATE on ProjectSouls.Atributos to 'UserProjectSouls'@'localhost';
+grant INSERT, DELETE, SELECT, UPDATE on ProjectSouls.Build to 'UserProjectSouls'@'localhost';
 
 flush privileges;
 

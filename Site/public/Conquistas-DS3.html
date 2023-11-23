@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./css/CDS3.css">
 </head>
 
-<body>
+<body onload="carregarConquest(sessionStorage.ID_USUARIO)">
     <!--Header-->
     <div>
         <div class="header">
@@ -73,10 +73,12 @@
 
         <div class="container-progress-bar">
             <div class="progress-bar">
-                <div class="progress" id="divProgress"></div>
+                <div class="progress" id="progressDs3"></div>
             </div>
         </div>
-
+        <div class="container-button">
+            <button onclick="realizarConquest()">Salvar</button>
+        </div>
         <div class="container-linha">
             <div class="linha-div"></div>
         </div>
@@ -85,147 +87,147 @@
             <div class="div-Conquest">
 
                 <div class="Conquest">
-                    <input onchange="relizarConquest()" type="checkbox" id="C202">
+                    <input onchange="progredirDS3()" type="checkbox" id="C202">
                     <div>
                         <h3>Acendendo</h3>
                         <p>Acenda uma fogueira pela primeira vez</p>
                     </div>
                 </div>
                 <div class="Conquest">
-                    <input onchange="relizarConquest()" type="checkbox" id="C203">
+                    <input onchange="progredirDS3()" type="checkbox" id="C203">
                     <div>
                         <h3>Abrace a Chama</h3>
                         <p>Torne-se um Hospedeiro das Brasas pela primeira vez</p>
                     </div>
                 </div>
                 <div class="Conquest">
-                    <input onchange="relizarConquest()" type="checkbox" id="C204">
+                    <input onchange="progredirDS3()" type="checkbox" id="C204">
                     <div>
                         <h3>Iudex Gundyr</h3>
                         <p>Derrote Iudex Gundyr </p>
                     </div>
                 </div>
                 <div class="Conquest">
-                    <input onchange="relizarConquest()" type="checkbox" id="C205">
+                    <input onchange="progredirDS3()" type="checkbox" id="C205">
                     <div>
                         <h3>Vordt do Vale Boreal</h3>
                         <p>Derrote Vordt do Vale Boreal</p>
                     </div>
                 </div>
                 <div class="Conquest">
-                    <input onchange="relizarConquest()" type="checkbox" id="C206">
+                    <input onchange="progredirDS3()" type="checkbox" id="C206">
                     <div>
                         <h3>Pacto: Caminho Azul</h3>
                         <p>Descubra o Pacto do Caminho Azul</p>
                     </div>
                 </div>
                 <div class="Conquest">
-                    <input onchange="relizarConquest()" type="checkbox" id="C207">
+                    <input onchange="progredirDS3()" type="checkbox" id="C207">
                     <div>
                         <h3>Grande Madeira Apodrecida</h3>
                         <p>Derrote a Grande Madeira Apodrecida</p>
                     </div>
                 </div>
                 <div class="Conquest">
-                    <input onchange="relizarConquest()" type="checkbox" id="C208">
+                    <input onchange="progredirDS3()" type="checkbox" id="C208">
                     <div>
                         <h3>Pacto: Sentinelas Azuis</h3>
                         <p>Descubra o Pacto dos Sentinelas Azuir</p>
                     </div>
                 </div>
                 <div class="Conquest">
-                    <input onchange="relizarConquest()" type="checkbox" id="C209">
+                    <input onchange="progredirDS3()" type="checkbox" id="C209">
                     <div>
                         <h3>Sábio de Cristal</h3>
                         <p>Derrote o Sábio de Cristal</p>
                     </div>
                 </div>
                 <div class="Conquest">
-                    <input onchange="relizarConquest()" type="checkbox" id="C210">
+                    <input onchange="progredirDS3()" type="checkbox" id="C210">
                     <div>
                         <h3>Lordes das Cinzas: Vigilantes do Abismo</h3>
                         <p>Derrote os Vigilantes do Abismo</p>
                     </div>
                 </div>
                 <div class="Conquest">
-                    <input onchange="relizarConquest()" type="checkbox" id="C211">
+                    <input onchange="progredirDS3()" type="checkbox" id="C211">
                     <div>
                         <h3>Diáconos das Profundezas</h3>
                         <p>Derrote os Diáconos das Profundezas</p>
                     </div>
                 </div>
                 <div class="Conquest">
-                    <input onchange="relizarConquest()" type="checkbox" id="C212">
+                    <input onchange="progredirDS3()" type="checkbox" id="C212">
                     <div>
                         <h3>Pacto: Guerreiro da Luz Solar</h3>
                         <p>Descubra o Pacto dos Guerreiros da Luz Solar</p>
                     </div>
                 </div>
                 <div class="Conquest">
-                    <input onchange="relizarConquest()" type="checkbox" id="C213">
+                    <input onchange="progredirDS3()" type="checkbox" id="C213">
                     <div>
                         <h3>Alto Lorde Wolnir</h3>
                         <p>Derrote o Lorde Wolnir</p>
                     </div>
                 </div>
                 <div class="Conquest">
-                    <input onchange="relizarConquest()" type="checkbox" id="C214">
+                    <input onchange="progredirDS3()" type="checkbox" id="C214">
                     <div>
                         <h3>Pontífice Sulyvahn</h3>
                         <p>Derrote Pontífice Sulyvahn</p>
                     </div>
                 </div>
                 <div class="Conquest">
-                    <input onchange="relizarConquest()" type="checkbox" id="C215">
+                    <input onchange="progredirDS3()" type="checkbox" id="C215">
                     <div>
                         <h3>Pacto: Vigilantes de Farron</h3>
                         <p>Descubra o pacto dos Vigilantes de Farron</p>
                     </div>
                 </div>
                 <div class="Conquest">
-                    <input onchange="relizarConquest()" type="checkbox" id="C216">
+                    <input onchange="progredirDS3()" type="checkbox" id="C216">
                     <div>
                         <h3>Dançarina do Vale Boreal</h3>
                         <p>Derrote a Dançarina do Vale Boreal</p>
                     </div>
                 </div>
                 <div class="Conquest">
-                    <input onchange="relizarConquest()" type="checkbox" id="C217">
+                    <input onchange="progredirDS3()" type="checkbox" id="C217">
                     <div>
                         <h3>Lorde das Cinzas: Aldrich, o Devorador de Deuses</h3>
                         <p>Derrote Aldrich, o Devorador de Deuses</p>
                     </div>
                 </div>
                 <div class="Conquest">
-                    <input onchange="relizarConquest()" type="checkbox" id="C218">
+                    <input onchange="progredirDS3()" type="checkbox" id="C218">
                     <div>
                         <h3>Lorde das Cinzas: Yhorm, o Gigante</h3>
                         <p>Derrote Yhorm, o Gigante</p>
                     </div>
                 </div>
                 <div class="Conquest">
-                    <input onchange="relizarConquest()" type="checkbox" id="C219">
+                    <input onchange="progredirDS3()" type="checkbox" id="C219">
                     <div>
                         <h3>Antigo Rei Demônio</h3>
                         <p>Derrote o Antigo Rei Demônio</p>
                     </div>
                 </div>
                 <div class="Conquest">
-                    <input onchange="relizarConquest()" type="checkbox" id="C220">
+                    <input onchange="progredirDS3()" type="checkbox" id="C220">
                     <div>
                         <h3>Armadura do Matador de Dragões</h3>
                         <p>Derrote a Armadura do Matador de Dragões</p>
                     </div>
                 </div>
                 <div class="Conquest">
-                    <input onchange="relizarConquest()" type="checkbox" id="C221">
+                    <input onchange="progredirDS3()" type="checkbox" id="C221">
                     <div>
                         <h3>Oceiros, o Rei Decaído</h3>
                         <p>Derrote Oceiros, o Rei Decaído</p>
                     </div>
                 </div>
                 <div class="Conquest">
-                    <input onchange="relizarConquest()" type="checkbox" id="C222">
+                    <input onchange="progredirDS3()" type="checkbox" id="C222">
                     <div>
                         <h3>Túmulos Abandonados</h3>
                         <p>Chegue aos Túmulos Abandonados</p>
@@ -237,154 +239,154 @@
             <div class="div-Conquest">
                
                 <div class="Conquest">
-                    <input onchange="relizarConquest()" type="checkbox" id="C223">
+                    <input onchange="progredirDS3()" type="checkbox" id="C223">
                     <div>
                         <h3>Pacto: os Dedos de Rosaria</h3>
                         <p>Descubra o pacto dos Dedos de Rosaria</p>
                     </div>
                 </div>
                 <div class="Conquest">
-                    <input onchange="relizarConquest()" type="checkbox" id="C224">
+                    <input onchange="progredirDS3()" type="checkbox" id="C224">
                     <div>
                         <h3>Campeão Gundyr</h3>
                         <p>Derrote o Campeão Gundyr</p>
                     </div>
                 </div>
                 <div class="Conquest">
-                    <input onchange="relizarConquest()" type="checkbox" id="C225">
+                    <input onchange="progredirDS3()" type="checkbox" id="C225">
                     <div>
                         <h3>Lorde das Cinzas: Lothric, o Príncipe Mais Jovem</h3>
                         <p>Derrote o Jovem Príncipe, Lothric</p>
                     </div>
                 </div>
                 <div class="Conquest">
-                    <input onchange="relizarConquest()" type="checkbox" id="C226">
+                    <input onchange="progredirDS3()" type="checkbox" id="C226">
                     <div>
                         <h3>Reforço de Arma Suprema</h3>
                         <p>Reforce qualquer arma ao nivel máximo</p>
                     </div>
                 </div>
                 <div class="Conquest">
-                    <input onchange="relizarConquest()" type="checkbox" id="C227">
+                    <input onchange="progredirDS3()" type="checkbox" id="C227">
                     <div>
                         <h3>Pico do Arquidragão</h3>
                         <p>Chegue ao Pico do Arquidragão</p>
                     </div>
                 </div>
                 <div class="Conquest">
-                    <input onchange="relizarConquest()" type="checkbox" id="C228">
+                    <input onchange="progredirDS3()" type="checkbox" id="C228">
                     <div>
                         <h3>Wyvern Ancião</h3>
                         <p>Derrote o Wyvern Ancião</p>
                     </div>
                 </div>
                 <div class="Conquest">
-                    <input onchange="relizarConquest()" type="checkbox" id="C229">
+                    <input onchange="progredirDS3()" type="checkbox" id="C229">
                     <div>
                         <h3>Pacto: Criadores de Montes</h3>
                         <p>Descubra o Pacto dos Criadores de Montes</p>
                     </div>
                 </div>
                 <div class="Conquest">
-                    <input onchange="relizarConquest()" type="checkbox" id="C230">
+                    <input onchange="progredirDS3()" type="checkbox" id="C230">
                     <div>
                         <h3>O Rei Sem Nome</h3>
                         <p>Derrote o Rei Sem Nome</p>
                     </div>
                 </div>
                 <div class="Conquest">
-                    <input onchange="relizarConquest()" type="checkbox" id="C231">
+                    <input onchange="progredirDS3()" type="checkbox" id="C231">
                     <div>
                         <h3>Pacto: Devoto de Aldrich</h3>
                         <p>Descubra o Pacto dos Devotos de Aldrich</p>
                     </div>
                 </div>
                 <div class="Conquest">
-                    <input onchange="relizarConquest()" type="checkbox" id="C232">
+                    <input onchange="progredirDS3()" type="checkbox" id="C232">
                     <div>
                         <h3>Fogueira Definitiva</h3>
                         <p>Reforce uma fogueira ao nível máximo</p>
                     </div>
                 </div>
                 <div class="Conquest">
-                    <input onchange="relizarConquest()" type="checkbox" id="C233">
+                    <input onchange="progredirDS3()" type="checkbox" id="C233">
                     <div>
                         <h3>Pacto: Lâmina da Lua Negra</h3>
                         <p>Descubra o Pacto da Lâmina da Lua Negra</p>
                     </div>
                 </div>
                 <div class="Conquest">
-                    <input onchange="relizarConquest()" type="checkbox" id="C234">
+                    <input onchange="progredirDS3()" type="checkbox" id="C234">
                     <div>
                         <h3>Estus Definitivo</h3>
                         <p>Reforce o Frasco de Estus ao nível máximo</p>
                     </div>
                 </div>
                 <div class="Conquest">
-                    <input onchange="relizarConquest()" type="checkbox" id="C235">
+                    <input onchange="progredirDS3()" type="checkbox" id="C235">
                     <div>
                         <h3>Acender a Primeira Chama</h3>
                         <p>Alcance o final "Acender a Primeira Chama"</p>
                     </div>
                 </div>
                 <div class="Conquest">
-                    <input onchange="relizarConquest()" type="checkbox" id="C236">
+                    <input onchange="progredirDS3()" type="checkbox" id="C236">
                     <div>
                         <h3>O Fim do Jogo</h3>
                         <p>Alcance o final "O Fim do Jogo"</p>
                     </div>
                 </div>
                 <div class="Conquest">
-                    <input onchange="relizarConquest()" type="checkbox" id="C237">
+                    <input onchange="progredirDS3()" type="checkbox" id="C237">
                     <div>
                         <h3>A Usurpação do Fogo</h3>
                         <p>Alcance o final "A Usurpação do Fogo"</p>
                     </div>
                 </div>
                 <div class="Conquest">
-                    <input onchange="relizarConquest()" type="checkbox" id="C238">
+                    <input onchange="progredirDS3()" type="checkbox" id="C238">
                     <div>
                         <h3>Mestre da Infusão</h3>
                         <p>Execute todas as formas de infusão"</p>
                     </div>
                 </div>
                 <div class="Conquest">
-                    <input onchange="relizarConquest()" type="checkbox" id="C239">
+                    <input onchange="progredirDS3()" type="checkbox" id="C239">
                     <div>
                         <h3>Mestre dos Feitiços</h3>
                         <p>Adquira todos os feitiços</p>
                     </div>
                 </div>
                 <div class="Conquest">
-                    <input onchange="relizarConquest()" type="checkbox" id="C240">
+                    <input onchange="progredirDS3()" type="checkbox" id="C240">
                     <div>
                         <h3>Mestre das Piromancias</h3>
                         <p>Adquira todas as piromancias</p>
                     </div>
                 </div>
                 <div class="Conquest">
-                    <input onchange="relizarConquest()" type="checkbox" id="C241">
+                    <input onchange="progredirDS3()" type="checkbox" id="C241">
                     <div>
                         <h3>Mestre dos Milagres</h3>
                         <p>Adquira todos os milagres</p>
                     </div>
                 </div>
                 <div class="Conquest">
-                    <input onchange="relizarConquest()" type="checkbox" id="C242">
+                    <input onchange="progredirDS3()" type="checkbox" id="C242">
                     <div>
                         <h3>Mestre da Expressão</h3>
                         <p>Aprenda todos os gestos</p>
                     </div>
                 </div>
                 <div class="Conquest">
-                    <input onchange="relizarConquest()" type="checkbox" id="C243">
+                    <input onchange="progredirDS3()" type="checkbox" id="C243">
                     <div>
                         <h3>Mestre dos Anéis</h3>
                         <p>Adquira todos os anéis</p>
                     </div>
                 </div>
                 <div class="Conquest">
-                    <input onchange="relizarConquest()" type="checkbox" id="C244" >
+                    <input onchange="progredirDS3()" type="checkbox" id="C244" >
                     <div>
                         <h3>A Alma Negra</h3>
                         <p>Complete todas as conquistas</p>

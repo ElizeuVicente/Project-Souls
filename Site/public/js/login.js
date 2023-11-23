@@ -28,10 +28,9 @@ function logar() {
                 console.log(JSON.stringify(json));
                 sessionStorage.ID_USUARIO = json.idUser
                 sessionStorage.NOME_USUARIO = json.nome
-                sessionStorage.EMAIL_USUARIO = json.email
                 setTimeout(function () {
                     window.location = "./index.html";
-                }, 1000); // apenas para exibir o loading
+                }); // apenas para exibir o loading
             });
 
         } else {

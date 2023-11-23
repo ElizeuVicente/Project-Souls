@@ -259,7 +259,9 @@ function calcularAlmasC() {
     spanCustoAlma.innerHTML = ` ${AlmasC.toFixed()}`;
 }
 
-let Atr = [Vigo, Conh, Forti, Vita, Forc, Dest, Inte, Fe, Sort]
+let Atr = [Vigo, Conh, Forti, Vita, Forc, Dest, Inte, Fe, Sort];
+
+
 
 
 function salvarBuild() {

@@ -111,3 +111,26 @@ body {
 
 }
 
+.container-button {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    bottom: 15px;
+}
+.container-button button{
+    background-color: #0d0d0d;
+    color: #D0D0D0;
+    border: 1px solid #D0D0D0;
+    border-radius: 5px;
+    padding: 5px 20px;
+    transition: 0.5s;
+}
+
+.container-button button:hover{
+    transition: 0.5s;
+    background-color: #790707;
+    color: #0d0d0d;
+    border: 1px solid #790707;
+    border-radius: 5px;
+    padding: 5px 30px;
+}
