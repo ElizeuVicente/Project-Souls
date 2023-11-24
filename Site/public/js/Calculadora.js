@@ -246,13 +246,13 @@ function lvDownSo() {
 
 function calcularAlmasC() {
     AlmasC = 673;
-    
+
     for (var i = 1; i < Level; i++) {
         if (Level != 1) {
-            if (Level < 13){
-                AlmasC = AlmasC*1.025
-            }else {
-            AlmasC = 0.02*Level^3 + 3.06*Level^3 + 105.6*Level - 895
+            if (Level < 13) {
+                AlmasC = AlmasC * 1.025
+            } else {
+                AlmasC = 0.02 * Level ^ 3 + 3.06 * Level ^ 3 + 105.6 * Level - 895
             }
         }
     }
@@ -265,8 +265,8 @@ let Atr = [Vigo, Conh, Forti, Vita, Forc, Dest, Inte, Fe, Sort];
 
 
 function salvarBuild() {
-    if(sessionStorage.ID_USUARIO != undefined) {
-        
+    if (sessionStorage.ID_USUARIO != undefined) {
+
         fetch("/usuarios/cadastrar", {
             method: "POST",
             headers: {
@@ -280,6 +280,94 @@ function salvarBuild() {
             })
         })
     }
+}
+
+
+function listar() {
+    listarArma(),
+        // listarArmadura(),
+        listarAnel(),
+        listarFeitico()
+}
+
+function listarArma() {
+    fetch("/build/listarArma", {
+        method: "GET",
+    })
+        .then(function (resposta) {
+            resposta.json().then((armas) => {
+                armas.forEach((armas) => {
+                    selArmDireita.innerHTML += `<option value='${armas.idArma}'>${armas.tipo}: ${armas.nome}</option>`;
+                    selArmEsquerda.innerHTML += `<option value='${armas.idArma}'>${armas.tipo}: ${armas.nome}</option>`;
+                    selArmDireita2.innerHTML += `<option value='${armas.idArma}'>${armas.tipo}: ${armas.nome}</option>`;
+                    selArmEsquerda2.innerHTML += `<option value='${armas.idArma}'>${armas.tipo}: ${armas.nome}</option>`;
+                });
+            });
+        })
+        .catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+}
+
+function listarArmadura() {
+    fetch("/build/listarArmadura", {
+        method: "GET",
+    })
+        .then(function (resposta) {
+            resposta.json().then((armaduras) => {
+                armaduras.forEach((armaduras) => {
+                    listaEmpresas.innerHTML += `<option value='${armaduras.idArmadura}'>${armaduras.nome}</option>`;
+                });
+            });
+        })
+        .catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+}
+
+function listarAnel() {
+    fetch("/build/listarAnel", {
+        method: "GET",
+    })
+        .then(function (resposta) {
+            resposta.json().then((aneis) => {
+                aneis.forEach((aneis) => {
+                    selAnel1.innerHTML += `<option value='${aneis.idArmadura}'>${aneis.nome}</option>`;
+                    selAnel2.innerHTML += `<option value='${aneis.idArmadura}'>${aneis.nome}</option>`;
+                    selAnel3.innerHTML += `<option value='${aneis.idArmadura}'>${aneis.nome}</option>`;
+                    selAnel4.innerHTML += `<option value='${aneis.idArmadura}'>${aneis.nome}</option>`;
+                });
+            });
+        })
+        .catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+}
+
+function listarFeitico() {
+    fetch("/build/listarFeitico", {
+        method: "GET",
+    })
+        .then(function (resposta) {
+            resposta.json().then((feiticos) => {
+                feiticos.forEach((feiticos) => {
+                    if (feiticos.tipo != null) {
+                        selMag1.innerHTML += `<option value='${feiticos.idFeitico}'>${feiticos.tipo}: ${feiticos.nome}</option>`;
+                        selMag2.innerHTML += `<option value='${feiticos.idFeitico}'>${feiticos.tipo}: ${feiticos.nome}</option>`;
+                        selMag3.innerHTML += `<option value='${feiticos.idFeitico}'>${feiticos.tipo}: ${feiticos.nome}</option>`;
+                        selMag4.innerHTML += `<option value='${feiticos.idFeitico}'>${feiticos.tipo}: ${feiticos.nome}</option>`;
+                    } else {
+                        selMag1.innerHTML += `<option value='${feiticos.idFeitico}'>${feiticos.nome}</option>`;
+                        selMag2.innerHTML += `<option value='${feiticos.idFeitico}'>${feiticos.nome}</option>`;
+                        selMag3.innerHTML += `<option value='${feiticos.idFeitico}'>${feiticos.nome}</option>`;
+                        selMag4.innerHTML += `<option value='${feiticos.idFeitico}'>${feiticos.nome}</option>`;
+                    }
+                });
+            });
+        })
+        .catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
 }
 
 

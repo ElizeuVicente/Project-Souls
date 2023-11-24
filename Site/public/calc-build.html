@@ -8,11 +8,9 @@
     <link rel="stylesheet" href="./css/calc-build.css">
     <link rel="stylesheet" href="./css/header.css">
     <link rel="shortcut icon" href="./img/Icon/ShortCutIcon.png" type="image/x-icon">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="./js/Calculadora.js"></script>
 </head>
 
-<body>
+<body onload="listar()">
     <!--Header-->
     <div>
         <div class="header">
@@ -201,7 +199,7 @@
                         </div>
                         <div class="equi-Sel">
                             <p>Mão Direita 2</p>
-                            <select id="selArmDireta2"></select>
+                            <select id="selArmDireita2"></select>
                         </div>
                         <div class="equi-Sel">
                             <p>Mão Esquerda 2</p>
@@ -350,12 +348,13 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </body>
 
 </html>
+<script src="./js/Calculadora.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
     const AtrCtx = document.getElementById('myChart');
 

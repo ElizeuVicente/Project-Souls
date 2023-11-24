@@ -82,6 +82,13 @@ DefesaEletrica int,
 DefesaSombria int
 );
 
+create table Anel (
+idAnel int,
+nome varchar(50),
+peso decimal(3,1),
+efeito varchar(80)
+);
+
 create table ArmaXBuild (
 fkArmas int,
 fkBuild int,
@@ -115,6 +122,7 @@ Slot int
 );
 
 insert into Armas values
+(null,'Fist','Punho', 0, 1, 0, 0, 0, 0, 100, 0),
 (null,'Dagger','Adaga', 1.5, 65, 0, 0, 0, 0, 130, 0),
 (null,'Parrying Dagger','Adaga', 1, 60, 0, 0, 0, 0, 110, 0),
 (null,'Mail Breaker','Adaga', 1.5, 89, 0, 0, 0, 0, 125, 0),
@@ -338,7 +346,8 @@ insert into Armas values
 (null,'Sacred Chime Of Filianore','Carrilhão', 0.5, 74,  0, 0, 0, 0, 100, 142);
 
 insert into Feiticos values
-(null, 'Heal Aid', 'Milagre', ' Significantemente restaura HP', 0, 1.1, 0),
+(null, '--', null, null, 0, 0, 0),
+(null, 'Heal Aid', 'Milagre', 'Significantemente restaura HP', 0, 1.1, 0),
 (null, 'Heal', 'Milagre', 'Restaura o próprio HP e de todos proximos', 0, 3, 0),
 (null, 'Med Heal', 'Milagre', 'Moderadamente restaura HP próprio e de todos proximos', 0, 4.1, 0),
 (null, 'Great Heal', 'Milagre', 'Restaura muito HP próprio e de todos próximos', 0, 5.5, 0),
@@ -577,6 +586,14 @@ select * from UserXConquista;
 
 -- Usuário
 create user 'UserProjectSouls'@'localhost' identified by 'S0uls6';
+
+grant SELECT on  ProjectSouls.Anel to 'UserProjectSouls'@'localhost';
+grant SELECT on  ProjectSouls.Armas to 'UserProjectSouls'@'localhost';
+grant SELECT on  ProjectSouls.Armaduras to 'UserProjectSouls'@'localhost';
+grant SELECT on  ProjectSouls.Feiticos to 'UserProjectSouls'@'localhost';
+grant SELECT on  ProjectSouls.Conquistas to 'UserProjectSouls'@'localhost';
+
+
 
 grant INSERT, SELECT, UPDATE on  ProjectSouls.Usuario to 'UserProjectSouls'@'localhost';
 grant INSERT, DELETE, SELECT, UPDATE on  ProjectSouls.UserXConquista to 'UserProjectSouls'@'localhost';
