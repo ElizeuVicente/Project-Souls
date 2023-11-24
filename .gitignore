@@ -5,5 +5,6 @@ package-lock.json
 # Caso você renomeie seu diretório /site, altere também nas linhas abaixo:
 Site/node_modules
 Site/package-lock.json
+Documentação-ProjectSouls.docx
 
 .github

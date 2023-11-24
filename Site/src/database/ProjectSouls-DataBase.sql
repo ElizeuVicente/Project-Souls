@@ -591,7 +591,7 @@ grant SELECT on  ProjectSouls.Anel to 'UserProjectSouls'@'localhost';
 grant SELECT on  ProjectSouls.Armas to 'UserProjectSouls'@'localhost';
 grant SELECT on  ProjectSouls.Armaduras to 'UserProjectSouls'@'localhost';
 grant SELECT on  ProjectSouls.Feiticos to 'UserProjectSouls'@'localhost';
-grant SELECT on  ProjectSouls.Conquistas to 'UserProjectSouls'@'localhost';
+grant SELECT on  ProjectSouls.Conquista to 'UserProjectSouls'@'localhost';
 
 
 
