@@ -5,11 +5,11 @@ function realizarConquest(idUser, conquest) {
     instrucaoSql = `
     insert into UserXConquista (fkUser, fkConquista) values
     `
-    for(var i = 0; i < conquest.length-1;i++){
+    for (var i = 0; i < conquest.length - 1; i++) {
         instrucaoSql += `('${idUser}' ,'${conquest[i]}'),`
     }
-    instrucaoSql += `('${idUser}' ,'${conquest[conquest.length-1]}');`
-    
+    instrucaoSql += `('${idUser}' ,'${conquest[conquest.length - 1]}');`
+
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
