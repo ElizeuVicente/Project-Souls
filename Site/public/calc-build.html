@@ -169,19 +169,26 @@
                         <div class="equi-Sel">
                             <p>Cabeça</p>
                             <select id="selArmCabeca">
+                                <option value="undefined"></option>
                             </select>
                         </div>
                         <div class="equi-Sel">
                             <p>Torso</p>
-                            <select id="selArmTorso"></select>
+                            <select id="selArmTorso">
+                                <option value="undefined"></option>
+                            </select>
                         </div>
                         <div class="equi-Sel">
                             <p>Mãos</p>
-                            <select id="selArmMao"></select>
+                            <select id="selArmMao">
+                                <option value="undefined"></option>
+                            </select>
                         </div>
                         <div class="equi-Sel">
                             <p>Pernas</p>
-                            <select id="selArmPerna"></select>
+                            <select id="selArmPerna">
+                                <option value="undefined"></option>
+                            </select>
                         </div>
                     </div>
 
@@ -190,20 +197,26 @@
                         <div class="equi-Sel">
                             <p>Mão Direita</p>
                             <select id="selArmDireita">
-
+                                <option value="undefined"></option>
                             </select>
                         </div>
                         <div class="equi-Sel">
                             <p>Mão Esquerda</p>
-                            <select id="selArmEsquerda"></select>
+                            <select id="selArmEsquerda">
+                                <option value="undefined"></option>
+                            </select>
                         </div>
                         <div class="equi-Sel">
                             <p>Mão Direita 2</p>
-                            <select id="selArmDireita2"></select>
+                            <select id="selArmDireita2">
+                                <option value="undefined"></option>
+                            </select>
                         </div>
                         <div class="equi-Sel">
                             <p>Mão Esquerda 2</p>
-                            <select id="selArmEsquerda2"></select>
+                            <select id="selArmEsquerda2">
+                                <option value="undefined"></option>
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -214,19 +227,26 @@
                         <div class="equi-Sel">
                             <p>Anél 1</p>
                             <select id="selAnel1">
+                                <option value="undefined"></option>
                             </select>
                         </div>
                         <div class="equi-Sel">
                             <p>Anél 2</p>
-                            <select id="selAnel2"></select>
+                            <select id="selAnel2">
+                                <option value="undefined"></option>
+                            </select>
                         </div>
                         <div class="equi-Sel">
                             <p>Anél 3</p>
-                            <select id="selAnel3"></select>
+                            <select id="selAnel3">
+                                <option value="undefined"></option>
+                            </select>
                         </div>
                         <div class="equi-Sel">
                             <p>Anél 4</p>
-                            <select id="selAnel4"></select>
+                            <select id="selAnel4">
+                                <option value="undefined"></option>
+                            </select>
                         </div>
                     </div>
 
@@ -235,20 +255,26 @@
                         <div class="equi-Sel">
                             <p>Espaço 1</p>
                             <select id="selMag1">
-
+                                <option value="undefined"></option>
                             </select>
                         </div>
                         <div class="equi-Sel">
                             <p>Espaço 2</p>
-                            <select id="selMag2"></select>
+                            <select id="selMag2">
+                                <option value="undefined"></option>
+                            </select>
                         </div>
                         <div class="equi-Sel">
                             <p>Espaço 3</p>
-                            <select id="selMag3"></select>
+                            <select id="selMag3">
+                                <option value="undefined"></option>
+                            </select>
                         </div>
                         <div class="equi-Sel">
                             <p>Espaço 4</p>
-                            <select id="selMag4"></select>
+                            <select id="selMag4">
+                                <option value="undefined"></option>
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -369,17 +395,29 @@
                 backgroundColor: "#790707ba",
                 borderWidth: 3,
                 pointHoverBackgroundColor: '#0d0d0d',
-            }]
+            }, {
+                label: 'Atributo recomendado',
+                data: [40,40,40,40,40,40,40,40,99],
+                borderColor: "#D0D0D0",
+                backgroundColor: "#d0d0d0ba",
+                borderWidth: 3,
+                pointHoverBackgroundColor: '#0d0d0d',
+            },
+            ]
         },
         options: {
             scales: {
                 r: {
                     suggestedMin: 5,
-                    suggestedMax: 99
+                    suggestedMax: 99,
+                    ticks: {
+                        stepSize: 1,
+                        callback: (value, tick, values) => {
+
+                        }
+                    }
                 }
-
             }
-
         }
     });
 

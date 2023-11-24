@@ -122,7 +122,6 @@ Slot int
 );
 
 insert into Armas values
-(null,'Fist','Punho', 0, 1, 0, 0, 0, 0, 100, 0),
 (null,'Dagger','Adaga', 1.5, 65, 0, 0, 0, 0, 130, 0),
 (null,'Parrying Dagger','Adaga', 1, 60, 0, 0, 0, 0, 110, 0),
 (null,'Mail Breaker','Adaga', 1.5, 89, 0, 0, 0, 0, 125, 0),
@@ -346,7 +345,6 @@ insert into Armas values
 (null,'Sacred Chime Of Filianore','Carrilhão', 0.5, 74,  0, 0, 0, 0, 100, 142);
 
 insert into Feiticos values
-(null, '--', null, null, 0, 0, 0),
 (null, 'Heal Aid', 'Milagre', 'Significantemente restaura HP', 0, 1.1, 0),
 (null, 'Heal', 'Milagre', 'Restaura o próprio HP e de todos proximos', 0, 3, 0),
 (null, 'Med Heal', 'Milagre', 'Moderadamente restaura HP próprio e de todos proximos', 0, 4.1, 0),
