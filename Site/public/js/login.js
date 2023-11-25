@@ -30,7 +30,7 @@ function logar() {
                 sessionStorage.NOME_USUARIO = json.nome
                 setTimeout(function () {
                     window.location = "./index.html";
-                }); // apenas para exibir o loading
+                });
             });
 
         } else {

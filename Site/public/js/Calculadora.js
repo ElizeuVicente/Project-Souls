@@ -247,6 +247,9 @@ function lvDownSo() {
 function calcularAlmasC() {
     AlmasC = 673;
 
+    chartAtr.data.datasets[0].data = Atr;
+    chartAtr.update();
+
     for (var i = 1; i < Level; i++) {
         if (Level != 1) {
             if (Level < 13) {
@@ -285,9 +288,9 @@ function salvarBuild() {
 
 function listar() {
     listarArma(),
-        // listarArmadura(),
-        listarAnel(),
-        listarFeitico()
+    listarArmadura(),
+    listarAnel(),
+    listarFeitico()
 }
 
 function listarArma() {
@@ -316,7 +319,12 @@ function listarArmadura() {
         .then(function (resposta) {
             resposta.json().then((armaduras) => {
                 armaduras.forEach((armaduras) => {
-                    listaEmpresas.innerHTML += `<option value='${armaduras.idArmadura}'>${armaduras.nome}</option>`;
+                    if (armaduras.tipo == 'Capacete') selArmCabeca.innerHTML += `<option value='${armaduras.idArmadura}'>${armaduras.tipo}: ${armaduras.nome}</option>`;
+                    else if (armaduras.tipo == 'Peitoral') selArmTorso.innerHTML += `<option value='${armaduras.idArmadura}'>${armaduras.tipo}: ${armaduras.nome}</option>`;
+                    else if (armaduras.tipo == 'Manopla') selArmMao.innerHTML += `<option value='${armaduras.idArmadura}'>${armaduras.tipo}: ${armaduras.nome}</option>`;
+                    else if (armaduras.tipo == 'Perneira') selArmPerna.innerHTML += `<option value='${armaduras.idArmadura}'>${armaduras.tipo}: ${armaduras.nome}</option>`;
+
+
                 });
             });
         })
