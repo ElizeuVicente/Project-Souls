@@ -194,3 +194,10 @@ body {
 .containerButton div .buttonLimparFicha:hover {
     color: #0d0d0d;
 }
+
+#inNomeBuild {
+    text-align: center;
+    border: 2px solid #d0d0d065;
+    background-color: #0d0d0db0;
+    color: #D0D0D0;
+}

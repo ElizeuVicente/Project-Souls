@@ -267,30 +267,14 @@ let Atr = [Vigo, Conh, Forti, Vita, Forc, Dest, Inte, Fe, Sort];
 
 
 
-function salvarBuild() {
-    if (sessionStorage.ID_USUARIO != undefined) {
 
-        fetch("/usuarios/cadastrar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                nomeServer: nomeVar,
-                emailServer: emailVar,
-                senhaServer: senhaVar,
-                idUsuarioServer: idUsuario
-            })
-        })
-    }
-}
 
 
 function listar() {
     listarArma(),
-    listarArmadura(),
-    listarAnel(),
-    listarFeitico()
+        listarArmadura(),
+        listarAnel(),
+        listarFeitico()
 }
 
 function listarArma() {
@@ -378,4 +362,45 @@ function listarFeitico() {
         });
 }
 
+function salvarBuild() {
+    var nomeBuild = inNomeBuild.value
+    var idUser = sessionStorage.ID_USUARIO;
+    if (sessionStorage.ID_USUARIO != undefined) {
 
+        fetch(`/build/salvarBuild/${idUser}`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                nomeBuildServer: nomeBuild
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!");
+        });
+        salvarAtributos(),
+            salvarAnel(),
+            salvarFeitico(),
+            salvarArmadura(),
+            salvarArma()
+
+    } else alert("Para salvar sua build é necessario realizar o login");
+}
+
+function salvarAtritubos() {
+    var idUser = sessionStorage.ID_USUARIO;
+
+
+    fetch(`/build/salvarAtributos/${idUser}`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            nomeBuildServer: nomeBuild,
+            Atributos: Atr
+        })
+    }).then(function (resposta) {
+        console.log("ESTOU NO THEN DO entrar()!");
+    });
+}

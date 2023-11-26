@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="./img/Icon/ShortCutIcon.png" type="image/x-icon">
 </head>
 
-<body onload="listar()">
+<body>
     <!--Header-->
     <div>
         <div class="header">
@@ -60,6 +60,8 @@
     </div>
     <!--Atributos-->
     <div class="calc-build">
+        
+
         <div class="Title">
             <div>
                 <h1>Atributos</h1>
@@ -376,10 +378,19 @@
             </div>
         </div>
 
+        <div class="Title">
+            <div>
+                <h1>Nome da Build</h1>
+                <p>
+                    <input type="text" id="inNomeBuild">
+                </p>
+            </div>
+        </div>
+
         <div class="containerButton">
             <div>
                 <button class="buttonLimparFicha">Limpar Ficha</button>
-                <button>Salvar</button>
+                <button onclick="salvarBuild()">Salvar</button>
             </div>
         </div>
     </div>

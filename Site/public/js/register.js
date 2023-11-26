@@ -64,7 +64,6 @@ function cadastrar() {
             nomeServer: nomeVar,
             emailServer: emailVar,
             senhaServer: senhaVar,
-            idUsuarioServer: idUsuario
         })
     })
 

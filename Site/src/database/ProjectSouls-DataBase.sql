@@ -727,8 +727,6 @@ grant SELECT on  ProjectSouls.Armaduras to 'UserProjectSouls'@'localhost';
 grant SELECT on  ProjectSouls.Feiticos to 'UserProjectSouls'@'localhost';
 grant SELECT on  ProjectSouls.Conquista to 'UserProjectSouls'@'localhost';
 
-
-
 grant INSERT, SELECT, UPDATE on  ProjectSouls.Usuario to 'UserProjectSouls'@'localhost';
 grant INSERT, DELETE, SELECT, UPDATE on  ProjectSouls.UserXConquista to 'UserProjectSouls'@'localhost';
 grant INSERT, DELETE, SELECT, UPDATE on ProjectSouls.ArmaXBuild to 'UserProjectSouls'@'localhost';

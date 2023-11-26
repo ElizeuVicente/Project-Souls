@@ -1,5 +1,12 @@
 var database = require("../database/config");
 
+function salvarBuild(idUser, nomeBuild) {
+    var instrucaoSQL = `insert into Build (fkUser, nome) values (${idUser}, ${nomeBuild});`
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSQL);
+    return database.executar(instrucaoSQL);
+}
+
 function listarArma() {
     var query = `select * from Armas;`
 
@@ -32,5 +39,6 @@ module.exports = {
     listarArma,
     listarFeitico,
     listarAnel,
-    listarArmadura
+    listarArmadura,
+    salvarBuild
 };

@@ -90,6 +90,7 @@ body {
     display: none;
     width: 300px;
     background-color: #000000d3;
+    border: 1px solid #790707;
     border-radius: 5px;
     text-align: center;
     color: #880707;

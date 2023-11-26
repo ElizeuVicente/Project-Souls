@@ -3,6 +3,13 @@ var router = express.Router();
 
 var buildController = require("../controllers/buildController");
 
+router.post("/salvarAtributos/:idUser", function(req,res) {
+    buildController.salvarAtributos(req, res);
+});
+
+router.post("/salvarBuild/:idUser", function(req,res) {
+    buildController.salvarBuild(req, res);
+});
 
 router.get("/listarArma", function (req, res) {
     buildController.listarArma(req, res);
