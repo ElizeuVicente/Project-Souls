@@ -375,6 +375,13 @@
                 </div>
             </div>
         </div>
+
+        <div class="containerButton">
+            <div>
+                <button class="buttonLimparFicha">Limpar Ficha</button>
+                <button>Salvar</button>
+            </div>
+        </div>
     </div>
 </body>
 
@@ -384,7 +391,7 @@
 <script>
     const AtrCtx = document.getElementById('myChart');
 
-   var chartAtr = new Chart(AtrCtx, {
+    var chartAtr = new Chart(AtrCtx, {
         type: 'radar',
         data: {
             labels: ['Vigor', 'Conhecimento', 'Fortitude', 'Vitalidade', 'Força', 'Destreza', 'Inteligencia', 'Fé', 'Sorte'],
@@ -395,7 +402,7 @@
                 backgroundColor: "#790707ba",
                 borderWidth: 3,
                 pointHoverBackgroundColor: '#0d0d0d',
-                
+
             }, {
                 label: 'Atributo recomendado',
                 data: [40, 40, 40, 40, 40, 40, 40, 40, 99],

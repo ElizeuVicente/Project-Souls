@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro</title>
+    <title>Build Salva</title>
     <link rel="shortcut icon" href="./img/Icon/ShortCutIcon.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/header.css">
-    <link rel="stylesheet" href="./css/register.css">
+    <link rel="stylesheet" href="./css/buildSalva.css">
 </head>
 
 <body>
@@ -48,7 +48,7 @@
                     <li>
                         <span>Build</span>
                         <ul class="dropdown-build">
-                            <li onclick="window.location.href = '../public/calc-build.html'">Calculadora de Build</li>
+                            <li onclick="window.location.href = './calc-build.html'">Calculadora de Build</li>
                             <li onclick="window.location.href = './buildSalva.html'">Builds Salvas</li>
                         </ul>
                     </li>
@@ -57,28 +57,39 @@
             </div>
         </div>
     </div>
-    <div class="register">
-        <div class="container-register">
-            <h1>Junte-se conosco</h1>
-            <span>Nome</span>
-            <input type="text" id="inUserName">
-            <span>Email</span>
-            <input type="text" id="inEmail" placeholder="Example123@gmail.com">
-            <span>Senha</span>
-            <input type="password" id="inSenha" placeholder="********">
-            <span>Confirmar senha</span>
-            <input type="password" id="inSenhaConfirm" placeholder="********">
+
+
+
+    <div class="loadBox">
+        <div class="container">
             <div>
-                <button onclick="window.location.href = './login.html'">Login</button>
-                <button onclick="cadastrar()">Registrar</button>
+                <div class="Load">
+                    <div>
+                        <div>Nome</div>
+                        <div>LV 1</div>
+                    </div>
+                </div>
+                <div class="Load">
+                    <div>
+                        <div>Nome</div>
+                        <div>LV 1</div>
+                    </div>
+                </div>
+                <div class="Load">
+                    <div>
+                        <div>Nome</div>
+                        <div>LV 1</div>
+                    </div>
+                </div>
+                <div class="Load">
+                    <div>
+                        <div>Nome</div>
+                        <div>LV 1</div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="cardError" id="cardError">
-            <p id="msgError">Preencha os Campos</p>
         </div>
     </div>
 </body>
 
 </html>
-
-<script src="./js/register.js"></script>
