@@ -26,8 +26,8 @@ function logar() {
             resposta.json().then(json => {
                 console.log(json);
                 console.log(JSON.stringify(json));
-                sessionStorage.ID_USUARIO = json.idUser
-                sessionStorage.NOME_USUARIO = json.nome
+                sessionStorage.ID_USUARIO = json.idUser;
+                sessionStorage.NOME_USUARIO = json.nome;
                 setTimeout(function () {
                     window.location = "./index.html";
                 });

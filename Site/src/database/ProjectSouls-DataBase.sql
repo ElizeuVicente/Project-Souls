@@ -83,7 +83,7 @@ DefesaSombria decimal(3,1)
 );
 
 create table Anel (
-idAnel int,
+idAnel int primary key auto_increment,
 nome varchar(50),
 peso decimal(3,1),
 efeito varchar(80)
@@ -668,6 +668,48 @@ insert into Conquista values
 (null, 'Mestre dos Anéis'),
 (null, 'A Alma Negra 3');
 
+insert into Anel values
+(null, 'Life Ring', 0.3, 'Aumenta o HP em 7%'),
+(null, 'Sun Princess Ring', 0.6, 'Gradualmente restaura o HP (2 por segundo)'),
+(null, 'Estus Ring', 0.8, 'Aumenta o poder do Frasco de Estus em 20%'),
+(null, 'Ashen Estus Ring', 0.8, 'Aumenta o poder das Cinzas do Frascos de Estus em 20%'),
+(null, 'Chloranthy Ring', 0.7, 'Aumenta a recuperação de estamina 7 de stamina por segundo'),
+(null, 'Havel Ring', 1.5, 'Aumenta o poder de carga em 15%'),
+(null, 'Ring of Favor', 1.5, 'Aumenta o Hp em 3%, Estamina em 9% e o Poder de carga em 5%'),
+(null, 'Prisioner Chain', 0.3, 'Aumenta o Vigor, Resistência e Vitalidade em 5 pontos'),
+(null, 'Ring of Steel Protection', 0.8, 'Diminui o dano fisico em 10% contra Inimigos e 2% contra outros players'),
+(null, 'Knight Ring', 0.8, 'Aumenta a força em 5 pontos'),
+(null, 'Hunter Ring', 0.8, 'Aumenta a destreza em 5 ponto'),
+(null, 'Scholar Ring', 0.6, 'Aumenta a inteligencia em 5 pontos'),
+(null, 'Priestess Ring', 0.6, 'Aumenta a fé em 5 pontos'),
+(null, 'Covetous Gold Serpernt Ring', 1.2, 'Aumenta chance de achar um item em 50 pontos'),
+(null, 'Covetous Silver Serpernt Ring', 1.2, 'Inimigos derrotados geram mais 10% de almas'),
+(null, 'Saint Serpernt Ring', 0.5, 'Permite mais espaços para feitiços adicionais'),
+(null, 'Young Dragon Ring', 0.7, 'Aumenta o dano de magias em 12%'),
+(null, 'Bellowing Dragoncrest Ring', 1, 'Aumenta o dano de magias em 20%'),
+(null, 'Great Swamp Ring', 0.5, 'Aumenta o dano de piromancias em 12%'),
+(null, 'Witch Ring', 1, 'Aumenta as piromancias em 20%'),
+(null, 'Morne Ring', 0.7, 'Aumenta o dano dos milagres em 12%'),
+(null, 'Ring of the Sun First Born', 1, 'Aumenta o dano de milagres em 20%'),
+(null, 'Lingering Dragoncrest Ring', 0.5, 'Aumenta a duração do efeito da magia em 30%'),
+(null, 'Leo Ring', 0.5, 'Fortalece o contra-ataque das laminas de impulso em 15%'),
+(null, 'Wolf Ring', 0.5, 'Aumenta o equilibrio em +4'),
+(null, 'Hawk Ring', 0.7, 'Aumenta o alcance de flechas'),
+(null, 'Hornet Ring', 1.1, 'Aumenta o dano critico em 30%'),
+(null, 'Knight Slayer Ring', 0.9, 'Inimigos perdem 20% a mais de Estamina quando defendem'),
+(null, 'Ring of the Evil Eye', 1, 'Absorve +30HP para cada inimigo derrotado'),
+(null, 'Farron Ring', 0.8, 'Reduz o consumo de FP em 25%'),
+(null, 'Dragonscale Ring', 1.1, 'Reduz o dano recebido de backstab em 30%'),
+(null, 'Horsehoof Ring', 0.6, 'Inimigos perdem 40% da estamina ao defenderem chutes'),
+(null, 'Wood Grain Ring', 0.5, 'Aumenta a durabilidade de armas em 20%'),
+(null, 'Flynn Ring', 0.9, 'Diminui o peso de equipamento em 15%'),
+(null, 'Magic Clutch Ring', 0.8, 'Aumenta o ataque magico em 15% contra inimigos normais e 8% contra outros players, reduzindo dano fisico e absorções 10% contra inimigos e 15% contra outros players'),
+(null, 'Lightning Clutch Ring', 0.8, 'Aumenta o dano elétrico em 15% contra inimigos normais e 8% contra outros players, reduzindo dano fisico e absorções 10% contra inimigos e 15% contra outros players'),
+(null, 'Fire Clutch Ring', 0.8, 'Aumenta o dano flamejante em 15% contra inimigos e 8% contra outros players, reduzindo dano fisico e absorções 10% contra inimigos e 15% contra outros players'),
+(null, 'Dark Clutch Ring', 0.8, 'Aumenta o dano sombrio em 15% contra inimigos e 8% contra outros players, reduzindo dano fisico e absorções 10% contra inimigos e 15% contra outros players'),
+(null, 'Red Tearstone Ring', 1.4, 'Aumenta dano 20% quando o HP estiver em menos de 20%'),
+(null, 'Blue Tearstone Ring', 1.1, 'Diminui o dano recebido em 20% quando o HP estiver abaixo de 20% contra inimigos e 15% contra outros players'),
+(null, 'Calamity Ring', 0.8, 'Reduz a absorção de inimigos 100%');
 
 select * from Armas;
 select * from Feiticos;
