@@ -739,6 +739,3 @@ grant INSERT, DELETE, SELECT, UPDATE on ProjectSouls.Atributos to 'UserProjectSo
 grant INSERT, DELETE, SELECT, UPDATE on ProjectSouls.Build to 'UserProjectSouls'@'localhost';
 
 flush privileges;
-
-    
-
