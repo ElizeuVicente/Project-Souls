@@ -365,6 +365,34 @@ function listarFeitico() {
 function salvarBuild() {
     var nomeBuild = inNomeBuild.value
     var idUser = sessionStorage.ID_USUARIO;
+    
+    var armas = {
+        idArmaDireita: document.getElementById(`selArmDireita`).value,
+        idArmaEsquerda: document.getElementById(`selArmEsquerda`).value,
+        idArmaDireita2: document.getElementById(`selArmDireita2`).value,
+        idArmaEsquerda2: document.getElementById(`selArmEsquerda2`).value,
+    }
+    var feiticos = {
+        idFeitico1: document.getElementById(`selMag1`).value,
+        idFeitico2: document.getElementById(`selMag2`).value,
+        idFeitico3: document.getElementById(`selMag3`).value,
+        idFeitico4: document.getElementById(`selMag4`).value,
+    }
+   
+    var armaduras = {
+        idArmCabeca: document.getElementById(`selArmCabeca`).value,
+        idArmTorso: document.getElementById(`selArmTorso`).value,
+        idArmMao: document.getElementById(`selArmMao`).value,
+        idArmPerna: document.getElementById(`selArmPerna`).value,
+    }
+
+    var anel = {
+        idAnel1: document.getElementById(`selAnel1`).value,
+        idAnel2: document.getElementById(`selAnel2`).value,
+        idAnel3: document.getElementById(`selAnel3`).value,
+        idAnel4: document.getElementById(`selAnel4`).value,
+    }
+
     if (sessionStorage.ID_USUARIO != undefined) {
 
         fetch(`/build/salvarBuild/${idUser}`, {
@@ -373,16 +401,16 @@ function salvarBuild() {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                nomeBuildServer: nomeBuild
+                nomeBuildServer: nomeBuild,
+                Atributos: Atr,
+                ArmadurasServer: armaduras,
+                ArmasServer: armas,
+                AneisServer: anel,
+                FeiticosServer: feiticos
             })
         }).then(function (resposta) {
             console.log("ESTOU NO THEN DO entrar()!");
         });
-        salvarAtributos(),
-            salvarAnel(),
-            salvarFeitico(),
-            salvarArmadura(),
-            salvarArma()
 
     } else alert("Para salvar sua build é necessario realizar o login");
 }

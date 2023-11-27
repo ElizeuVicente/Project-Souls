@@ -27,6 +27,11 @@ function listarFeitico(req, res) {
 function salvarBuild(req,res) {
     var nomeBuild = req.body.nomeBuildServer;
     var idUser = req.params.idUser;
+    var Arma = req.body.ArmasServer;
+    var Armadura = req.body.ArmadurasServer;
+    var Anel = req.body.AneisServer;
+    var Feitico = req.body.FeiticosServer;
+    var Atributos = req.body.Atributos;
 
     // Faça as validações dos valores
     if (nomeBuild == undefined) {
@@ -39,8 +44,8 @@ function salvarBuild(req,res) {
         buildModel.salvarBuild(idUser, nomeBuild)
             .then(
                 function (resultado) {
+                    buildModel.salvarArma(idUser, resultado.insertId, Arma)
                     res.json(resultado);
-                    console.log('Registrando a Build no Model')
                 }
             ).catch(
                 function (erro) {

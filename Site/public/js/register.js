@@ -5,8 +5,6 @@ function cadastrar() {
     var senhaVar = inSenha.value;
     var confirmacaoSenhaVar = inSenhaConfirm.value;
 
-    const idUsuario = sessionStorage.idUsuario;
-
 
     if (nomeVar == "" || emailVar == "" || senhaVar == "" || idUsuario == "") {
         cardError.style.display = `block`
@@ -45,8 +43,7 @@ function cadastrar() {
 
         }
 
-        else if
-            (confirmacaoSenhaVar != senhaVar) {
+        else if (confirmacaoSenhaVar != senhaVar) {
             msgError.innerHTML = `A senha de confirmação não corresponde à senha inserida. Por favor, tente novamente`
             msgError.className = "invalido"
 

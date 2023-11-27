@@ -1,7 +1,13 @@
 var database = require("../database/config");
 
+function salvarArma(idUser, idBuild, Arma) {
+    var instrucaoSQL = `
+    insert into ArmaxBuild values 
+    `
+}
+
 function salvarBuild(idUser, nomeBuild) {
-    var instrucaoSQL = `insert into Build (fkUser, nome) values (${idUser}, ${nomeBuild});`
+    var instrucaoSQL = `insert into Build (fkUser, nome) values (${idUser}, '${nomeBuild}');`
 
     console.log("Executando a instrução SQL: \n" + instrucaoSQL);
     return database.executar(instrucaoSQL);
