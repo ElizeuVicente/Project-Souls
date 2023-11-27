@@ -6,7 +6,7 @@ function cadastrar() {
     var confirmacaoSenhaVar = inSenhaConfirm.value;
 
 
-    if (nomeVar == "" || emailVar == "" || senhaVar == "" || idUsuario == "") {
+    if (nomeVar == "" || emailVar == "" || senhaVar == "") {
         cardError.style.display = `block`
     } else {
         if (emailVar.indexOf("@") == -1 || emailVar.endsWith(".com") == false) {

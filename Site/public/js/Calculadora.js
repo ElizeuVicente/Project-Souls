@@ -303,10 +303,10 @@ function listarArmadura() {
         .then(function (resposta) {
             resposta.json().then((armaduras) => {
                 armaduras.forEach((armaduras) => {
-                    if (armaduras.tipo == 'Capacete') selArmCabeca.innerHTML += `<option value='${armaduras.idArmadura}'>${armaduras.tipo}: ${armaduras.nome}</option>`;
-                    else if (armaduras.tipo == 'Peitoral') selArmTorso.innerHTML += `<option value='${armaduras.idArmadura}'>${armaduras.tipo}: ${armaduras.nome}</option>`;
-                    else if (armaduras.tipo == 'Manopla') selArmMao.innerHTML += `<option value='${armaduras.idArmadura}'>${armaduras.tipo}: ${armaduras.nome}</option>`;
-                    else if (armaduras.tipo == 'Perneira') selArmPerna.innerHTML += `<option value='${armaduras.idArmadura}'>${armaduras.tipo}: ${armaduras.nome}</option>`;
+                    if (armaduras.tipo == 'Capacete') selArmCabeca.innerHTML += `<option value='${armaduras.idArmaduras}'>${armaduras.tipo}: ${armaduras.nome}</option>`;
+                    else if (armaduras.tipo == 'Peitoral') selArmTorso.innerHTML += `<option value='${armaduras.idArmaduras}'>${armaduras.tipo}: ${armaduras.nome}</option>`;
+                    else if (armaduras.tipo == 'Manopla') selArmMao.innerHTML += `<option value='${armaduras.idArmaduras}'>${armaduras.tipo}: ${armaduras.nome}</option>`;
+                    else if (armaduras.tipo == 'Perneira') selArmPerna.innerHTML += `<option value='${armaduras.idArmaduras}'>${armaduras.tipo}: ${armaduras.nome}</option>`;
 
 
                 });
@@ -324,10 +324,10 @@ function listarAnel() {
         .then(function (resposta) {
             resposta.json().then((aneis) => {
                 aneis.forEach((aneis) => {
-                    selAnel1.innerHTML += `<option value='${aneis.idArmadura}'>${aneis.nome}</option>`;
-                    selAnel2.innerHTML += `<option value='${aneis.idArmadura}'>${aneis.nome}</option>`;
-                    selAnel3.innerHTML += `<option value='${aneis.idArmadura}'>${aneis.nome}</option>`;
-                    selAnel4.innerHTML += `<option value='${aneis.idArmadura}'>${aneis.nome}</option>`;
+                    selAnel1.innerHTML += `<option value='${aneis.idAnel}'>${aneis.nome}</option>`;
+                    selAnel2.innerHTML += `<option value='${aneis.idAnel}'>${aneis.nome}</option>`;
+                    selAnel3.innerHTML += `<option value='${aneis.idAnel}'>${aneis.nome}</option>`;
+                    selAnel4.innerHTML += `<option value='${aneis.idAnel}'>${aneis.nome}</option>`;
                 });
             });
         })
@@ -348,11 +348,6 @@ function listarFeitico() {
                         selMag2.innerHTML += `<option value='${feiticos.idFeitico}'>${feiticos.tipo}: ${feiticos.nome}</option>`;
                         selMag3.innerHTML += `<option value='${feiticos.idFeitico}'>${feiticos.tipo}: ${feiticos.nome}</option>`;
                         selMag4.innerHTML += `<option value='${feiticos.idFeitico}'>${feiticos.tipo}: ${feiticos.nome}</option>`;
-                    } else {
-                        selMag1.innerHTML += `<option value='${feiticos.idFeitico}'>${feiticos.nome}</option>`;
-                        selMag2.innerHTML += `<option value='${feiticos.idFeitico}'>${feiticos.nome}</option>`;
-                        selMag3.innerHTML += `<option value='${feiticos.idFeitico}'>${feiticos.nome}</option>`;
-                        selMag4.innerHTML += `<option value='${feiticos.idFeitico}'>${feiticos.nome}</option>`;
                     }
                 });
             });
@@ -365,33 +360,33 @@ function listarFeitico() {
 function salvarBuild() {
     var nomeBuild = inNomeBuild.value
     var idUser = sessionStorage.ID_USUARIO;
-    
-    var armas = {
-        idArmaDireita: document.getElementById(`selArmDireita`).value,
-        idArmaEsquerda: document.getElementById(`selArmEsquerda`).value,
-        idArmaDireita2: document.getElementById(`selArmDireita2`).value,
-        idArmaEsquerda2: document.getElementById(`selArmEsquerda2`).value,
-    }
-    var feiticos = {
-        idFeitico1: document.getElementById(`selMag1`).value,
-        idFeitico2: document.getElementById(`selMag2`).value,
-        idFeitico3: document.getElementById(`selMag3`).value,
-        idFeitico4: document.getElementById(`selMag4`).value,
-    }
-   
-    var armaduras = {
-        idArmCabeca: document.getElementById(`selArmCabeca`).value,
-        idArmTorso: document.getElementById(`selArmTorso`).value,
-        idArmMao: document.getElementById(`selArmMao`).value,
-        idArmPerna: document.getElementById(`selArmPerna`).value,
-    }
 
-    var anel = {
-        idAnel1: document.getElementById(`selAnel1`).value,
-        idAnel2: document.getElementById(`selAnel2`).value,
-        idAnel3: document.getElementById(`selAnel3`).value,
-        idAnel4: document.getElementById(`selAnel4`).value,
-    }
+    var armas = [
+        document.getElementById(`selArmDireita`).value,
+        document.getElementById(`selArmEsquerda`).value,
+        document.getElementById(`selArmDireita2`).value,
+        document.getElementById(`selArmEsquerda2`).value,
+    ]
+    var feiticos = [
+        document.getElementById(`selMag1`).value,
+        document.getElementById(`selMag2`).value,
+        document.getElementById(`selMag3`).value,
+        document.getElementById(`selMag4`).value,
+    ]
+
+    var armaduras = [
+        document.getElementById(`selArmCabeca`).value,
+        document.getElementById(`selArmTorso`).value,
+        document.getElementById(`selArmMao`).value,
+        document.getElementById(`selArmPerna`).value,
+    ]
+
+    var anel = [
+        document.getElementById(`selAnel1`).value,
+        document.getElementById(`selAnel2`).value,
+        document.getElementById(`selAnel3`).value,
+        document.getElementById(`selAnel4`).value,
+    ]
 
     if (sessionStorage.ID_USUARIO != undefined) {
 
@@ -402,16 +397,15 @@ function salvarBuild() {
             },
             body: JSON.stringify({
                 nomeBuildServer: nomeBuild,
+                Level: Level,
                 Atributos: Atr,
                 ArmadurasServer: armaduras,
                 ArmasServer: armas,
                 AneisServer: anel,
                 FeiticosServer: feiticos
-            })
-        }).then(function (resposta) {
-            console.log("ESTOU NO THEN DO entrar()!");
-        });
 
+            })
+        });
     } else alert("Para salvar sua build é necessario realizar o login");
 }
 

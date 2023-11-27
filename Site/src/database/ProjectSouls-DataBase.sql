@@ -30,8 +30,8 @@ nome varchar(45)
 create table Atributos (
 fkBuild int,
 fkUser int,
-idAtr int,
-primary key (fkBuild, fkUser, idAtr),
+idAtr int auto_increment,
+primary key (idAtr, fkBuild, fkUser),
 Nivel int,
 Vigor int,
 Conhecimento int,
@@ -71,7 +71,7 @@ buff decimal(4,3)
 );
 
 create table Armaduras (
-idArmaduras int,
+idArmaduras int primary key auto_increment,
 nome varchar(45),
 tipo varchar(45),
 peso decimal(3,1),
@@ -86,7 +86,7 @@ create table Anel (
 idAnel int primary key auto_increment,
 nome varchar(50),
 peso decimal(3,1),
-efeito varchar(80)
+efeito text
 );
 
 create table ArmaXBuild (
@@ -711,11 +711,6 @@ insert into Anel values
 (null, 'Blue Tearstone Ring', 1.1, 'Diminui o dano recebido em 20% quando o HP estiver abaixo de 20% contra inimigos e 15% contra outros players'),
 (null, 'Calamity Ring', 0.8, 'Reduz a absorção de inimigos 100%');
 
-select * from Armas;
-select * from Feiticos;
-select * from Conquista;
-select * from Usuario;
-select * from UserXConquista;
 
 
 -- Usuário

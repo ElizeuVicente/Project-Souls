@@ -24,7 +24,7 @@ function listarFeitico(req, res) {
     });
 }
 
-function salvarBuild(req,res) {
+function salvarBuild(req, res) {
     var nomeBuild = req.body.nomeBuildServer;
     var idUser = req.params.idUser;
     var Arma = req.body.ArmasServer;
@@ -32,6 +32,7 @@ function salvarBuild(req,res) {
     var Anel = req.body.AneisServer;
     var Feitico = req.body.FeiticosServer;
     var Atributos = req.body.Atributos;
+    var Level = req.body.Level;
 
     // Faça as validações dos valores
     if (nomeBuild == undefined) {
@@ -44,7 +45,15 @@ function salvarBuild(req,res) {
         buildModel.salvarBuild(idUser, nomeBuild)
             .then(
                 function (resultado) {
-                    buildModel.salvarArma(idUser, resultado.insertId, Arma)
+                    for (var i = 0; i < 4; i++) {
+                        if (Arma[i] > -1) buildModel.salvarArma(idUser, resultado.insertId, Arma[i], i + 1)
+                        if (Feitico[i] > -1) buildModel.salvarFeitico(idUser, resultado.insertId, Feitico[i], i + 1)
+                        if (Armadura[i] > -1) buildModel.salvarArmadura(idUser, resultado.insertId, Armadura[i], i + 1)
+                        if (Anel[i] > -1) buildModel.salvarAnel(idUser, resultado.insertId, Anel[i], i + 1)
+
+
+                    }
+                    buildModel.salvarAtributo(idUser, resultado.insertId, Level, Atributos[0], Atributos[1], Atributos[2], Atributos[3], Atributos[4], Atributos[5], Atributos[6], Atributos[7], Atributos[8])
                     res.json(resultado);
                 }
             ).catch(
@@ -66,5 +75,5 @@ module.exports = {
     listarFeitico,
     listarAnel,
     listarArmadura,
-    salvarBuild
+    salvarBuild,
 };

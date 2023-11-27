@@ -1,10 +1,48 @@
 var database = require("../database/config");
 
-function salvarArma(idUser, idBuild, Arma) {
+function salvarArma(idUser, idBuild, Arma, Slot) {
     var instrucaoSQL = `
-    insert into ArmaxBuild values 
+    insert into ArmaxBuild values (${Arma}, ${idBuild}, ${idUser}, ${Slot})
     `
+    console.log("Executando a instrução SQL: \n" + instrucaoSQL);
+    return database.executar(instrucaoSQL);
 }
+
+function salvarFeitico(idUser, idBuild, Feitico, Slot) {
+    var instrucaoSQL = `
+    insert into FeiticoxBuild values (${Feitico}, ${idBuild}, ${idUser}, ${Slot})
+    `
+    console.log("Executando a instrução SQL: \n" + instrucaoSQL);
+    return database.executar(instrucaoSQL);
+}
+
+function salvarAnel(idUser, idBuild, Anel, Slot) {
+    var instrucaoSQL = `
+    insert into AnelxBuild values (${Anel}, ${idBuild}, ${idUser}, ${Slot})
+    `
+    console.log("Executando a instrução SQL: \n" + instrucaoSQL);
+    return database.executar(instrucaoSQL);
+}
+
+function salvarArmadura(idUser, idBuild, Armadura, Slot) {
+    var instrucaoSQL = `
+    insert into ArmaduraxBuild values (${Armadura}, ${idBuild}, ${idUser}, ${Slot})
+    `
+    console.log("Executando a instrução SQL: \n" + instrucaoSQL);
+    return database.executar(instrucaoSQL);
+}
+
+function salvarAtributo(idUser, idBuild, Level, Vigor, Conhecimento, Fortitude, Vitalidade, Forca, Destreza, Inteligencia, Fe, Sorte) {
+    var instrucaoSQL = `
+    insert into Atributos values (${idBuild}, ${idUser}, null, ${Level}, ${Vigor}, ${Conhecimento}, ${Fortitude}, ${Vitalidade}, ${Forca}, ${Destreza}, ${Inteligencia}, ${Fe}, ${Sorte})
+    `
+    console.log("Executando a instrução SQL: \n" + instrucaoSQL);
+    return database.executar(instrucaoSQL);
+}
+
+
+
+
 
 function salvarBuild(idUser, nomeBuild) {
     var instrucaoSQL = `insert into Build (fkUser, nome) values (${idUser}, '${nomeBuild}');`
@@ -46,5 +84,10 @@ module.exports = {
     listarFeitico,
     listarAnel,
     listarArmadura,
-    salvarBuild
+    salvarBuild,
+    salvarArma,
+    salvarFeitico,
+    salvarAnel,
+    salvarArmadura,
+    salvarAtributo
 };
