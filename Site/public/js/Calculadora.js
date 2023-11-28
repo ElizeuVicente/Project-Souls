@@ -10,7 +10,11 @@ var Fe = 10;
 var Sort = 10;
 var AlmasC = 0;
 
-var Hp = 403
+var Hp = 403;
+var Fp = 93;
+var Stamina = 91;
+var EquipLoad = 50;
+var EquipLoadI = 0
 
 var Atr = [Vigo, Conh, Forti, Vita, Forc, Dest, Inte, Fe, Sort];
 
@@ -38,11 +42,11 @@ function lvDownVigo() {
         Vigo = Vigo - 1;
         lvVigor.innerHTML = Vigo;
         Atr[0] = Vigo;
+        
         if (Vigo < 15) Hp -= 35
         else if (Vigo < 26) Hp -= 44
         else if (Vigo < 44) Hp -= 15
         else Hp -= 2
-
         document.getElementById('spanHp').innerHTML = Hp
     }
     if (Level > 1 && Vigo >= 10) {
@@ -62,6 +66,12 @@ function lvUpConh() {
         spanLevel.innerHTML = ` ${Level}`;
         spanLevelStats.innerHTML = ` ${Level}`;
         Atr[1] = Conh;
+
+        if (Conh < 28) Fp += 5
+        else if (Conh <= 35) Fp += 10
+        else  Fp += 2
+
+        document.getElementById('spanFp').innerHTML = Fp
     }
     calcularAlmasC()
 }
@@ -70,6 +80,12 @@ function lvDownConh() {
         Conh = Conh - 1;
         lvConhecimento.innerHTML = Conh;
         Atr[1] = Conh;
+
+        if (Conh < 28) Fp -= 5
+        else if (Conh <= 35) Fp -= 10
+        else  Fp -= 2
+
+        document.getElementById('spanFp').innerHTML = Fp
     }
     if (Level > 1 && Conh >= 10) {
         Level = Level - 1;
@@ -88,6 +104,12 @@ function lvUpForti() {
         spanLevel.innerHTML = ` ${Level}`;
         spanLevelStats.innerHTML = ` ${Level}`;
         Atr[2] = Forti;
+
+        if (Forti < 40) Stamina += 2
+        EquipLoad++
+        
+        document.getElementById('spanEquipLoad').innerHTML = EquipLoad;
+        document.getElementById('spanStamina').innerHTML = `${EquipLoadI}(${Stamina})`;
     }
     calcularAlmasC()
 }
@@ -96,6 +118,12 @@ function lvDownForti() {
         Forti = Forti - 1;
         lvFortitude.innerHTML = Forti
         Atr[2] = Forti;
+
+        if (Forti < 40) Stamina -= 2
+        EquipLoad--
+        
+        document.getElementById('spanEquipLoad').innerHTML = `${EquipLoadI}(${Stamina})`;
+        document.getElementById('spanStamina').innerHTML = Stamina;
     }
     if (Level > 1 && Forti >= 10) {
         Level = Level - 1;
@@ -278,14 +306,6 @@ function calcularAlmasC() {
     }
     spanCustoAlma.innerHTML = ` ${AlmasC.toFixed()}`;
 }
-
-
-
-
-
-
-
-
 
 function listar() {
     listarArma()

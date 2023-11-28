@@ -56,28 +56,28 @@ function listarMetricas() {
 }
 
 function listarArma() {
-    var query = `select * from Armas;`
+    var query = `select idArma, nome, tipo from Armas;`
 
     console.log("Executando a instrução SQL: \n" + query);
     return database.executar(query);
 }
 
 function listarFeitico() {
-    var query = `select * from Feiticos;`
+    var query = `select idFeitico, nome, tipo from Feiticos;`
 
     console.log("Executando a instrução SQL: \n" + query);
     return database.executar(query);
 }
 
 function listarAnel() {
-    var query = `select * from Anel;`
+    var query = `select idAnel, nome from Anel;`
 
     console.log("Executando a instrução SQL: \n" + query);
     return database.executar(query);
 }
 
 function listarArmadura() {
-    var query = `select * from Armaduras;`
+    var query = `select idArmaduras, nome, tipo from Armaduras;`
 
     console.log("Executando a instrução SQL: \n" + query);
     return database.executar(query);
