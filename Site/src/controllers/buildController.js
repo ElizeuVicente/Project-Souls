@@ -69,6 +69,12 @@ function salvarBuild(req, res) {
     }
 }
 
+function listarMetricas(req, res) {
+    buildModel.listarMetricas().then((resposta) => {
+        res.status(200).json(resposta);
+    });
+}
+
 
 module.exports = {
     listarArma,
@@ -76,4 +82,5 @@ module.exports = {
     listarAnel,
     listarArmadura,
     salvarBuild,
+    listarMetricas
 };

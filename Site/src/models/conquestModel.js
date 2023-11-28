@@ -3,7 +3,8 @@ var database = require("../database/config");
 
 function realizarConquest(idUser, conquest) {
     instrucaoSql = `
-    insert into UserXConquista (fkUser, fkConquista) values
+    delete from UserXConquista where fkUser = ${idUser} and fkConquista ;
+    insert into UserXConquista (fkUser, fkConquista) values;
     `
     for (var i = 0; i < conquest.length - 1; i++) {
         instrucaoSql += `('${idUser}' ,'${conquest[i]}'),`
@@ -20,6 +21,8 @@ function carregarConquest(idUsuario) {
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
+
+
 module.exports = {
     realizarConquest,
     carregarConquest

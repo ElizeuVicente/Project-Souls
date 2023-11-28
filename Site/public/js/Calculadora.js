@@ -270,11 +270,43 @@ let Atr = [Vigo, Conh, Forti, Vita, Forc, Dest, Inte, Fe, Sort];
 
 
 
+
 function listar() {
-    listarArma(),
-        listarArmadura(),
-        listarAnel(),
-        listarFeitico()
+    /* listarArma()
+    listarArmadura()
+    listarAnel()
+    listarFeitico() */
+    listarMetricas()
+}
+
+function listarMetricas() {
+
+    var MetAtr = []
+    
+    fetch("/build/listarMetricas", {
+        method: "GET",
+    })
+        .then(function (resposta) {
+            resposta.json().then((resposta) => {
+                console.log(resposta)
+                MetAtr.push(resposta[0].Vigor)
+                MetAtr.push(resposta[0].Conhecimento)
+                MetAtr.push(resposta[0].Fortitude)
+                MetAtr.push(resposta[0].Vitalidade)
+                MetAtr.push(resposta[0].Forca)
+                MetAtr.push(resposta[0].Destreza)
+                MetAtr.push(resposta[0].Inteligencia)
+                MetAtr.push(resposta[0].Fe)
+                MetAtr.push(resposta[0].Sorte)
+                chartAtr.date.datasets[1].data = MetAtr
+                chartAtr.update() 
+
+            });
+        })
+        .catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+    return MetAtr;
 }
 
 function listarArma() {

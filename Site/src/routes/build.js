@@ -11,6 +11,10 @@ router.post("/salvarBuild/:idUser", function(req,res) {
     buildController.salvarBuild(req, res);
 });
 
+router.get("/listarMetricas", function (req, res) {
+    buildController.listarMetricas(req, res);
+});
+
 router.get("/listarArma", function (req, res) {
     buildController.listarArma(req, res);
 });

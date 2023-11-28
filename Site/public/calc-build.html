@@ -400,6 +400,8 @@
 <script src="./js/Calculadora.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
+    
+    
     const AtrCtx = document.getElementById('myChart');
 
     var chartAtr = new Chart(AtrCtx, {
@@ -416,7 +418,7 @@
 
             }, {
                 label: 'Atributo recomendado',
-                data: [40, 40, 40, 40, 40, 40, 40, 40, 99],
+                data: listarMetricas(),
                 borderColor: "#D0D0D0",
                 backgroundColor: "#d0d0d0ba",
                 borderWidth: 3,
