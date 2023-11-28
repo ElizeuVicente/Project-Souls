@@ -1,14 +1,18 @@
-let Level = 1;
-let Vigo = 10;
-let Conh = 10;
-let Forti = 10;
-let Vita = 10;
-let Forc = 10;
-let Dest = 10;
-let Inte = 10;
-let Fe = 10;
-let Sort = 10;
-let AlmasC = 0;
+var Level = 1;
+var Vigo = 10;
+var Conh = 10;
+var Forti = 10;
+var Vita = 10;
+var Forc = 10;
+var Dest = 10;
+var Inte = 10;
+var Fe = 10;
+var Sort = 10;
+var AlmasC = 0;
+
+var Hp = 403
+
+var Atr = [Vigo, Conh, Forti, Vita, Forc, Dest, Inte, Fe, Sort];
 
 function lvUpVigo() {
     if (Vigo < 99) {
@@ -19,6 +23,13 @@ function lvUpVigo() {
         spanLevelStats.innerHTML = ` ${Level}`;
         spanLevelStats.innerHTML = ` ${Level}`
         Atr[0] = Vigo;
+
+        if (Vigo < 15) Hp += 35
+        else if (Vigo < 26) Hp += 44
+        else if (Vigo < 44) Hp += 15
+        else Hp += 2
+
+        document.getElementById('spanHp').innerHTML = Hp
     }
     calcularAlmasC()
 }
@@ -27,6 +38,12 @@ function lvDownVigo() {
         Vigo = Vigo - 1;
         lvVigor.innerHTML = Vigo;
         Atr[0] = Vigo;
+        if (Vigo < 15) Hp -= 35
+        else if (Vigo < 26) Hp -= 44
+        else if (Vigo < 44) Hp -= 15
+        else Hp -= 2
+
+        document.getElementById('spanHp').innerHTML = Hp
     }
     if (Level > 1 && Vigo >= 10) {
         Level = Level - 1;
@@ -262,7 +279,6 @@ function calcularAlmasC() {
     spanCustoAlma.innerHTML = ` ${AlmasC.toFixed()}`;
 }
 
-let Atr = [Vigo, Conh, Forti, Vita, Forc, Dest, Inte, Fe, Sort];
 
 
 
@@ -272,17 +288,17 @@ let Atr = [Vigo, Conh, Forti, Vita, Forc, Dest, Inte, Fe, Sort];
 
 
 function listar() {
-    /* listarArma()
+    listarArma()
     listarArmadura()
     listarAnel()
-    listarFeitico() */
+    listarFeitico()
     listarMetricas()
 }
 
 function listarMetricas() {
 
     var MetAtr = []
-    
+
     fetch("/build/listarMetricas", {
         method: "GET",
     })
@@ -299,7 +315,7 @@ function listarMetricas() {
                 MetAtr.push(resposta[0].Fe)
                 MetAtr.push(resposta[0].Sorte)
                 chartAtr.date.datasets[1].data = MetAtr
-                chartAtr.update() 
+                chartAtr.update()
 
             });
         })
@@ -439,22 +455,6 @@ function salvarBuild() {
             })
         });
     } else alert("Para salvar sua build é necessario realizar o login");
-}
 
-function salvarAtritubos() {
-    var idUser = sessionStorage.ID_USUARIO;
-
-
-    fetch(`/build/salvarAtributos/${idUser}`, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            nomeBuildServer: nomeBuild,
-            Atributos: Atr
-        })
-    }).then(function (resposta) {
-        console.log("ESTOU NO THEN DO entrar()!");
-    });
+    window.location = "./index.html";
 }
