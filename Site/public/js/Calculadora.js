@@ -14,7 +14,22 @@ var Hp = 403;
 var Fp = 93;
 var Stamina = 91;
 var EquipLoad = 50;
-var EquipLoadI = 0
+var Peso = 0;
+
+var DanoArmaD = Forc * (Forc - 9);
+var DanoArmaE = Forc * (Forc - 9);
+var DanoArmaD2 = Forc * (Forc - 9);
+var DanoArmaE2 = Forc * (Forc - 9);
+
+var ResFisica = Vita * (Vita - 9);
+var ResMagica = Vita * (Vita - 9);
+var ResFlamejante = Vita * (Vita - 9);
+var ResEletrica = Vita * (Vita - 9);
+
+var DanoFisico = 0;
+var DanoMagico = 0;
+var DanoFlamejante = 0;
+var DanoEletrica = 0;
 
 var Atr = [Vigo, Conh, Forti, Vita, Forc, Dest, Inte, Fe, Sort];
 
@@ -42,7 +57,7 @@ function lvDownVigo() {
         Vigo = Vigo - 1;
         lvVigor.innerHTML = Vigo;
         Atr[0] = Vigo;
-        
+
         if (Vigo < 15) Hp -= 35
         else if (Vigo < 26) Hp -= 44
         else if (Vigo < 44) Hp -= 15
@@ -69,7 +84,7 @@ function lvUpConh() {
 
         if (Conh < 28) Fp += 5
         else if (Conh <= 35) Fp += 10
-        else  Fp += 2
+        else Fp += 2
 
         document.getElementById('spanFp').innerHTML = Fp
     }
@@ -83,7 +98,7 @@ function lvDownConh() {
 
         if (Conh < 28) Fp -= 5
         else if (Conh <= 35) Fp -= 10
-        else  Fp -= 2
+        else Fp -= 2
 
         document.getElementById('spanFp').innerHTML = Fp
     }
@@ -107,9 +122,9 @@ function lvUpForti() {
 
         if (Forti < 40) Stamina += 2
         EquipLoad++
-        
+
         document.getElementById('spanEquipLoad').innerHTML = EquipLoad;
-        document.getElementById('spanStamina').innerHTML = `${EquipLoadI}(${Stamina})`;
+        document.getElementById('spanStamina').innerHTML = `${Peso}(${Stamina})`;
     }
     calcularAlmasC()
 }
@@ -121,8 +136,8 @@ function lvDownForti() {
 
         if (Forti < 40) Stamina -= 2
         EquipLoad--
-        
-        document.getElementById('spanEquipLoad').innerHTML = `${EquipLoadI}(${Stamina})`;
+
+        document.getElementById('spanEquipLoad').innerHTML = `${Peso}(${Stamina})`;
         document.getElementById('spanStamina').innerHTML = Stamina;
     }
     if (Level > 1 && Forti >= 10) {
@@ -477,4 +492,44 @@ function salvarBuild() {
     } else alert("Para salvar sua build é necessario realizar o login");
 
     window.location = "./index.html";
+}
+
+
+function selectArmDireita() {
+    var ArmDireita = document.getElementById(`selArmDireita`).value;
+
+    if (ArmDireita != undefined) {
+        fetch("/build/selectArmDireita", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                ArmDireitaServer: ArmDireita
+            })
+        }).then(function (resultado) {
+            console.log("ESTOU NO THEN DO selectArmDireita()!");
+
+            if (resultado.ok) {
+                console.log(resultado);
+
+                resultado.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    DanoArmaD = json.DanoFisico + json.DanoMagico + json.DanoFlamejante + json.DanoEletrico + Forc * (Forc - 9);
+                    Peso += json.peso 
+
+                });
+
+            } else {
+                console.log("Houve um erro ao tentar realizar a busca da Arma direita");
+
+                resultado.text().then(texto => {
+                    console.error(texto);
+                });
+            }
+        }).catch(function (erro) {
+            console.log(erro);
+        });
+    }
 }

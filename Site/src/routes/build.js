@@ -3,6 +3,11 @@ var router = express.Router();
 
 var buildController = require("../controllers/buildController");
 
+router.post("/selectArmDireita", function(req,res) {
+    buildController.selectArmDireita(req, res);
+});
+
+
 router.post("/salvarAtributos/:idUser", function(req,res) {
     buildController.salvarAtributos(req, res);
 });
@@ -10,6 +15,8 @@ router.post("/salvarAtributos/:idUser", function(req,res) {
 router.post("/salvarBuild/:idUser", function(req,res) {
     buildController.salvarBuild(req, res);
 });
+
+
 
 router.get("/listarMetricas", function (req, res) {
     buildController.listarMetricas(req, res);

@@ -1,5 +1,13 @@
 var database = require("../database/config");
 
+function selectArmDireita(ArmDireita) {
+    var instrucaoSQL = `
+    select tipo, peso, DanoFisico, DanoMagico, DanoFlamejante, DanoEletrico from Armas where idArma = ${ArmDireita}; 
+    `
+}
+
+
+
 function salvarArma(idUser, idBuild, Arma, Slot) {
     var instrucaoSQL = `
     insert into ArmaxBuild values (${Arma}, ${idBuild}, ${idUser}, ${Slot})
@@ -48,6 +56,7 @@ function salvarBuild(idUser, nomeBuild) {
 }
 
 
+
 function listarMetricas() {
     var query = `select round(avg(Vigor)) as Vigor, round(avg(Conhecimento)) as Conhecimento, round(avg(Fortitude)) as Fortitude, round(avg(Vitalidade)) as Vitalidade, round(avg(Forca)) as Forca, round(avg(Destreza)) as Destreza, round(avg(Inteligencia)) as Inteligencia, round(avg(Fe)) as Fe, round(avg(Sorte)) as Sorte from Atributos;`
 
@@ -94,5 +103,6 @@ module.exports = {
     salvarAnel,
     salvarArmadura,
     salvarAtributo,
-    listarMetricas
+    listarMetricas,
+    selectArmDireita
 };

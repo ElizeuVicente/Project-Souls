@@ -24,6 +24,13 @@ function listarFeitico(req, res) {
     });
 }
 
+function listarMetricas(req, res) {
+    buildModel.listarMetricas().then((resposta) => {
+        res.status(200).json(resposta);
+    });
+}
+
+
 function salvarBuild(req, res) {
     var nomeBuild = req.body.nomeBuildServer;
     var idUser = req.params.idUser;
@@ -69,11 +76,28 @@ function salvarBuild(req, res) {
     }
 }
 
-function listarMetricas(req, res) {
-    buildModel.listarMetricas().then((resposta) => {
-        res.status(200).json(resposta);
-    });
+function selectArmDireita(req, res) {
+    var ArmDireita = req.body.ArmDireitaServer;
+
+    buildModel.selectArmDireita(ArmDireita)
+        .then(
+            function (resultado) {
+                if (resultado != undefined || resultado != null) {
+                    res.status(200).json(resultado);
+                    console.log(resultado);
+                    res.json(resultado[0]);
+                } else console.log(`Tem algo undefined`)
+            }
+        ).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("\nHouve um erro ao realizar a seleção de arma! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
 }
+
+
 
 
 module.exports = {
@@ -82,5 +106,6 @@ module.exports = {
     listarAnel,
     listarArmadura,
     salvarBuild,
-    listarMetricas
+    listarMetricas,
+    selectArmDireita,
 };
