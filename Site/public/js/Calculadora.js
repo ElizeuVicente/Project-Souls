@@ -35,11 +35,27 @@ var Atr = [Vigo, Conh, Forti, Vita, Forc, Dest, Inte, Fe, Sort];
 var MetAtr = []
 
 function lvUpVigo() {
-    legendaChart.style.display = `block`
+    legendaChart.style.opacity = `1`
     legendaChart.innerHTML = `
     A média de nivels de atributos usadas pelos usuarios são:<br>
-    Vigor: ${MetAtr[0]}, Conhecimento: ${MetAtr[1]}, Fortitude: ${MetAtr[2]}, Vitalidade: ${MetAtr[3]}, Força: ${MetAtr[4]}<br>
-    Fé: ${MetAtr[5]}, Inteligencia: ${MetAtr[6]}, Fé: ${MetAtr[7]}, Sorte: ${MetAtr[8]}
+    <div>
+        <div>Vigor: ${MetAtr[0]}</div> 
+        <div>Conhecimento: ${MetAtr[1]}</div>
+        <div>Fortitude: ${MetAtr[2]}</div>
+    </div>
+    
+    
+    <div>
+        <div>Vitalidade: ${MetAtr[3]}</div>
+        <div>Força: ${MetAtr[4]}</div>
+        <div>Destreza: ${MetAtr[5]}</div>
+    </div>
+
+    <div>
+        <div>Inteligencia: ${MetAtr[6]}</div>
+        <div>Fé: ${MetAtr[7]}</div>
+        <div>Sorte: ${MetAtr[8]}</div>
+    </div>
     `
     
     
@@ -336,7 +352,6 @@ function listar() {
     listarArmadura()
     listarAnel()
     listarFeitico()
-    listarMetricas()
 }
 
 function listarMetricas() {
@@ -358,7 +373,6 @@ function listarMetricas() {
                 MetAtr.push(resposta[0].Inteligencia)
                 MetAtr.push(resposta[0].Fe)
                 MetAtr.push(resposta[0].Sorte)
-                chartAtr.date.datasets[1].data = MetAtr
                 chartAtr.update()
                 
             });

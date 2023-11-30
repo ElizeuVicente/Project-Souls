@@ -8,6 +8,7 @@ body {
     width: 100%;
     display: flex;
     justify-content: center;
+    height: 500px;
 }
 
 .Status .container-status {
@@ -19,7 +20,7 @@ body {
 
 .Status .container-status .chart-atributos {
     width: 400px;
-    height: 500px;
+    height: fit-content;
     align-items: center;
     display: flex;
 }
@@ -205,6 +206,12 @@ body {
 #legendaChart {
     color: #D0D0D0;
     text-align: center;
+    width: 400px;
+    opacity: 0;
+}
+
+#legendaChart div {
+    display: flex;
+    justify-content: space-between;
     width: 100%;
-    display: none;
 }
