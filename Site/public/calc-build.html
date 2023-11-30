@@ -60,7 +60,7 @@
     </div>
     <!--Atributos-->
     <div class="calc-build">
-        
+
 
         <div class="Title">
             <div>
@@ -154,8 +154,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="chart-atributos">
-                    <canvas id="myChart"></canvas>
+                <div>
+                    <div class="chart-atributos">
+                        <canvas id="myChart"></canvas>
+                    </div>
+                    <div id="legendaChart"></div>
                 </div>
             </div>
         </div>
@@ -400,8 +403,8 @@
 <script src="./js/Calculadora.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-    
-    
+
+
     const AtrCtx = document.getElementById('myChart');
 
     var chartAtr = new Chart(AtrCtx, {
@@ -417,7 +420,7 @@
                 pointHoverBackgroundColor: '#0d0d0d',
 
             }, {
-                label: 'Atributo recomendado',
+                label: 'Nivel de atributo recomendado',
                 data: listarMetricas(),
                 borderColor: "#D0D0D0",
                 backgroundColor: "#d0d0d0ba",

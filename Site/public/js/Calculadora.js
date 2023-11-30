@@ -32,8 +32,17 @@ var DanoFlamejante = 0;
 var DanoEletrica = 0;
 
 var Atr = [Vigo, Conh, Forti, Vita, Forc, Dest, Inte, Fe, Sort];
+var MetAtr = []
 
 function lvUpVigo() {
+    legendaChart.style.display = `block`
+    legendaChart.innerHTML = `
+    A média de nivels de atributos usadas pelos usuarios são:<br>
+    Vigor: ${MetAtr[0]}, Conhecimento: ${MetAtr[1]}, Fortitude: ${MetAtr[2]}, Vitalidade: ${MetAtr[3]}, Força: ${MetAtr[4]}<br>
+    Fé: ${MetAtr[5]}, Inteligencia: ${MetAtr[6]}, Fé: ${MetAtr[7]}, Sorte: ${MetAtr[8]}
+    `
+    
+    
     if (Vigo < 99) {
         Vigo++;
         Level++;
@@ -332,7 +341,7 @@ function listar() {
 
 function listarMetricas() {
 
-    var MetAtr = []
+    
 
     fetch("/build/listarMetricas", {
         method: "GET",
@@ -351,12 +360,15 @@ function listarMetricas() {
                 MetAtr.push(resposta[0].Sorte)
                 chartAtr.date.datasets[1].data = MetAtr
                 chartAtr.update()
+                
             });
         })
         .catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
         });
     return MetAtr;
+
+    
 }
 
 function listarArma() {
