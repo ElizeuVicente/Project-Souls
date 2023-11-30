@@ -1,6 +1,22 @@
 create database ProjectSouls;
 use ProjectSouls;
 
+select * from Usuario;
+select * from Conquista;
+select * from UserXConquista;
+
+select * from Build;
+select * from Atributos;
+select * from ArmaXBuild;
+select * from FeiticoXBuild;
+select * from ArmaduraXBuild;
+select * from AnelXBuild;
+
+select * from Armas;
+select * from Feiticos;
+select * from Armaduras;
+select * from Anel;
+
 create table Usuario (
 idUser int primary key auto_increment,
 nome varchar(30),
@@ -44,6 +60,7 @@ Fe int,
 Sorte int
 );
 
+select * from Atributos;
 
 create table Armas (
 idArma int primary key auto_increment,
@@ -732,3 +749,33 @@ grant INSERT, DELETE, SELECT, UPDATE on ProjectSouls.Atributos to 'UserProjectSo
 grant INSERT, DELETE, SELECT, UPDATE on ProjectSouls.Build to 'UserProjectSouls'@'localhost';
 
 flush privileges;
+
+-- Selects
+
+select count(Vigor), Vigor from Atributos group by Vigor 
+order by Vigor
+limit 1;
+select count(Conhecimento), Conhecimento from Atributos group by Conhecimento 
+order by Conhecimento
+limit 1;
+select count(Fortitude), Fortitude from Atributos group by Fortitude 
+order by Fortitude
+limit 1;
+select count(Vitalidade), Vitalidade from Atributos group by Vitalidade 
+order by Vitalidade
+limit 1;
+select count(Forca), Forca from Atributos group by Forca 
+order by Forca
+limit 1;
+select count(Destreza), Destreza from Atributos group by Destreza 
+order by Destreza
+limit 1;
+select count(Inteligencia), Inteligencia from Atributos group by Inteligencia 
+order by Inteligencia
+limit 1;
+select count(Fe), Fe from Atributos group by Fe 
+order by Fe
+limit 1;
+select count(Sorte), Sorte from Atributos group by Sorte 
+order by Sorte
+limit 1;

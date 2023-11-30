@@ -58,7 +58,9 @@ function salvarBuild(idUser, nomeBuild) {
 
 
 function listarMetricas() {
-    var query = `select round(avg(Vigor)) as Vigor, round(avg(Conhecimento)) as Conhecimento, round(avg(Fortitude)) as Fortitude, round(avg(Vitalidade)) as Vitalidade, round(avg(Forca)) as Forca, round(avg(Destreza)) as Destreza, round(avg(Inteligencia)) as Inteligencia, round(avg(Fe)) as Fe, round(avg(Sorte)) as Sorte from Atributos;`
+    var query = `
+    select round(avg(Vigor)) as Vigor, round(avg(Conhecimento)) as Conhecimento, round(avg(Fortitude)) as Fortitude, round(avg(Vitalidade)) as Vitalidade, round(avg(Forca)) as Forca, round(avg(Destreza)) as Destreza, round(avg(Inteligencia)) as Inteligencia, round(avg(Fe)) as Fe, round(avg(Sorte)) as Sorte from Atributos;
+    `
 
     console.log("Executando a instrução SQL: \n" + query);
     return database.executar(query);

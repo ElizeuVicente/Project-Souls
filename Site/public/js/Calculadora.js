@@ -123,8 +123,8 @@ function lvUpForti() {
         if (Forti < 40) Stamina += 2
         EquipLoad++
 
-        document.getElementById('spanEquipLoad').innerHTML = EquipLoad;
-        document.getElementById('spanStamina').innerHTML = `${Peso}(${Stamina})`;
+        document.getElementById('spanEquipLoad').innerHTML = `${Peso}(${EquipLoad})`;
+        document.getElementById('spanStamina').innerHTML = Stamina;
     }
     calcularAlmasC()
 }
@@ -137,7 +137,7 @@ function lvDownForti() {
         if (Forti < 40) Stamina -= 2
         EquipLoad--
 
-        document.getElementById('spanEquipLoad').innerHTML = `${Peso}(${Stamina})`;
+        document.getElementById('spanEquipLoad').innerHTML = `${Peso}(${EquipLoad})`;;
         document.getElementById('spanStamina').innerHTML = Stamina;
     }
     if (Level > 1 && Forti >= 10) {
@@ -351,7 +351,6 @@ function listarMetricas() {
                 MetAtr.push(resposta[0].Sorte)
                 chartAtr.date.datasets[1].data = MetAtr
                 chartAtr.update()
-
             });
         })
         .catch(function (resposta) {
@@ -499,37 +498,31 @@ function selectArmDireita() {
     var ArmDireita = document.getElementById(`selArmDireita`).value;
 
     if (ArmDireita != undefined) {
-        fetch("/build/selectArmDireita", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                ArmDireitaServer: ArmDireita
-            })
-        }).then(function (resultado) {
-            console.log("ESTOU NO THEN DO selectArmDireita()!");
+        fetch(`/build/selectArmDireita/${ArmDireita}`,
+            { cache: 'no-store' })
+            .then(function (resultado) {
+                console.log("ESTOU NO THEN DO selectArmDireita()!");
 
-            if (resultado.ok) {
-                console.log(resultado);
+                if (resultado.ok) {
+                    console.log(resultado);
 
-                resultado.json().then(json => {
-                    console.log(json);
-                    console.log(JSON.stringify(json));
-                    DanoArmaD = json.DanoFisico + json.DanoMagico + json.DanoFlamejante + json.DanoEletrico + Forc * (Forc - 9);
-                    Peso += json.peso 
+                    resultado.json().then(json => {
+                        console.log(json);
+                        console.log(JSON.stringify(json));
+                        DanoArmaD = json.DanoFisico + json.DanoMagico + json.DanoFlamejante + json.DanoEletrico;
+                        Peso += json.peso
 
-                });
+                    });
 
-            } else {
-                console.log("Houve um erro ao tentar realizar a busca da Arma direita");
+                } else {
+                    console.log("Houve um erro ao tentar realizar a busca da Arma direita");
 
-                resultado.text().then(texto => {
-                    console.error(texto);
-                });
-            }
-        }).catch(function (erro) {
-            console.log(erro);
-        });
+                    resultado.text().then(texto => {
+                        console.error(texto);
+                    });
+                }
+            }).catch(function (erro) {
+                console.log(erro);
+            });
     }
 }

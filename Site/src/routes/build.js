@@ -3,7 +3,7 @@ var router = express.Router();
 
 var buildController = require("../controllers/buildController");
 
-router.post("/selectArmDireita", function(req,res) {
+router.get("/selectArmDireita/:ArmDireita", function(req,res) {
     buildController.selectArmDireita(req, res);
 });
 

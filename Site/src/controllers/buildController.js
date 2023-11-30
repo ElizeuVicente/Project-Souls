@@ -77,22 +77,12 @@ function salvarBuild(req, res) {
 }
 
 function selectArmDireita(req, res) {
-    var ArmDireita = req.body.ArmDireitaServer;
+    var ArmDireita = req.params.ArmDireita;
 
-    buildModel.selectArmDireita(ArmDireita)
-        .then(
+    buildModel.selectArmDireita(ArmDireita).then(
             function (resultado) {
-                if (resultado != undefined || resultado != null) {
-                    res.status(200).json(resultado);
-                    console.log(resultado);
-                    res.json(resultado[0]);
-                } else console.log(`Tem algo undefined`)
-            }
-        ).catch(
-            function (erro) {
-                console.log(erro);
-                console.log("\nHouve um erro ao realizar a seleção de arma! Erro: ", erro.sqlMessage);
-                res.status(500).json(erro.sqlMessage);
+                res.status(200).json(resultado);
+                console.log(resultado);
             }
         );
 }
