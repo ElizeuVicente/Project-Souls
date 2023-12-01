@@ -1,406 +1,347 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calculadora de Build</title>
-    <link rel="stylesheet" href="./css/calc-build.css" />
-    <link rel="stylesheet" href="./css/header.css" />
-    <link
-      rel="shortcut icon"
-      href="./img/Icon/ShortCutIcon.png"
-      type="image/x-icon"
-    />
-  </head>
 
-  <body onload="listar()">
-    <!--Header-->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora de Build</title>
+  <link rel="stylesheet" href="./css/calc-build.css" />
+  <link rel="stylesheet" href="./css/header.css" />
+  <link rel="shortcut icon" href="./img/Icon/ShortCutIcon.png" type="image/x-icon" />
+</head>
+
+<body onload="listar()">
+  <!--Header-->
+  <div>
+    <div class="header">
+      <div class="container">
+        <div class="navbar">
+          <li>
+            <span>Personagens</span>
+            <ul class="dropdown-personagens">
+              <li onclick="window.location.href = './'">Bosses</li>
+              <li onclick="window.location.href = './'">NPC</li>
+              <li onclick="window.location.href = './'">Inimigos</li>
+            </ul>
+          </li>
+          <li>
+            <span>Conquistas</span>
+            <ul class="dropdown-conquistas">
+              <li onclick="window.location.href = './Conquistas-DS1.html'">
+                Dark Souls I
+              </li>
+              <li onclick="window.location.href = './Conquistas-DS2.html'">
+                Dark Souls II
+              </li>
+              <li onclick="window.location.href = './Conquistas-DS3.html'">
+                Dark Souls III
+              </li>
+            </ul>
+          </li>
+        </div>
+        <a href="./index.html"><img src="./img/Icon/Ricon.png" /></a>
+        <div class="navbar">
+          <li>
+            <span>Equipamentos</span>
+            <ul class="dropdown-equipamentos">
+              <li onclick="window.location.href = './'">Armas</li>
+              <li onclick="window.location.href = './'">Armaduras</li>
+              <li onclick="window.location.href = './'">Feitiços</li>
+              <li onclick="window.location.href = './'">Anéis</li>
+            </ul>
+          </li>
+          <li>
+            <span>Build</span>
+            <ul class="dropdown-build">
+              <li onclick="window.location.href = './calc-build.html'">
+                Calculadora de Build
+              </li>
+              <li onclick="window.location.href = './buildSalva.html'">
+                Builds Salvas
+              </li>
+            </ul>
+          </li>
+        </div>
+      </div>
+      <div class="login"><a href="./login.html">Entrar</a></div>
+    </div>
+  </div>
+  <!--Atributos-->
+  <div class="calc-build">
+    <div class="Title">
+      <div>
+        <h1>Atributos</h1>
+        <p>Nivel:<span id="spanLevel"> 1</span></p>
+      </div>
+    </div>
+    <div class="Status">
+      <div class="container-status">
+        <div class="Atributos">
+          <div class="atrStatus">
+            <p>Vigor</p>
+            <div class="btnAtrSts">
+              <button onclick="lvDownVigo()">-</button>
+              <span id="lvVigor">10</span>
+              <button onclick="lvUpVigo()">+</button>
+            </div>
+          </div>
+
+          <div class="atrStatus">
+            <p>Conhecimento</p>
+            <div class="btnAtrSts">
+              <button onclick="lvDownConh()">-</button>
+              <span id="lvConhecimento">10</span>
+              <button onclick="lvUpConh()">+</button>
+            </div>
+          </div>
+
+          <div class="atrStatus">
+            <p>Fortitude</p>
+            <div class="btnAtrSts">
+              <button onclick="lvDownForti()">-</button>
+              <span id="lvFortitude">10</span>
+              <button onclick="lvUpForti()">+</button>
+            </div>
+          </div>
+
+          <div class="atrStatus">
+            <p>Vitalidade</p>
+            <div class="btnAtrSts">
+              <button onclick="lvDownVita()">-</button>
+              <span id="lvVitalidade">10</span>
+              <button onclick="lvUpVita()">+</button>
+            </div>
+          </div>
+
+          <div class="atrStatus">
+            <p>Força</p>
+            <div class="btnAtrSts">
+              <button onclick="lvDownForc()">-</button>
+              <span id="lvForca">10</span>
+              <button onclick="lvUpForc()">+</button>
+            </div>
+          </div>
+
+          <div class="atrStatus">
+            <p>Destreza</p>
+            <div class="btnAtrSts">
+              <button onclick="lvDownDest()">-</button>
+              <span id="lvDestreza">10</span>
+              <button onclick="lvUpDest()">+</button>
+            </div>
+          </div>
+
+          <div class="atrStatus">
+            <p>Inteligencia</p>
+            <div class="btnAtrSts">
+              <button onclick="lvDownInt()">-</button>
+              <span id="lvInteligencia">10</span>
+              <button onclick="lvUpInt()">+</button>
+            </div>
+          </div>
+
+          <div class="atrStatus">
+            <p>Fé</p>
+            <div class="btnAtrSts">
+              <button onclick="lvDownFe()">-</button>
+              <span id="lvFe">10</span>
+              <button onclick="lvUpFe()">+</button>
+            </div>
+          </div>
+
+          <div class="atrStatus">
+            <p>Sorte</p>
+            <div class="btnAtrSts">
+              <button onclick="lvDownSo()">-</button>
+              <span id="lvSorte">10</span>
+              <button onclick="lvUpSo()">+</button>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="chart-atributos">
+            <canvas id="myChart"></canvas>
+          </div>
+          <div id="legendaChart"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="Title">
+      <h1>Equipamento</h1>
+    </div>
+    <div class="equipamentos">
+      <div class="container">
+        <div class="container-equi">
+          <div class="form-Equi">
+            <h3>Armaduras</h3>
+            <div class="equi-Sel">
+              <p>Cabeça</p>
+              <select id="selArmCabeca">
+                <option value="undefined"></option>
+              </select>
+            </div>
+            <div class="equi-Sel">
+              <p>Torso</p>
+              <select id="selArmTorso">
+                <option value="undefined"></option>
+              </select>
+            </div>
+            <div class="equi-Sel">
+              <p>Mãos</p>
+              <select id="selArmMao">
+                <option value="undefined"></option>
+              </select>
+            </div>
+            <div class="equi-Sel">
+              <p>Pernas</p>
+              <select id="selArmPerna">
+                <option value="undefined"></option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-Equi">
+            <h3>Armas</h3>
+            <div class="equi-Sel">
+              <p>Mão Direita</p>
+              <select onchange="selectArmDireita()" id="selArmDireita">
+                <option value="undefined"></option>
+              </select>
+            </div>
+            <div class="equi-Sel">
+              <p>Mão Esquerda</p>
+              <select onchange="selectArmEsquerda()" id="selArmEsquerda">
+                <option value="undefined"></option>
+              </select>
+            </div>
+            <div class="equi-Sel">
+              <p>Mão Direita 2</p>
+              <select onchange="selectArmDireita2()" id="selArmDireita2">
+                <option value="undefined"></option>
+              </select>
+            </div>
+            <div class="equi-Sel">
+              <p>Mão Esquerda 2</p>
+              <select onchange="selectArmEsquerda2()" id="selArmEsquerda2">
+                <option value="undefined"></option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-equi">
+          <div class="form-Equi">
+            <h3>Anéis</h3>
+            <div class="equi-Sel">
+              <p>Anél 1</p>
+              <select id="selAnel1">
+                <option value="undefined"></option>
+              </select>
+            </div>
+            <div class="equi-Sel">
+              <p>Anél 2</p>
+              <select id="selAnel2">
+                <option value="undefined"></option>
+              </select>
+            </div>
+            <div class="equi-Sel">
+              <p>Anél 3</p>
+              <select id="selAnel3">
+                <option value="undefined"></option>
+              </select>
+            </div>
+            <div class="equi-Sel">
+              <p>Anél 4</p>
+              <select id="selAnel4">
+                <option value="undefined"></option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-Equi">
+            <h3>Feitiços</h3>
+            <div class="equi-Sel">
+              <p>Espaço 1</p>
+              <select id="selMag1">
+                <option value="undefined"></option>
+              </select>
+            </div>
+            <div class="equi-Sel">
+              <p>Espaço 2</p>
+              <select id="selMag2">
+                <option value="undefined"></option>
+              </select>
+            </div>
+            <div class="equi-Sel">
+              <p>Espaço 3</p>
+              <select id="selMag3">
+                <option value="undefined"></option>
+              </select>
+            </div>
+            <div class="equi-Sel">
+              <p>Espaço 4</p>
+              <select id="selMag4">
+                <option value="undefined"></option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="Title">
+      <div>
+        <h1>Status</h1>
+        <p>Nivel:<span id="spanLevelStats"> 1</span></p>
+        <p>Almas Necessarias: <span id="spanCustoAlma"> 673</span></p>
+      </div>
+    </div>
+
+    <div class="resultado-Sts">
+      <div class="container">
+        <div class="Sts">
+          <div class="corpo-Sts">
+            <div class="Sts-Tupla">
+              <p>HP</p>
+              <span id="spanHp">403</span>
+            </div>
+            <div class="Sts-Tupla">
+              <p>FP</p>
+              <span id="spanFp">93</span>
+            </div>
+            <div class="Sts-Tupla">
+              <p>Stamina</p>
+              <span id="spanStamina">91</span>
+            </div>
+            <div class="Sts-Tupla">
+              <p>Carga Max</p>
+              <span id="spanEquipLoad">50</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="Title">
     <div>
-      <div class="header">
-        <div class="container">
-          <div class="navbar">
-            <li>
-              <span>Personagens</span>
-              <ul class="dropdown-personagens">
-                <li onclick="window.location.href = './'">Bosses</li>
-                <li onclick="window.location.href = './'">NPC</li>
-                <li onclick="window.location.href = './'">Inimigos</li>
-              </ul>
-            </li>
-            <li>
-              <span>Conquistas</span>
-              <ul class="dropdown-conquistas">
-                <li onclick="window.location.href = './Conquistas-DS1.html'">
-                  Dark Souls I
-                </li>
-                <li onclick="window.location.href = './Conquistas-DS2.html'">
-                  Dark Souls II
-                </li>
-                <li onclick="window.location.href = './Conquistas-DS3.html'">
-                  Dark Souls III
-                </li>
-              </ul>
-            </li>
-          </div>
-          <a href="./index.html"><img src="./img/Icon/Ricon.png" /></a>
-          <div class="navbar">
-            <li>
-              <span>Equipamentos</span>
-              <ul class="dropdown-equipamentos">
-                <li onclick="window.location.href = './'">Armas</li>
-                <li onclick="window.location.href = './'">Armaduras</li>
-                <li onclick="window.location.href = './'">Feitiços</li>
-                <li onclick="window.location.href = './'">Anéis</li>
-              </ul>
-            </li>
-            <li>
-              <span>Build</span>
-              <ul class="dropdown-build">
-                <li onclick="window.location.href = './calc-build.html'">
-                  Calculadora de Build
-                </li>
-                <li onclick="window.location.href = './buildSalva.html'">
-                  Builds Salvas
-                </li>
-              </ul>
-            </li>
-          </div>
-        </div>
-        <div class="login"><a href="./login.html">Entrar</a></div>
-      </div>
+      <h1>Nome da Build</h1>
+      <p>
+        <input type="text" id="inNomeBuild" />
+      </p>
     </div>
-    <!--Atributos-->
-    <div class="calc-build">
-      <div class="Title">
-        <div>
-          <h1>Atributos</h1>
-          <p>Nivel:<span id="spanLevel"> 1</span></p>
-        </div>
-      </div>
-      <div class="Status">
-        <div class="container-status">
-          <div class="Atributos">
-            <div class="atrStatus">
-              <p>Vigor</p>
-              <div class="btnAtrSts">
-                <button onclick="lvDownVigo()">-</button>
-                <span id="lvVigor">10</span>
-                <button onclick="lvUpVigo()">+</button>
-              </div>
-            </div>
+  </div>
 
-            <div class="atrStatus">
-              <p>Conhecimento</p>
-              <div class="btnAtrSts">
-                <button onclick="lvDownConh()">-</button>
-                <span id="lvConhecimento">10</span>
-                <button onclick="lvUpConh()">+</button>
-              </div>
-            </div>
-
-            <div class="atrStatus">
-              <p>Fortitude</p>
-              <div class="btnAtrSts">
-                <button onclick="lvDownForti()">-</button>
-                <span id="lvFortitude">10</span>
-                <button onclick="lvUpForti()">+</button>
-              </div>
-            </div>
-
-            <div class="atrStatus">
-              <p>Vitalidade</p>
-              <div class="btnAtrSts">
-                <button onclick="lvDownVita()">-</button>
-                <span id="lvVitalidade">10</span>
-                <button onclick="lvUpVita()">+</button>
-              </div>
-            </div>
-
-            <div class="atrStatus">
-              <p>Força</p>
-              <div class="btnAtrSts">
-                <button onclick="lvDownForc()">-</button>
-                <span id="lvForca">10</span>
-                <button onclick="lvUpForc()">+</button>
-              </div>
-            </div>
-
-            <div class="atrStatus">
-              <p>Destreza</p>
-              <div class="btnAtrSts">
-                <button onclick="lvDownDest()">-</button>
-                <span id="lvDestreza">10</span>
-                <button onclick="lvUpDest()">+</button>
-              </div>
-            </div>
-
-            <div class="atrStatus">
-              <p>Inteligencia</p>
-              <div class="btnAtrSts">
-                <button onclick="lvDownInt()">-</button>
-                <span id="lvInteligencia">10</span>
-                <button onclick="lvUpInt()">+</button>
-              </div>
-            </div>
-
-            <div class="atrStatus">
-              <p>Fé</p>
-              <div class="btnAtrSts">
-                <button onclick="lvDownFe()">-</button>
-                <span id="lvFe">10</span>
-                <button onclick="lvUpFe()">+</button>
-              </div>
-            </div>
-
-            <div class="atrStatus">
-              <p>Sorte</p>
-              <div class="btnAtrSts">
-                <button onclick="lvDownSo()">-</button>
-                <span id="lvSorte">10</span>
-                <button onclick="lvUpSo()">+</button>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div class="chart-atributos">
-              <canvas id="myChart"></canvas>
-            </div>
-            <div id="legendaChart"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="Title">
-        <h1>Equipamento</h1>
-      </div>
-      <div class="equipamentos">
-        <div class="container">
-          <div class="container-equi">
-            <div class="form-Equi">
-              <h3>Armaduras</h3>
-              <div class="equi-Sel">
-                <p>Cabeça</p>
-                <select id="selArmCabeca">
-                  <option value="undefined"></option>
-                </select>
-              </div>
-              <div class="equi-Sel">
-                <p>Torso</p>
-                <select id="selArmTorso">
-                  <option value="undefined"></option>
-                </select>
-              </div>
-              <div class="equi-Sel">
-                <p>Mãos</p>
-                <select id="selArmMao">
-                  <option value="undefined"></option>
-                </select>
-              </div>
-              <div class="equi-Sel">
-                <p>Pernas</p>
-                <select id="selArmPerna">
-                  <option value="undefined"></option>
-                </select>
-              </div>
-            </div>
-
-            <div class="form-Equi">
-              <h3>Armas</h3>
-              <div class="equi-Sel">
-                <p>Mão Direita</p>
-                <select onchange="selectArmDireita()" id="selArmDireita">
-                  <option value="undefined"></option>
-                </select>
-              </div>
-              <div class="equi-Sel">
-                <p>Mão Esquerda</p>
-                <select onchange="selectArmEsquerda()" id="selArmEsquerda">
-                  <option value="undefined"></option>
-                </select>
-              </div>
-              <div class="equi-Sel">
-                <p>Mão Direita 2</p>
-                <select onchange="selectArmDireita2()" id="selArmDireita2">
-                  <option value="undefined"></option>
-                </select>
-              </div>
-              <div class="equi-Sel">
-                <p>Mão Esquerda 2</p>
-                <select onchange="selectArmEsquerda2()" id="selArmEsquerda2">
-                  <option value="undefined"></option>
-                </select>
-              </div>
-            </div>
-          </div>
-
-          <div class="container-equi">
-            <div class="form-Equi">
-              <h3>Anéis</h3>
-              <div class="equi-Sel">
-                <p>Anél 1</p>
-                <select id="selAnel1">
-                  <option value="undefined"></option>
-                </select>
-              </div>
-              <div class="equi-Sel">
-                <p>Anél 2</p>
-                <select id="selAnel2">
-                  <option value="undefined"></option>
-                </select>
-              </div>
-              <div class="equi-Sel">
-                <p>Anél 3</p>
-                <select id="selAnel3">
-                  <option value="undefined"></option>
-                </select>
-              </div>
-              <div class="equi-Sel">
-                <p>Anél 4</p>
-                <select id="selAnel4">
-                  <option value="undefined"></option>
-                </select>
-              </div>
-            </div>
-
-            <div class="form-Equi">
-              <h3>Feitiços</h3>
-              <div class="equi-Sel">
-                <p>Espaço 1</p>
-                <select id="selMag1">
-                  <option value="undefined"></option>
-                </select>
-              </div>
-              <div class="equi-Sel">
-                <p>Espaço 2</p>
-                <select id="selMag2">
-                  <option value="undefined"></option>
-                </select>
-              </div>
-              <div class="equi-Sel">
-                <p>Espaço 3</p>
-                <select id="selMag3">
-                  <option value="undefined"></option>
-                </select>
-              </div>
-              <div class="equi-Sel">
-                <p>Espaço 4</p>
-                <select id="selMag4">
-                  <option value="undefined"></option>
-                </select>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="Title">
-        <div>
-          <h1>Status</h1>
-          <p>Nivel:<span id="spanLevelStats"> 1</span></p>
-          <p>Almas Necessarias: <span id="spanCustoAlma"> 673</span></p>
-        </div>
-      </div>
-
-      <div class="resultado-Sts">
-        <div class="container">
-          <div class="Sts">
-            <div class="corpo-Sts">
-              <div class="Sts-Tupla">
-                <p>HP</p>
-                <span id="spanHp">403</span>
-              </div>
-              <div class="Sts-Tupla">
-                <p>FP</p>
-                <span id="spanFp">93</span>
-              </div>
-              <div class="Sts-Tupla">
-                <p>Stamina</p>
-                <span id="spanStamina">91</span>
-              </div>
-              <div class="Sts-Tupla">
-                <p>Equip Load</p>
-                <span id="spanEquipLoad">0(50)</span>
-              </div>
-            </div>
-
-            <div class="corpo-Sts">
-              <div class="Sts-Tupla">
-                <p>Defesa Fisica</p>
-                <span id="spanHp">999</span>
-              </div>
-              <div class="Sts-Tupla">
-                <p>Defesa Magica</p>
-                <span id="spanHp">999</span>
-              </div>
-              <div class="Sts-Tupla">
-                <p>Defesa Flamejante</p>
-                <span id="spanHp">999</span>
-              </div>
-              <div class="Sts-Tupla">
-                <p>Defesa Eletrica</p>
-                <span id="spanHp">999</span>
-              </div>
-            </div>
-          </div>
-          <div class="Sts">
-            <div class="corpo-Sts">
-              <div class="Sts-Tupla">
-                <p>Arma D</p>
-                <span id="spanDanoArmaD">10</span>
-              </div>
-              <div class="Sts-Tupla">
-                <p>Arma E</p>
-                <span id="spanHp">999</span>
-              </div>
-              <div class="Sts-Tupla">
-                <p>Arma D2</p>
-                <span id="spanHp">999</span>
-              </div>
-              <div class="Sts-Tupla">
-                <p>Arma E2</p>
-                <span id="spanHp">999</span>
-              </div>
-            </div>
-
-            <div class="corpo-Sts">
-              <div class="Sts-Tupla">
-                <p>Dano Fisico</p>
-                <span id="spanHp">999</span>
-              </div>
-              <div class="Sts-Tupla">
-                <p>Dano Magico</p>
-                <span id="spanHp">999</span>
-              </div>
-              <div class="Sts-Tupla">
-                <p>Dano Flamejante</p>
-                <span id="spanHp">999</span>
-              </div>
-              <div class="Sts-Tupla">
-                <p>Dano Eletrico</p>
-                <span id="spanHp">999</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="Title">
-        <div>
-          <h1>Nome da Build</h1>
-          <p>
-            <input type="text" id="inNomeBuild" />
-          </p>
-        </div>
-      </div>
-
-      <div class="containerButton">
-        <div>
-          <button class="buttonLimparFicha">Limpar Ficha</button>
-          <button onclick="salvarBuild()">Salvar</button>
-        </div>
-      </div>
+  <div class="containerButton">
+    <div>
+      <button onclick="salvarBuild()">Salvar</button>
     </div>
-  </body>
+  </div>
+  </div>
+</body>
+
 </html>
 <script src="./js/Calculadora.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -440,8 +381,8 @@
     },
     options: {
       labelOptions: {
-      fontColor: "#FFF",
-    },
+        fontColor: "#FFF",
+      },
       elements: {
         borderWidth: 1.5,
       },
@@ -461,11 +402,11 @@
           grid: {
             color: "#D0D0D0",
           },
-          
+
         },
       },
       plugins: {
-        labels: {color: "#D0D0D0"},
+        labels: { color: "#D0D0D0" },
         legend: {
           labels: {
             color: "#D0D0D0",

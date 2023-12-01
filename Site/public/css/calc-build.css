@@ -137,7 +137,7 @@ body {
 
 .resultado-Sts .container .Sts {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .resultado-Sts .container .Sts .corpo-Sts {
@@ -168,7 +168,7 @@ body {
 
 .containerButton div {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     width: 20%;
 }
 

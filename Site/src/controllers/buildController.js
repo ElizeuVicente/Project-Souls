@@ -80,47 +80,47 @@ function selectArmDireita(req, res) {
     var ArmDireita = req.params.ArmDireita;
 
     buildModel.selectArmDireita(ArmDireita).then(
-            function (resultado) {
-                res.status(200).json(resultado);
-                console.log(resultado);
-            }
-        );
+        function (resultado) {
+            res.status(200).json(resultado);
+            console.log(resultado);
+        }
+    );
 }
 
 function selectArmDireita2(req, res) {
     var ArmDireita2 = req.params.ArmDireita2;
 
     buildModel.selectArmDireita2(ArmDireita2).then(
-            function (resultado) {
-                res.status(200).json(resultado);
-                console.log(resultado);
-            }
-        );
+        function (resultado) {
+            res.status(200).json(resultado);
+            console.log(resultado);
+        }
+    );
 }
 
 function selectArmEsquerda(req, res) {
     var ArmEsquerda = req.params.ArmEsquerda;
 
     buildModel.selectArmEsquerda(ArmEsquerda).then(
-            function (resultado) {
-                res.status(200).json(resultado);
-                console.log(resultado);
-            }
-        );
+        function (resultado) {
+            res.status(200).json(resultado);
+            console.log(resultado);
+        }
+    );
 }
 
 function selectArmEsquerda2(req, res) {
     var ArmEsquerda2 = req.params.ArmEsquerda2;
 
     buildModel.selectArmEsquerda2(ArmEsquerda2).then(
-            function (resultado) {
-                res.status(200).json(resultado);
-                console.log(resultado);
-            }
-        );
+        function (resultado) {
+            res.status(200).json(resultado);
+            console.log(resultado);
+        }
+    );
 }
 
-function listarBuild (req, res) {
+function listarBuild(req, res) {
     var idUser = req.params.idUser;
 
     buildModel.listarBuild(idUser).then((resposta) => {

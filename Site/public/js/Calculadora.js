@@ -128,7 +128,7 @@ function lvUpForti() {
         if (Forti < 40) Stamina += 2
         EquipLoad++
 
-        document.getElementById('spanEquipLoad').innerHTML = `${Peso}(${EquipLoad})`;
+        document.getElementById('spanEquipLoad').innerHTML = `${EquipLoad}`;
         document.getElementById('spanStamina').innerHTML = Stamina;
     }
     calcularAlmasC()
@@ -142,7 +142,7 @@ function lvDownForti() {
         if (Forti < 40) Stamina -= 2
         EquipLoad--
 
-        document.getElementById('spanEquipLoad').innerHTML = `${Peso}(${EquipLoad})`;;
+        document.getElementById('spanEquipLoad').innerHTML = `${EquipLoad}`;;
         document.getElementById('spanStamina').innerHTML = Stamina;
     }
     if (Level > 1 && Forti >= 10) {
@@ -526,17 +526,17 @@ function salvarBuild() {
 
             })
         });
-    } else alert("Para salvar sua build é necessario realizar o login");
 
-    window.location = "./index.html";
+        window.location = "./buildSalva.html"
+    } else {
+        alert("Para salvar sua build é necessario realizar o login");
+        window.location = "./login.html";
+    }
 }
 
 
 function selectArmDireita() {
     var ArmDireita = document.getElementById(`selArmDireita`).value;
-    var ArmEsquerda = document.getElementById(`selArmEsquerda`).value;
-
-    var ArmEsquerda2 = document.getElementById(`selArmEsquerda2`).value;
 
     if (ArmDireita != undefined) {
         fetch(`/build/selectArmDireita/${ArmDireita}`,
@@ -620,9 +620,9 @@ function selectArmEsquerda() {
                     resultado.json().then(json => {
                         console.log(json);
                         console.log(JSON.stringify(json));
-                       /*  DanoArmaE += JSON.parse(json.DanoFisico) + JSON.parse(json.DanoMagico) + JSON.parse(json.DanoFlamejante) + JSON.parse(json.DanoEletrico) + Forc * (Forc - 9);
-                        Peso += json.peso
-                        document.getElementById('spanEquipLoad').innerHTML = `${Peso}(${EquipLoad})`; */
+                        /*  DanoArmaE += JSON.parse(json.DanoFisico) + JSON.parse(json.DanoMagico) + JSON.parse(json.DanoFlamejante) + JSON.parse(json.DanoEletrico) + Forc * (Forc - 9);
+                         Peso += json.peso
+                         document.getElementById('spanEquipLoad').innerHTML = `${Peso}(${EquipLoad})`; */
 
                     });
 

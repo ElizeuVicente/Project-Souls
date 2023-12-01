@@ -10,7 +10,7 @@ router.post("/realizarConquest", function (req, res) {
 
 router.get("/carregarConquest/:idUsuario", function (req, res) {
     conquestController.carregarConquest(req, res);
-    
+
 });
 
 module.exports = router;
