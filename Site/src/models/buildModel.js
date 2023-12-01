@@ -4,6 +4,8 @@ function selectArmDireita(ArmDireita) {
     var instrucaoSQL = `
     select tipo, peso, DanoFisico, DanoMagico, DanoFlamejante, DanoEletrico from Armas where idArma = ${ArmDireita}; 
     `
+    console.log("Executando a instrução SQL: \n" + instrucaoSQL);
+    return database.executar(instrucaoSQL);
 }
 
 

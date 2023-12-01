@@ -522,7 +522,7 @@ function salvarBuild() {
 
 function selectArmDireita() {
     var ArmDireita = document.getElementById(`selArmDireita`).value;
-
+  
     if (ArmDireita != undefined) {
         fetch(`/build/selectArmDireita/${ArmDireita}`,
             { cache: 'no-store' })
