@@ -8,6 +8,31 @@ function selectArmDireita(ArmDireita) {
     return database.executar(instrucaoSQL);
 }
 
+function selectArmDireita2(ArmDireita2) {
+    var instrucaoSQL = `
+    select tipo, peso, DanoFisico, DanoMagico, DanoFlamejante, DanoEletrico from Armas where idArma = ${ArmDireita2}; 
+    `
+    console.log("Executando a instrução SQL: \n" + instrucaoSQL);
+    return database.executar(instrucaoSQL);
+}
+
+function selectArmEsquerda(ArmEsquerda) {
+    var instrucaoSQL = `
+    select tipo, peso, DanoFisico, DanoMagico, DanoFlamejante, DanoEletrico from Armas where idArma = ${ArmEsquerda}; 
+    `
+    console.log("Executando a instrução SQL: \n" + instrucaoSQL);
+    return database.executar(instrucaoSQL);
+}
+
+function selectArmEsquerda2(ArmEsquerda2) {
+    var instrucaoSQL = `
+    select tipo, peso, DanoFisico, DanoMagico, DanoFlamejante, DanoEletrico from Armas where idArma = ${ArmEsquerda2}; 
+    `
+    console.log("Executando a instrução SQL: \n" + instrucaoSQL);
+    return database.executar(instrucaoSQL);
+}
+
+
 
 
 function salvarArma(idUser, idBuild, Arma, Slot) {
@@ -44,7 +69,7 @@ function salvarArmadura(idUser, idBuild, Armadura, Slot) {
 
 function salvarAtributo(idUser, idBuild, Level, Vigor, Conhecimento, Fortitude, Vitalidade, Forca, Destreza, Inteligencia, Fe, Sorte) {
     var instrucaoSQL = `
-    insert into Atributos values (${idBuild}, ${idUser}, null, ${Level}, ${Vigor}, ${Conhecimento}, ${Fortitude}, ${Vitalidade}, ${Forca}, ${Destreza}, ${Inteligencia}, ${Fe}, ${Sorte})
+    insert into Atributos values (${idBuild}, ${idUser}, ${Level}, ${Vigor}, ${Conhecimento}, ${Fortitude}, ${Vitalidade}, ${Forca}, ${Destreza}, ${Inteligencia}, ${Fe}, ${Sorte})
     `
     console.log("Executando a instrução SQL: \n" + instrucaoSQL);
     return database.executar(instrucaoSQL);
@@ -61,8 +86,41 @@ function salvarBuild(idUser, nomeBuild) {
 
 function listarMetricas() {
     var query = `
-    select round(avg(Vigor)) as Vigor, round(avg(Conhecimento)) as Conhecimento, round(avg(Fortitude)) as Fortitude, round(avg(Vitalidade)) as Vitalidade, round(avg(Forca)) as Forca, round(avg(Destreza)) as Destreza, round(avg(Inteligencia)) as Inteligencia, round(avg(Fe)) as Fe, round(avg(Sorte)) as Sorte from Atributos;
-    `
+    SELECT
+  SUBSTRING_INDEX(GROUP_CONCAT(Vigor ORDER BY Contagem_Vigor DESC), ',', 1) AS Moda_Vigor,
+  SUBSTRING_INDEX(GROUP_CONCAT(Conhecimento ORDER BY Contagem_Conhecimento DESC), ',', 1) AS Moda_Conhecimento,
+  SUBSTRING_INDEX(GROUP_CONCAT(Fortitude ORDER BY Contagem_Fortitude DESC), ',', 1) AS Moda_Fortitude,
+  SUBSTRING_INDEX(GROUP_CONCAT(Vitalidade ORDER BY Contagem_Vitalidade DESC), ',', 1) AS Moda_Vitalidade,
+  SUBSTRING_INDEX(GROUP_CONCAT(Forca ORDER BY Contagem_Forca DESC), ',', 1) AS Moda_Forca,
+  SUBSTRING_INDEX(GROUP_CONCAT(Destreza ORDER BY Contagem_Destreza DESC), ',', 1) AS Moda_Destreza,
+  SUBSTRING_INDEX(GROUP_CONCAT(Inteligencia ORDER BY Contagem_Inteligencia DESC), ',', 1) AS Moda_Inteligencia,
+  SUBSTRING_INDEX(GROUP_CONCAT(Fe ORDER BY Contagem_Fe DESC), ',', 1) AS Moda_Fe,
+  SUBSTRING_INDEX(GROUP_CONCAT(Sorte ORDER BY Contagem_Sorte DESC), ',', 1) AS Moda_Sorte
+FROM (
+  SELECT
+    Vigor,
+    Conhecimento,
+    Fortitude,
+    Vitalidade,
+    Forca,
+    Destreza,
+    Inteligencia,
+    Fe,
+    Sorte,
+    COUNT(*) AS Contagem_Vigor,
+    COUNT(*) AS Contagem_Conhecimento,
+    COUNT(*) AS Contagem_Fortitude,
+    COUNT(*) AS Contagem_Vitalidade,
+    COUNT(*) AS Contagem_Forca,
+    COUNT(*) AS Contagem_Destreza,
+    COUNT(*) AS Contagem_Inteligencia,
+    COUNT(*) AS Contagem_Fe,
+    COUNT(*) AS Contagem_Sorte
+  FROM Atributos
+  GROUP BY Vigor, Conhecimento, Fortitude, Vitalidade, Forca, Destreza, Inteligencia, Fe, Sorte
+) AS Contagens;
+
+  `
 
     console.log("Executando a instrução SQL: \n" + query);
     return database.executar(query);
@@ -96,6 +154,17 @@ function listarArmadura() {
     return database.executar(query);
 }
 
+function listarBuild(idUser) {
+    var query = `
+    Select Build.nome, Atributos.Nivel from Build join Atributos on Build.idBuild = Atributos.fkBuild 
+    where Build.fkUser = ${idUser};`
+
+    console.log("Executando a instrução SQL: \n" + query);
+    return database.executar(query);
+}
+
+
+
 module.exports = {
     listarArma,
     listarFeitico,
@@ -108,5 +177,9 @@ module.exports = {
     salvarArmadura,
     salvarAtributo,
     listarMetricas,
-    selectArmDireita
+    selectArmDireita,
+    selectArmDireita2,
+    selectArmEsquerda,
+    selectArmEsquerda2,
+    listarBuild
 };

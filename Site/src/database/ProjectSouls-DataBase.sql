@@ -1,22 +1,6 @@
 create database ProjectSouls;
 use ProjectSouls;
 
-select * from Usuario;
-select * from Conquista;
-select * from UserXConquista;
-
-select * from Build;
-select * from Atributos;
-select * from ArmaXBuild;
-select * from FeiticoXBuild;
-select * from ArmaduraXBuild;
-select * from AnelXBuild;
-
-select * from Armas;
-select * from Feiticos;
-select * from Armaduras;
-select * from Anel;
-
 create table Usuario (
 idUser int primary key auto_increment,
 nome varchar(30),
@@ -46,8 +30,7 @@ nome varchar(45)
 create table Atributos (
 fkBuild int,
 fkUser int,
-idAtr int auto_increment,
-primary key (idAtr, fkBuild, fkUser),
+primary key (fkBuild, fkUser),
 Nivel int,
 Vigor int,
 Conhecimento int,
@@ -750,32 +733,91 @@ grant INSERT, DELETE, SELECT, UPDATE on ProjectSouls.Build to 'UserProjectSouls'
 
 flush privileges;
 
+ INSERT INTO Usuario (nome, email, senha) VALUES ('Elizeu', 'Ez@.com', '123123123*');
+
+ insert into Build values
+ (50001, 10000, "MasterBuild"),
+ (50002, 10000, "OpBuild"),
+ (50003, 10000, "BlasterBuild"),
+ (50004, 10000, "ULTIMATEBuild");
+ 
+ insert into Atributos values 
+ (50000, 10000, 346, 50, 50, 50, 50, 50, 50, 50, 50, 35),
+ (500001, 10000, 356, 60, 50, 50, 50, 50, 50, 50, 50, 35),
+ (500002, 10000, 346, 60, 50, 50, 50, 50, 40, 50, 50, 35),
+ (500003, 10000, 346, 60, 50, 50, 50, 50, 40, 50, 50, 35),
+ (500004, 10000, 346, 60, 50, 50, 50, 50, 40, 50, 50, 35);
+ 
+
+ 
+ select * from Atributos;
+
+
 -- Selects
 
-select count(Vigor), Vigor from Atributos group by Vigor 
-order by Vigor
-limit 1;
-select count(Conhecimento), Conhecimento from Atributos group by Conhecimento 
-order by Conhecimento
-limit 1;
-select count(Fortitude), Fortitude from Atributos group by Fortitude 
-order by Fortitude
-limit 1;
-select count(Vitalidade), Vitalidade from Atributos group by Vitalidade 
-order by Vitalidade
-limit 1;
-select count(Forca), Forca from Atributos group by Forca 
-order by Forca
-limit 1;
-select count(Destreza), Destreza from Atributos group by Destreza 
-order by Destreza
-limit 1;
-select count(Inteligencia), Inteligencia from Atributos group by Inteligencia 
-order by Inteligencia
-limit 1;
-select count(Fe), Fe from Atributos group by Fe 
-order by Fe
-limit 1;
-select count(Sorte), Sorte from Atributos group by Sorte 
-order by Sorte
-limit 1;
+Select Build.nome, Atributos.Nivel from Build join Atributos on Build.idBuild = Atributos.fkBuild where Build.fkUser = 10000;
+
+SELECT
+  SUBSTRING_INDEX(GROUP_CONCAT(Vigor ORDER BY Contagem_Vigor DESC), ',', 1) AS Moda_Vigor,
+  SUBSTRING_INDEX(GROUP_CONCAT(Conhecimento ORDER BY Contagem_Conhecimento DESC), ',', 1) AS Moda_Conhecimento,
+  SUBSTRING_INDEX(GROUP_CONCAT(Fortitude ORDER BY Contagem_Fortitude DESC), ',', 1) AS Moda_Fortitude,
+  SUBSTRING_INDEX(GROUP_CONCAT(Vitalidade ORDER BY Contagem_Vitalidade DESC), ',', 1) AS Moda_Vitalidade,
+  SUBSTRING_INDEX(GROUP_CONCAT(Forca ORDER BY Contagem_Forca DESC), ',', 1) AS Moda_Forca,
+  SUBSTRING_INDEX(GROUP_CONCAT(Destreza ORDER BY Contagem_Destreza DESC), ',', 1) AS Moda_Destreza,
+  SUBSTRING_INDEX(GROUP_CONCAT(Inteligencia ORDER BY Contagem_Inteligencia DESC), ',', 1) AS Moda_Inteligencia,
+  SUBSTRING_INDEX(GROUP_CONCAT(Fe ORDER BY Contagem_Fe DESC), ',', 1) AS Moda_Fe,
+  SUBSTRING_INDEX(GROUP_CONCAT(Sorte ORDER BY Contagem_Sorte DESC), ',', 1) AS Moda_Sorte
+FROM (
+  SELECT
+    Vigor,
+    Conhecimento,
+    Fortitude,
+    Vitalidade,
+    Forca,
+    Destreza,
+    Inteligencia,
+    Fe,
+    Sorte,
+    COUNT(*) AS Contagem_Vigor,
+    COUNT(*) AS Contagem_Conhecimento,
+    COUNT(*) AS Contagem_Fortitude,
+    COUNT(*) AS Contagem_Vitalidade,
+    COUNT(*) AS Contagem_Forca,
+    COUNT(*) AS Contagem_Destreza,
+    COUNT(*) AS Contagem_Inteligencia,
+    COUNT(*) AS Contagem_Fe,
+    COUNT(*) AS Contagem_Sorte
+  FROM Atributos
+  GROUP BY Vigor, Conhecimento, Fortitude, Vitalidade, Forca, Destreza, Inteligencia, Fe, Sorte
+) AS Contagens;
+
+
+
+
+select * from Usuario;
+select * from Conquista;
+select * from UserXConquista;
+
+select * from Build;
+select * from Atributos;
+select * from ArmaXBuild;
+select * from FeiticoXBuild;
+select * from ArmaduraXBuild;
+select * from AnelXBuild;
+
+select * from Armas;
+select * from Feiticos;
+select * from Armaduras;
+select * from Anel;
+
+select Build.nome as NomeBuild, Atributos.Vigor, Atributos.Conhecimento, Atributos.Fortitude, Atributos.Vitalidade, Atributos.Forca, Atributos.Destreza, Atributos.Inteligencia, Atributos.Fe, Atributos.Sorte, Armas.nome as ArmaNome, ArmaXBuild.slot as ArmaSlot,
+	Feiticos.nome as FeiticoNome, FeiticoXBuild.slot as FeiticoSlot, Anel.nome as AnelNome, AnelXBuild.slot as AnelSlot, Armaduras.nome as ArmaduraNome, ArmaduraXBuild.slot as ArmaduraSlot from Build 
+		join Atributos on Atributos.fkBuild = Build.idBuild
+			join ArmaXBuild on ArmaXBuild.fkBuild = Build.idBuild
+				join FeiticoXBuild on FeiticoXBuild.fkBuild = Build.idBuild
+					join ArmaduraXBuild on ArmaduraXBuild.fkBuild = Build.idBuild
+						join AnelXBuild on AnelXBuild.fkBuild = Build.idBuild
+							join Armas on ArmaXBuild.fkArmas = Armas.idArma
+								join Feiticos on FeiticoXBuild.fkFeitico = Feiticos.idFeitico
+									join Anel on AnelXBuild.fkAnel = Anel.idAnel
+										join Armaduras on ArmaduraXBuild.fkArmadura = Armaduras.idArmaduras;

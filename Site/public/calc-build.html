@@ -214,19 +214,19 @@
               </div>
               <div class="equi-Sel">
                 <p>Mão Esquerda</p>
-                <select id="selArmEsquerda">
+                <select onchange="selectArmEsquerda()" id="selArmEsquerda">
                   <option value="undefined"></option>
                 </select>
               </div>
               <div class="equi-Sel">
                 <p>Mão Direita 2</p>
-                <select id="selArmDireita2">
+                <select onchange="selectArmDireita2()" id="selArmDireita2">
                   <option value="undefined"></option>
                 </select>
               </div>
               <div class="equi-Sel">
                 <p>Mão Esquerda 2</p>
-                <select id="selArmEsquerda2">
+                <select onchange="selectArmEsquerda2()" id="selArmEsquerda2">
                   <option value="undefined"></option>
                 </select>
               </div>
@@ -346,7 +346,7 @@
             <div class="corpo-Sts">
               <div class="Sts-Tupla">
                 <p>Arma D</p>
-                <span id="spanDanoArmaD">999</span>
+                <span id="spanDanoArmaD">10</span>
               </div>
               <div class="Sts-Tupla">
                 <p>Arma E</p>
@@ -439,6 +439,9 @@
       ],
     },
     options: {
+      labelOptions: {
+      fontColor: "#FFF",
+    },
       elements: {
         borderWidth: 1.5,
       },
@@ -456,16 +459,16 @@
             },
           },
           grid: {
-            color: "#D0D0D0ff",
+            color: "#D0D0D0",
           },
           
         },
       },
       plugins: {
-        labels: {color: "#D0D0D0fc"},
+        labels: {color: "#D0D0D0"},
         legend: {
           labels: {
-            color: "#D0D0D0fc",
+            color: "#D0D0D0",
           },
         },
       },

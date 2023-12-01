@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./css/buildSalva.css">
 </head>
 
-<body>
+<body onload="listarBuild()">
     <!--Header-->
     <div>
         <div class="header">
@@ -62,34 +62,40 @@
 
     <div class="loadBox">
         <div class="container">
-            <div>
-                <div class="Load">
-                    <div>
-                        <div>Nome</div>
-                        <div>LV 1</div>
-                    </div>
-                </div>
-                <div class="Load">
-                    <div>
-                        <div>Nome</div>
-                        <div>LV 1</div>
-                    </div>
-                </div>
-                <div class="Load">
-                    <div>
-                        <div>Nome</div>
-                        <div>LV 1</div>
-                    </div>
-                </div>
-                <div class="Load">
-                    <div>
-                        <div>Nome</div>
-                        <div>LV 1</div>
-                    </div>
-                </div>
+            <div id="loadBuild">
+
             </div>
         </div>
     </div>
 </body>
+
+<script>
+    function listarBuild() {
+        var idUser = sessionStorage.ID_USUARIO;
+        if (idUser != undefined) {
+            fetch(`/build/listarBuild/${idUser}`, {
+                method: "GET",
+            })
+                .then(function (resposta) {
+                    resposta.json().then((resposta => {
+                        resposta.forEach((resposta) => {
+                            loadBuild.innerHTML += `
+                        <div class="Load">
+                            <div>
+                                <div>${resposta.nome}</div>
+                                <div>LV ${resposta.Nivel}</div>
+                            </div>
+                        </div>
+                        `
+
+                        });
+                    }));
+                })
+                .catch(function (resposta) {
+                    console.log(`#ERRO: ${resposta}`);
+                });
+        }
+    }
+</script>
 
 </html>

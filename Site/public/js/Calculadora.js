@@ -21,6 +21,7 @@ var DanoArmaE = Forc * (Forc - 9);
 var DanoArmaD2 = Forc * (Forc - 9);
 var DanoArmaE2 = Forc * (Forc - 9);
 
+
 var ResFisica = Vita * (Vita - 9);
 var ResMagica = Vita * (Vita - 9);
 var ResFlamejante = Vita * (Vita - 9);
@@ -35,30 +36,6 @@ var Atr = [Vigo, Conh, Forti, Vita, Forc, Dest, Inte, Fe, Sort];
 var MetAtr = []
 
 function lvUpVigo() {
-    legendaChart.style.opacity = `1`
-    legendaChart.innerHTML = `
-    A média de nivels de atributos usadas pelos usuarios são:<br>
-    <div>
-        <div>Vigor: ${MetAtr[0]}</div> 
-        <div>Conhecimento: ${MetAtr[1]}</div>
-        <div>Fortitude: ${MetAtr[2]}</div>
-    </div>
-    
-    
-    <div>
-        <div>Vitalidade: ${MetAtr[3]}</div>
-        <div>Força: ${MetAtr[4]}</div>
-        <div>Destreza: ${MetAtr[5]}</div>
-    </div>
-
-    <div>
-        <div>Inteligencia: ${MetAtr[6]}</div>
-        <div>Fé: ${MetAtr[7]}</div>
-        <div>Sorte: ${MetAtr[8]}</div>
-    </div>
-    `
-    
-    
     if (Vigo < 99) {
         Vigo++;
         Level++;
@@ -93,12 +70,15 @@ function lvDownVigo() {
         Level = Level - 1;
         spanLevel.innerHTML = ` ${Level}`;
         spanLevelStats.innerHTML = ` ${Level}`;
+
     }
     calcularAlmasC()
 }
 
 
 function lvUpConh() {
+
+
     if (Conh < 99) {
         Conh++;
         Level++;
@@ -209,14 +189,24 @@ function lvUpForc() {
         spanLevel.innerHTML = ` ${Level}`;
         spanLevelStats.innerHTML = ` ${Level}`;
         Atr[4] = Forc;
+        var DanoArmaD = Forc * (Forc - 9);
+        var DanoArmaE = Forc * (Forc - 9);
+        var DanoArmaD2 = Forc * (Forc - 9);
+        var DanoArmaE2 = Forc * (Forc - 9);
+        spanDanoArmaD.innerHTML = DanoArmaD
+        calcularAlmasC()
     }
-    calcularAlmasC()
 }
 function lvDownForc() {
     if (Forc > 10) {
         Forc = Forc - 1;
         lvForca.innerHTML = Forc
         Atr[4] = Forc;
+        DanoArmaD = Forc * (Forc - 9);
+        DanoArmaE = Forc * (Forc - 9);
+        DanoArmaD2 = Forc * (Forc - 9);
+        DanoArmaE2 = Forc * (Forc - 9);
+        spanDanoArmaD.innerHTML = DanoArmaD;
     }
     if (Level > 1 && Forc >= 10) {
         Level = Level - 1;
@@ -331,6 +321,28 @@ function lvDownSo() {
 
 function calcularAlmasC() {
     AlmasC = 673;
+    legendaChart.style.opacity = `1`
+    legendaChart.innerHTML = `
+    A média de nivels de atributos usadas pelos usuarios são:<br>
+    <div>
+        <div>Vigor: ${MetAtr[0]}</div> 
+        <div>Conhecimento: ${MetAtr[1]}</div>
+        <div>Fortitude: ${MetAtr[2]}</div>
+    </div>
+    
+    
+    <div>
+        <div>Vitalidade: ${MetAtr[3]}</div>
+        <div>Força: ${MetAtr[4]}</div>
+        <div>Destreza: ${MetAtr[5]}</div>
+    </div>
+
+    <div>
+        <div>Inteligencia: ${MetAtr[6]}</div>
+        <div>Fé: ${MetAtr[7]}</div>
+        <div>Sorte: ${MetAtr[8]}</div>
+    </div>
+    `
 
     chartAtr.data.datasets[0].data = Atr;
     chartAtr.update();
@@ -356,7 +368,7 @@ function listar() {
 
 function listarMetricas() {
 
-    
+
 
     fetch("/build/listarMetricas", {
         method: "GET",
@@ -364,17 +376,17 @@ function listarMetricas() {
         .then(function (resposta) {
             resposta.json().then((resposta) => {
                 console.log(resposta)
-                MetAtr.push(resposta[0].Vigor)
-                MetAtr.push(resposta[0].Conhecimento)
-                MetAtr.push(resposta[0].Fortitude)
-                MetAtr.push(resposta[0].Vitalidade)
-                MetAtr.push(resposta[0].Forca)
-                MetAtr.push(resposta[0].Destreza)
-                MetAtr.push(resposta[0].Inteligencia)
-                MetAtr.push(resposta[0].Fe)
-                MetAtr.push(resposta[0].Sorte)
+                MetAtr.push(resposta[0].Moda_Vigor)
+                MetAtr.push(resposta[0].Moda_Conhecimento)
+                MetAtr.push(resposta[0].Moda_Fortitude)
+                MetAtr.push(resposta[0].Moda_Vitalidade)
+                MetAtr.push(resposta[0].Moda_Forca)
+                MetAtr.push(resposta[0].Moda_Destreza)
+                MetAtr.push(resposta[0].Moda_Inteligencia)
+                MetAtr.push(resposta[0].Moda_Fe)
+                MetAtr.push(resposta[0].Moda_Sorte)
                 chartAtr.update()
-                
+
             });
         })
         .catch(function (resposta) {
@@ -382,7 +394,7 @@ function listarMetricas() {
         });
     return MetAtr;
 
-    
+
 }
 
 function listarArma() {
@@ -522,7 +534,10 @@ function salvarBuild() {
 
 function selectArmDireita() {
     var ArmDireita = document.getElementById(`selArmDireita`).value;
-  
+    var ArmEsquerda = document.getElementById(`selArmEsquerda`).value;
+
+    var ArmEsquerda2 = document.getElementById(`selArmEsquerda2`).value;
+
     if (ArmDireita != undefined) {
         fetch(`/build/selectArmDireita/${ArmDireita}`,
             { cache: 'no-store' })
@@ -535,8 +550,113 @@ function selectArmDireita() {
                     resultado.json().then(json => {
                         console.log(json);
                         console.log(JSON.stringify(json));
-                        DanoArmaD = json.DanoFisico + json.DanoMagico + json.DanoFlamejante + json.DanoEletrico;
+
+                        /*DanoArmaD += json.parse(json.DanoFisico) + json.parse(json.DanoMagico) + json.parse(json.DanoFlamejante) + json.parse(json.DanoEletrico) + Forc * (Forc - 9)
+                        spanDanoArmaD.innerHTML = DanoArmaD 
+                        Peso += json.peso.parse()
+                        document.getElementById('spanEquipLoad').innerHTML = `${Peso}(${EquipLoad})`; */
+
+                    });
+
+                } else {
+                    console.log("Houve um erro ao tentar realizar a busca da Arma direita");
+
+                    resultado.text().then(texto => {
+                        console.error(texto);
+                    });
+                }
+            }).catch(function (erro) {
+                console.log(erro);
+            });
+    }
+}
+
+function selectArmDireita2() {
+    var ArmDireita2 = document.getElementById(`selArmDireita2`).value;
+
+    if (ArmDireita2 != undefined) {
+        fetch(`/build/selectArmDireita2/${ArmDireita2}`,
+            { cache: 'no-store' })
+            .then(function (resultado) {
+                console.log("ESTOU NO THEN DO selectArmDireita2()!");
+
+                if (resultado.ok) {
+                    console.log(resultado);
+
+                    resultado.json().then(json => {
+                        console.log(json);
+                        console.log(JSON.stringify(json));
+                        /* DanoArmaD2 += JSON.parse(json.DanoFisico) + JSON.parse(json.DanoMagico) + JSON.parse(json.DanoFlamejante) + JSON.parse(json.DanoEletrico) + Forc * (Forc - 9);
                         Peso += json.peso
+                        document.getElementById('spanEquipLoad').innerHTML = `${Peso}(${EquipLoad})`; */
+
+                    });
+
+                } else {
+                    console.log("Houve um erro ao tentar realizar a busca da Arma direita");
+
+                    resultado.text().then(texto => {
+                        console.error(texto);
+                    });
+                }
+            }).catch(function (erro) {
+                console.log(erro);
+            });
+    }
+}
+
+function selectArmEsquerda() {
+    var ArmEsquerda = document.getElementById(`selArmEsquerda`).value;
+
+    if (ArmEsquerda != undefined) {
+        fetch(`/build/selectArmEsquerda/${ArmEsquerda}`,
+            { cache: 'no-store' })
+            .then(function (resultado) {
+                console.log("ESTOU NO THEN DO selectArmEsquerda2()!");
+
+                if (resultado.ok) {
+                    console.log(resultado);
+
+                    resultado.json().then(json => {
+                        console.log(json);
+                        console.log(JSON.stringify(json));
+                       /*  DanoArmaE += JSON.parse(json.DanoFisico) + JSON.parse(json.DanoMagico) + JSON.parse(json.DanoFlamejante) + JSON.parse(json.DanoEletrico) + Forc * (Forc - 9);
+                        Peso += json.peso
+                        document.getElementById('spanEquipLoad').innerHTML = `${Peso}(${EquipLoad})`; */
+
+                    });
+
+                } else {
+                    console.log("Houve um erro ao tentar realizar a busca da Arma direita");
+
+                    resultado.text().then(texto => {
+                        console.error(texto);
+                    });
+                }
+            }).catch(function (erro) {
+                console.log(erro);
+            });
+    }
+}
+
+function selectArmEsquerda2() {
+    var ArmEsquerda2 = document.getElementById(`selArmEsquerda2`).value;
+
+    if (ArmEsquerda2 != undefined) {
+        fetch(`/build/selectArmEsquerda2/${ArmEsquerda2}`,
+            { cache: 'no-store' })
+            .then(function (resultado) {
+                console.log("ESTOU NO THEN DO selectArmEsquerda2()!");
+
+                if (resultado.ok) {
+                    console.log(resultado);
+
+                    resultado.json().then(json => {
+                        console.log(json);
+                        console.log(JSON.stringify(json));
+                        /* DanoArmaE2 += JSON.parse(json.DanoFisico) + JSON.parse(json.DanoMagico) + JSON.parse(json.DanoFlamejante) + JSON.parse(json.DanoEletrico) + Forc * (Forc - 9);
+                        Peso += json.peso
+                        document.getElementById('spanEquipLoad').innerHTML = `${Peso}(${EquipLoad})`; */
 
                     });
 
