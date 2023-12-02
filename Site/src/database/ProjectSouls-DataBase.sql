@@ -757,6 +757,10 @@ flush privileges;
 
 Select Build.nome, Atributos.Nivel from Build join Atributos on Build.idBuild = Atributos.fkBuild where Build.fkUser = 10000;
 
+-- O select abaixo é para contarmos a moda de todos os atributos individualmente
+-- O substring_Index esta juntando a moda (count da linha de baixo) em uma coluna e pegando apenas o primeiro valor
+-- O Count esta pegando o valor dos atributos e contando para obtermos com quanta frequencia cada atributo apareceu
+-- 
 SELECT
   SUBSTRING_INDEX(GROUP_CONCAT(Vigor ORDER BY Contagem_Vigor DESC), ',', 1) AS Moda_Vigor,
   SUBSTRING_INDEX(GROUP_CONCAT(Conhecimento ORDER BY Contagem_Conhecimento DESC), ',', 1) AS Moda_Conhecimento,
